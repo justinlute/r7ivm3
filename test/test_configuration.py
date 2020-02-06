@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.configuration import Configuration  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestConfiguration(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestConfiguration(unittest.TestCase):
     def testConfiguration(self):
         """Test Configuration"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.configuration.Configuration()  # noqa: E501
+        # model = r7ivm3.models.configuration.Configuration()  # noqa: E501
         pass
 
 

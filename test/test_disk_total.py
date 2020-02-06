@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.disk_total import DiskTotal  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestDiskTotal(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestDiskTotal(unittest.TestCase):
     def testDiskTotal(self):
         """Test DiskTotal"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.disk_total.DiskTotal()  # noqa: E501
+        # model = r7ivm3.models.disk_total.DiskTotal()  # noqa: E501
         pass
 
 

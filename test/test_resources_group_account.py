@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.resources_group_account import ResourcesGroupAccount  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestResourcesGroupAccount(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestResourcesGroupAccount(unittest.TestCase):
     def testResourcesGroupAccount(self):
         """Test ResourcesGroupAccount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.resources_group_account.ResourcesGroupAccount()  # noqa: E501
+        # model = r7ivm3.models.resources_group_account.ResourcesGroupAccount()  # noqa: E501
         pass
 
 

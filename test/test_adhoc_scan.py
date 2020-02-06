@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.adhoc_scan import AdhocScan  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestAdhocScan(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAdhocScan(unittest.TestCase):
     def testAdhocScan(self):
         """Test AdhocScan"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.adhoc_scan.AdhocScan()  # noqa: E501
+        # model = r7ivm3.models.adhoc_scan.AdhocScan()  # noqa: E501
         pass
 
 

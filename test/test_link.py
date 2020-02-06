@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.link import Link  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestLink(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestLink(unittest.TestCase):
     def testLink(self):
         """Test Link"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.link.Link()  # noqa: E501
+        # model = r7ivm3.models.link.Link()  # noqa: E501
         pass
 
 

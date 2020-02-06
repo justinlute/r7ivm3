@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.page_of_discovery_connection import PageOfDiscoveryConnection  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestPageOfDiscoveryConnection(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestPageOfDiscoveryConnection(unittest.TestCase):
     def testPageOfDiscoveryConnection(self):
         """Test PageOfDiscoveryConnection"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_of_discovery_connection.PageOfDiscoveryConnection()  # noqa: E501
+        # model = r7ivm3.models.page_of_discovery_connection.PageOfDiscoveryConnection()  # noqa: E501
         pass
 
 

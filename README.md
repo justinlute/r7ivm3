@@ -23,7 +23,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import swagger_client 
+import r7ivm3 
 ```
 
 ### Setuptools
@@ -37,7 +37,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import swagger_client
+import r7ivm3
 ```
 
 ## Getting Started
@@ -47,12 +47,12 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi(swagger_client.ApiClient(configuration))
+api_instance = r7ivm3.AdministrationApi(r7ivm3.ApiClient(configuration))
 license = 'license_example' # str |  (optional)
 key = 'key_example' # str | A license activation key. (optional)
 
@@ -64,7 +64,7 @@ except ApiException as e:
     print("Exception when calling AdministrationApi->activate_license: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi(swagger_client.ApiClient(configuration))
+api_instance = r7ivm3.AdministrationApi(r7ivm3.ApiClient(configuration))
 body = 'body_example' # str | The console command to execute. (optional)
 
 try:
@@ -75,7 +75,7 @@ except ApiException as e:
     print("Exception when calling AdministrationApi->execute_command: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi(swagger_client.ApiClient(configuration))
+api_instance = r7ivm3.AdministrationApi(r7ivm3.ApiClient(configuration))
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -86,7 +86,7 @@ except ApiException as e:
     print("Exception when calling AdministrationApi->get_info: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi(swagger_client.ApiClient(configuration))
+api_instance = r7ivm3.AdministrationApi(r7ivm3.ApiClient(configuration))
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -97,7 +97,7 @@ except ApiException as e:
     print("Exception when calling AdministrationApi->get_license: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi(swagger_client.ApiClient(configuration))
+api_instance = r7ivm3.AdministrationApi(r7ivm3.ApiClient(configuration))
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -108,7 +108,7 @@ except ApiException as e:
     print("Exception when calling AdministrationApi->get_properties: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi(swagger_client.ApiClient(configuration))
+api_instance = r7ivm3.AdministrationApi(r7ivm3.ApiClient(configuration))
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -121,7 +121,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

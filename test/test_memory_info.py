@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.memory_info import MemoryInfo  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestMemoryInfo(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestMemoryInfo(unittest.TestCase):
     def testMemoryInfo(self):
         """Test MemoryInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.memory_info.MemoryInfo()  # noqa: E501
+        # model = r7ivm3.models.memory_info.MemoryInfo()  # noqa: E501
         pass
 
 

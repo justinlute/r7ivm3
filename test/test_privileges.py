@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.privileges import Privileges  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestPrivileges(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestPrivileges(unittest.TestCase):
     def testPrivileges(self):
         """Test Privileges"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.privileges.Privileges()  # noqa: E501
+        # model = r7ivm3.models.privileges.Privileges()  # noqa: E501
         pass
 
 

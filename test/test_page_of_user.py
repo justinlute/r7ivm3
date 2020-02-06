@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.page_of_user import PageOfUser  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestPageOfUser(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestPageOfUser(unittest.TestCase):
     def testPageOfUser(self):
         """Test PageOfUser"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_of_user.PageOfUser()  # noqa: E501
+        # model = r7ivm3.models.page_of_user.PageOfUser()  # noqa: E501
         pass
 
 

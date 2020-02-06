@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.console_command_output import ConsoleCommandOutput  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestConsoleCommandOutput(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestConsoleCommandOutput(unittest.TestCase):
     def testConsoleCommandOutput(self):
         """Test ConsoleCommandOutput"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.console_command_output.ConsoleCommandOutput()  # noqa: E501
+        # model = r7ivm3.models.console_command_output.ConsoleCommandOutput()  # noqa: E501
         pass
 
 

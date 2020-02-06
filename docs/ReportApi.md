@@ -1,6 +1,6 @@
 # swagger_client.ReportApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,13 +29,13 @@ Configures a new report for generation. Report types are controlled through eith
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
-body = swagger_client.Report() # Report | The specification of a report configuration. (optional)
+api_instance = r7ivm3.ReportApi()
+body = r7ivm3.Report() # Report | The specification of a report configuration. (optional)
 
 try:
     # Reports
@@ -77,12 +77,12 @@ Deletes the configuration of a report.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 56 # int | The identifier of the report.
 
 try:
@@ -125,12 +125,12 @@ Deletes an instance of a generated report.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 56 # int | The identifier of the report.
 instance = 'instance_example' # str | The identifier of the report instance.
 
@@ -175,12 +175,12 @@ Returns the contents of a generated report. The report content is usually return
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 56 # int | The identifier of the report.
 instance = 'instance_example' # str | The identifier of the report instance.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
@@ -227,12 +227,12 @@ Generates a configured report and returns the instance identifier of the report.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 56 # int | The identifier of the report.
 
 try:
@@ -275,12 +275,12 @@ Returns the configuration details of a report.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 56 # int | The identifier of the report.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -325,12 +325,12 @@ Returns all available report formats. A report format indicates an output file f
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -373,12 +373,12 @@ Returns the details for a generation of the report.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 56 # int | The identifier of the report.
 instance = 'instance_example' # str | The identifier of the report instance.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
@@ -425,12 +425,12 @@ Returns all historical details for generation of the report over time.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 56 # int | The identifier of the report.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -475,12 +475,12 @@ Returns the details of a report template. Report templates govern the contents g
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 'id_example' # str | The identifier of the report template;
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -525,12 +525,12 @@ Returns all available report templates.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -573,12 +573,12 @@ Returns all defined report configurations.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
 size = 56 # int | The number of records per page to retrieve. (optional)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
@@ -627,14 +627,14 @@ Updates the configuration details of a report.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ReportApi()
+api_instance = r7ivm3.ReportApi()
 id = 56 # int | The identifier of the report.
-body = swagger_client.Report() # Report | The specification of a report configuration. (optional)
+body = r7ivm3.Report() # Report | The specification of a report configuration. (optional)
 
 try:
     # Report

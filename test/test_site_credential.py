@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.site_credential import SiteCredential  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestSiteCredential(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestSiteCredential(unittest.TestCase):
     def testSiteCredential(self):
         """Test SiteCredential"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.site_credential.SiteCredential()  # noqa: E501
+        # model = r7ivm3.models.site_credential.SiteCredential()  # noqa: E501
         pass
 
 

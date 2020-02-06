@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.policy_override_submitter import PolicyOverrideSubmitter  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestPolicyOverrideSubmitter(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestPolicyOverrideSubmitter(unittest.TestCase):
     def testPolicyOverrideSubmitter(self):
         """Test PolicyOverrideSubmitter"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.policy_override_submitter.PolicyOverrideSubmitter()  # noqa: E501
+        # model = r7ivm3.models.policy_override_submitter.PolicyOverrideSubmitter()  # noqa: E501
         pass
 
 

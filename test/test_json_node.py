@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.json_node import JsonNode  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestJsonNode(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestJsonNode(unittest.TestCase):
     def testJsonNode(self):
         """Test JsonNode"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.json_node.JsonNode()  # noqa: E501
+        # model = r7ivm3.models.json_node.JsonNode()  # noqa: E501
         pass
 
 

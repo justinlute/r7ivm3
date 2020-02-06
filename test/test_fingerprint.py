@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.fingerprint import Fingerprint  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestFingerprint(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestFingerprint(unittest.TestCase):
     def testFingerprint(self):
         """Test Fingerprint"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.fingerprint.Fingerprint()  # noqa: E501
+        # model = r7ivm3.models.fingerprint.Fingerprint()  # noqa: E501
         pass
 
 

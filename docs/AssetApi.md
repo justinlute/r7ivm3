@@ -1,6 +1,6 @@
 # swagger_client.AssetApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -41,12 +41,12 @@ Assigns the specified tag to the asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 tag_id = 56 # int | The identifier of the tag.
 
@@ -91,14 +91,14 @@ Creates or updates an asset with the specified details.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 56 # int | The identifier of the site.
-body = swagger_client.AssetCreate() # AssetCreate | The details of the asset being added or updated. 
+body = r7ivm3.AssetCreate() # AssetCreate | The details of the asset being added or updated. 
 The operating system can be specified in one of three ways, with the order of precedence: `"osFingerprint"`, `"os"`, `"cpe"` (optional)
 
 try:
@@ -143,12 +143,12 @@ Deletes the specified asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 
 try:
@@ -191,13 +191,13 @@ Returns all assets for which you have access that match the given search criteri
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
-body = swagger_client.SearchCriteria() # SearchCriteria | param1
+api_instance = r7ivm3.AssetApi()
+body = r7ivm3.SearchCriteria() # SearchCriteria | param1
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
 size = 56 # int | The number of records per page to retrieve. (optional)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
@@ -245,12 +245,12 @@ Returns the specified asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -295,12 +295,12 @@ Returns the databases enumerated on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -345,12 +345,12 @@ Returns the files discovered on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -395,12 +395,12 @@ Returns the service running a port and protocol on the asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 protocol = 'protocol_example' # str | The protocol of the service.
 port = 56 # int | The port of the service.
@@ -449,12 +449,12 @@ Returns the configuration (properties) of a port and protocol on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 protocol = 'protocol_example' # str | The protocol of the service.
 port = 56 # int | The port of the service.
@@ -503,12 +503,12 @@ Returns the databases running on a port and protocol on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 protocol = 'protocol_example' # str | The protocol of the service.
 port = 56 # int | The port of the service.
@@ -557,12 +557,12 @@ Returns the user groups enumerated on a port and protocol on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 protocol = 'protocol_example' # str | The protocol of the service.
 port = 56 # int | The port of the service.
@@ -611,12 +611,12 @@ Returns the users enumerated on a port and protocol on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 protocol = 'protocol_example' # str | The protocol of the service.
 port = 56 # int | The port of the service.
@@ -665,12 +665,12 @@ Returns a web application running on a port and protocol on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 protocol = 'protocol_example' # str | The protocol of the service.
 port = 56 # int | The port of the service.
@@ -721,12 +721,12 @@ Returns the web applications running on a port and protocol on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 protocol = 'protocol_example' # str | The protocol of the service.
 port = 56 # int | The port of the service.
@@ -775,12 +775,12 @@ Returns the services discovered on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -825,12 +825,12 @@ Returns the software on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -875,12 +875,12 @@ Returns tags assigned to an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -925,12 +925,12 @@ Returns user groups enumerated on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -975,12 +975,12 @@ Returns users enumerated on an asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -1025,12 +1025,12 @@ Returns all assets for which you have access.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
 size = 56 # int | The number of records per page to retrieve. (optional)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
@@ -1079,12 +1079,12 @@ Returns the details for an operating system.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the operating system.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -1129,12 +1129,12 @@ Returns all operating systems discovered across all assets.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
 size = 56 # int | The number of records per page to retrieve. (optional)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
@@ -1183,12 +1183,12 @@ Returns the details for software.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the software.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -1233,12 +1233,12 @@ Returns all software enumerated on any asset.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
 size = 56 # int | The number of records per page to retrieve. (optional)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
@@ -1287,12 +1287,12 @@ Removes the specified tag from the asset's tags.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetApi()
+api_instance = r7ivm3.AssetApi()
 id = 789 # int | The identifier of the asset.
 tag_id = 56 # int | The identifier of the tag.
 

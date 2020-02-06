@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.bad_request_error import BadRequestError  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestBadRequestError(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestBadRequestError(unittest.TestCase):
     def testBadRequestError(self):
         """Test BadRequestError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.bad_request_error.BadRequestError()  # noqa: E501
+        # model = r7ivm3.models.bad_request_error.BadRequestError()  # noqa: E501
         pass
 
 

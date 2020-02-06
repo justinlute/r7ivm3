@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.page_of_asset_policy import PageOfAssetPolicy  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestPageOfAssetPolicy(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestPageOfAssetPolicy(unittest.TestCase):
     def testPageOfAssetPolicy(self):
         """Test PageOfAssetPolicy"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_of_asset_policy.PageOfAssetPolicy()  # noqa: E501
+        # model = r7ivm3.models.page_of_asset_policy.PageOfAssetPolicy()  # noqa: E501
         pass
 
 

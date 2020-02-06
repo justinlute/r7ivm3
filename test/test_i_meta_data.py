@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.i_meta_data import IMetaData  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestIMetaData(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestIMetaData(unittest.TestCase):
     def testIMetaData(self):
         """Test IMetaData"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.i_meta_data.IMetaData()  # noqa: E501
+        # model = r7ivm3.models.i_meta_data.IMetaData()  # noqa: E501
         pass
 
 

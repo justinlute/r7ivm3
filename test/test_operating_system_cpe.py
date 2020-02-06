@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.operating_system_cpe import OperatingSystemCpe  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestOperatingSystemCpe(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestOperatingSystemCpe(unittest.TestCase):
     def testOperatingSystemCpe(self):
         """Test OperatingSystemCpe"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.operating_system_cpe.OperatingSystemCpe()  # noqa: E501
+        # model = r7ivm3.models.operating_system_cpe.OperatingSystemCpe()  # noqa: E501
         pass
 
 

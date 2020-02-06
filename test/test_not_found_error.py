@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.not_found_error import NotFoundError  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestNotFoundError(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestNotFoundError(unittest.TestCase):
     def testNotFoundError(self):
         """Test NotFoundError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.not_found_error.NotFoundError()  # noqa: E501
+        # model = r7ivm3.models.not_found_error.NotFoundError()  # noqa: E501
         pass
 
 

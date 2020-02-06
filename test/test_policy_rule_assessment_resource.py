@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.policy_rule_assessment_resource import PolicyRuleAssessmentResource  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestPolicyRuleAssessmentResource(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestPolicyRuleAssessmentResource(unittest.TestCase):
     def testPolicyRuleAssessmentResource(self):
         """Test PolicyRuleAssessmentResource"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.policy_rule_assessment_resource.PolicyRuleAssessmentResource()  # noqa: E501
+        # model = r7ivm3.models.policy_rule_assessment_resource.PolicyRuleAssessmentResource()  # noqa: E501
         pass
 
 

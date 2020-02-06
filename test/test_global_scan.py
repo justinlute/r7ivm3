@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.global_scan import GlobalScan  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestGlobalScan(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestGlobalScan(unittest.TestCase):
     def testGlobalScan(self):
         """Test GlobalScan"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.global_scan.GlobalScan()  # noqa: E501
+        # model = r7ivm3.models.global_scan.GlobalScan()  # noqa: E501
         pass
 
 

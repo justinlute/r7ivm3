@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.web_settings import WebSettings  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestWebSettings(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestWebSettings(unittest.TestCase):
     def testWebSettings(self):
         """Test WebSettings"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.web_settings.WebSettings()  # noqa: E501
+        # model = r7ivm3.models.web_settings.WebSettings()  # noqa: E501
         pass
 
 

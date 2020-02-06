@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.telnet import Telnet  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestTelnet(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestTelnet(unittest.TestCase):
     def testTelnet(self):
         """Test Telnet"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.telnet.Telnet()  # noqa: E501
+        # model = r7ivm3.models.telnet.Telnet()  # noqa: E501
         pass
 
 

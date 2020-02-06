@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.user_create_role import UserCreateRole  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestUserCreateRole(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestUserCreateRole(unittest.TestCase):
     def testUserCreateRole(self):
         """Test UserCreateRole"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.user_create_role.UserCreateRole()  # noqa: E501
+        # model = r7ivm3.models.user_create_role.UserCreateRole()  # noqa: E501
         pass
 
 

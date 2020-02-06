@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.scheduled_scan_targets import ScheduledScanTargets  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestScheduledScanTargets(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestScheduledScanTargets(unittest.TestCase):
     def testScheduledScanTargets(self):
         """Test ScheduledScanTargets"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.scheduled_scan_targets.ScheduledScanTargets()  # noqa: E501
+        # model = r7ivm3.models.scheduled_scan_targets.ScheduledScanTargets()  # noqa: E501
         pass
 
 

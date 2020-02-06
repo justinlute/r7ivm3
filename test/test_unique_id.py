@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.unique_id import UniqueId  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestUniqueId(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestUniqueId(unittest.TestCase):
     def testUniqueId(self):
         """Test UniqueId"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.unique_id.UniqueId()  # noqa: E501
+        # model = r7ivm3.models.unique_id.UniqueId()  # noqa: E501
         pass
 
 

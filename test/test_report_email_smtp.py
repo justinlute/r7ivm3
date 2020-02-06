@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.report_email_smtp import ReportEmailSmtp  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestReportEmailSmtp(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestReportEmailSmtp(unittest.TestCase):
     def testReportEmailSmtp(self):
         """Test ReportEmailSmtp"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.report_email_smtp.ReportEmailSmtp()  # noqa: E501
+        # model = r7ivm3.models.report_email_smtp.ReportEmailSmtp()  # noqa: E501
         pass
 
 

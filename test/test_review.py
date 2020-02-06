@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.review import Review  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestReview(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestReview(unittest.TestCase):
     def testReview(self):
         """Test Review"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.review.Review()  # noqa: E501
+        # model = r7ivm3.models.review.Review()  # noqa: E501
         pass
 
 

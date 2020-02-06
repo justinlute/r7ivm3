@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.memory_total import MemoryTotal  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestMemoryTotal(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestMemoryTotal(unittest.TestCase):
     def testMemoryTotal(self):
         """Test MemoryTotal"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.memory_total.MemoryTotal()  # noqa: E501
+        # model = r7ivm3.models.memory_total.MemoryTotal()  # noqa: E501
         pass
 
 

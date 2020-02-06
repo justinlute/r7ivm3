@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.scan_scope import ScanScope  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestScanScope(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestScanScope(unittest.TestCase):
     def testScanScope(self):
         """Test ScanScope"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.scan_scope.ScanScope()  # noqa: E501
+        # model = r7ivm3.models.scan_scope.ScanScope()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.scan_template_web_spider_paths import ScanTemplateWebSpiderPaths  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestScanTemplateWebSpiderPaths(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestScanTemplateWebSpiderPaths(unittest.TestCase):
     def testScanTemplateWebSpiderPaths(self):
         """Test ScanTemplateWebSpiderPaths"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.scan_template_web_spider_paths.ScanTemplateWebSpiderPaths()  # noqa: E501
+        # model = r7ivm3.models.scan_template_web_spider_paths.ScanTemplateWebSpiderPaths()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.sonar_criteria import SonarCriteria  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestSonarCriteria(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestSonarCriteria(unittest.TestCase):
     def testSonarCriteria(self):
         """Test SonarCriteria"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.sonar_criteria.SonarCriteria()  # noqa: E501
+        # model = r7ivm3.models.sonar_criteria.SonarCriteria()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.range_resource import RangeResource  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestRangeResource(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestRangeResource(unittest.TestCase):
     def testRangeResource(self):
         """Test RangeResource"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.range_resource.RangeResource()  # noqa: E501
+        # model = r7ivm3.models.range_resource.RangeResource()  # noqa: E501
         pass
 
 

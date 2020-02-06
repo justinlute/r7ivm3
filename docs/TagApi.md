@@ -1,6 +1,6 @@
 # swagger_client.TagApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,13 +37,13 @@ Creates a new tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
-body = swagger_client.Tag() # Tag | The details of the tag. (optional)
+api_instance = r7ivm3.TagApi()
+body = r7ivm3.Tag() # Tag | The details of the tag. (optional)
 
 try:
     # Tags
@@ -85,12 +85,12 @@ Deletes the tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 
 try:
@@ -133,12 +133,12 @@ Returns a tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -183,12 +183,12 @@ Returns the asset groups associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -233,12 +233,12 @@ Returns the search criteria associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -283,12 +283,12 @@ Returns the assets tagged with a tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -333,12 +333,12 @@ Returns the sites associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -383,12 +383,12 @@ Returns all tags.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 name = 'name_example' # str | name (optional)
 type = 'type_example' # str | type (optional)
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
@@ -441,12 +441,12 @@ Removes the search criteria associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 
 try:
@@ -489,12 +489,12 @@ Removes the associations between the tag and the sites.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 
 try:
@@ -537,12 +537,12 @@ Sets the asset groups associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 body = [56] # list[int] | The asset groups to add to the tag. (optional)
 
@@ -587,12 +587,12 @@ Sets the sites associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 body = [56] # list[int] | The sites to add to the tag. (optional)
 
@@ -637,12 +637,12 @@ Adds an asset to the tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 asset_id = 789 # int | The identifier of the asset.
 
@@ -687,12 +687,12 @@ Adds an asset group to this tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 asset_group_id = 56 # int | The asset group identifier.
 
@@ -737,12 +737,12 @@ Adds a site to this tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 site_id = 56 # int | The identifier of the site.
 
@@ -787,12 +787,12 @@ Removes the associations between the tag and all asset groups.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 
 try:
@@ -835,12 +835,12 @@ Removes an asset from the tag. Note: The asset must be added through the asset o
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 asset_id = 789 # int | The identifier of the asset.
 
@@ -885,12 +885,12 @@ Removes an asset group from this tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 asset_group_id = 56 # int | The asset group identifier.
 
@@ -935,12 +935,12 @@ Removes a site from this tag.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
 site_id = 56 # int | The identifier of the site.
 
@@ -985,14 +985,14 @@ Updates the details of a tag. For more information about accepted fields for the
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
-body = swagger_client.Tag() # Tag | The details of the tag. (optional)
+body = r7ivm3.Tag() # Tag | The details of the tag. (optional)
 
 try:
     # Tag
@@ -1035,14 +1035,14 @@ Updates the search criteria associated with the tag.   The following table outli
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.TagApi()
+api_instance = r7ivm3.TagApi()
 id = 56 # int | The identifier of the tag.
-body = swagger_client.SearchCriteria() # SearchCriteria | The details of the search criteria. (optional)
+body = r7ivm3.SearchCriteria() # SearchCriteria | The details of the search criteria. (optional)
 
 try:
     # Tag Search Criteria

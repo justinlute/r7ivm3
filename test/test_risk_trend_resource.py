@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.risk_trend_resource import RiskTrendResource  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestRiskTrendResource(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestRiskTrendResource(unittest.TestCase):
     def testRiskTrendResource(self):
         """Test RiskTrendResource"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.risk_trend_resource.RiskTrendResource()  # noqa: E501
+        # model = r7ivm3.models.risk_trend_resource.RiskTrendResource()  # noqa: E501
         pass
 
 

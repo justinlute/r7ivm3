@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.role import Role  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestRole(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestRole(unittest.TestCase):
     def testRole(self):
         """Test Role"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.role.Role()  # noqa: E501
+        # model = r7ivm3.models.role.Role()  # noqa: E501
         pass
 
 

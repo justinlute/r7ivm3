@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.resources_authentication_source import ResourcesAuthenticationSource  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestResourcesAuthenticationSource(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestResourcesAuthenticationSource(unittest.TestCase):
     def testResourcesAuthenticationSource(self):
         """Test ResourcesAuthenticationSource"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.resources_authentication_source.ResourcesAuthenticationSource()  # noqa: E501
+        # model = r7ivm3.models.resources_authentication_source.ResourcesAuthenticationSource()  # noqa: E501
         pass
 
 

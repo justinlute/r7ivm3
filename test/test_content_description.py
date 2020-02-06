@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.content_description import ContentDescription  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestContentDescription(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestContentDescription(unittest.TestCase):
     def testContentDescription(self):
         """Test ContentDescription"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.content_description.ContentDescription()  # noqa: E501
+        # model = r7ivm3.models.content_description.ContentDescription()  # noqa: E501
         pass
 
 

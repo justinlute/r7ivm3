@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.page_of_policy_item import PageOfPolicyItem  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestPageOfPolicyItem(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestPageOfPolicyItem(unittest.TestCase):
     def testPageOfPolicyItem(self):
         """Test PageOfPolicyItem"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_of_policy_item.PageOfPolicyItem()  # noqa: E501
+        # model = r7ivm3.models.page_of_policy_item.PageOfPolicyItem()  # noqa: E501
         pass
 
 

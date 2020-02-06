@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.additional_information import AdditionalInformation  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestAdditionalInformation(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAdditionalInformation(unittest.TestCase):
     def testAdditionalInformation(self):
         """Test AdditionalInformation"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.additional_information.AdditionalInformation()  # noqa: E501
+        # model = r7ivm3.models.additional_information.AdditionalInformation()  # noqa: E501
         pass
 
 

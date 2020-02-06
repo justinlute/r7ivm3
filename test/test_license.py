@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.license import License  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestLicense(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestLicense(unittest.TestCase):
     def testLicense(self):
         """Test License"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.license.License()  # noqa: E501
+        # model = r7ivm3.models.license.License()  # noqa: E501
         pass
 
 

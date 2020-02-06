@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.risk_modifier_settings import RiskModifierSettings  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestRiskModifierSettings(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestRiskModifierSettings(unittest.TestCase):
     def testRiskModifierSettings(self):
         """Test RiskModifierSettings"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.risk_modifier_settings.RiskModifierSettings()  # noqa: E501
+        # model = r7ivm3.models.risk_modifier_settings.RiskModifierSettings()  # noqa: E501
         pass
 
 

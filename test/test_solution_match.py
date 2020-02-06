@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.solution_match import SolutionMatch  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestSolutionMatch(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestSolutionMatch(unittest.TestCase):
     def testSolutionMatch(self):
         """Test SolutionMatch"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.solution_match.SolutionMatch()  # noqa: E501
+        # model = r7ivm3.models.solution_match.SolutionMatch()  # noqa: E501
         pass
 
 

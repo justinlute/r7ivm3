@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.excluded_scan_targets import ExcludedScanTargets  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestExcludedScanTargets(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestExcludedScanTargets(unittest.TestCase):
     def testExcludedScanTargets(self):
         """Test ExcludedScanTargets"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.excluded_scan_targets.ExcludedScanTargets()  # noqa: E501
+        # model = r7ivm3.models.excluded_scan_targets.ExcludedScanTargets()  # noqa: E501
         pass
 
 

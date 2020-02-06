@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.syslog_alert import SyslogAlert  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestSyslogAlert(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestSyslogAlert(unittest.TestCase):
     def testSyslogAlert(self):
         """Test SyslogAlert"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.syslog_alert.SyslogAlert()  # noqa: E501
+        # model = r7ivm3.models.syslog_alert.SyslogAlert()  # noqa: E501
         pass
 
 

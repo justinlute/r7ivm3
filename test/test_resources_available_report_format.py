@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.resources_available_report_format import ResourcesAvailableReportFormat  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestResourcesAvailableReportFormat(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestResourcesAvailableReportFormat(unittest.TestCase):
     def testResourcesAvailableReportFormat(self):
         """Test ResourcesAvailableReportFormat"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.resources_available_report_format.ResourcesAvailableReportFormat()  # noqa: E501
+        # model = r7ivm3.models.resources_available_report_format.ResourcesAvailableReportFormat()  # noqa: E501
         pass
 
 

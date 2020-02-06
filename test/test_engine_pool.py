@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.engine_pool import EnginePool  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestEnginePool(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestEnginePool(unittest.TestCase):
     def testEnginePool(self):
         """Test EnginePool"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.engine_pool.EnginePool()  # noqa: E501
+        # model = r7ivm3.models.engine_pool.EnginePool()  # noqa: E501
         pass
 
 

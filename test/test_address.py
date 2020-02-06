@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.address import Address  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestAddress(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAddress(unittest.TestCase):
     def testAddress(self):
         """Test Address"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.address.Address()  # noqa: E501
+        # model = r7ivm3.models.address.Address()  # noqa: E501
         pass
 
 

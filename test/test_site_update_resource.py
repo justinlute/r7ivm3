@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.site_update_resource import SiteUpdateResource  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestSiteUpdateResource(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestSiteUpdateResource(unittest.TestCase):
     def testSiteUpdateResource(self):
         """Test SiteUpdateResource"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.site_update_resource.SiteUpdateResource()  # noqa: E501
+        # model = r7ivm3.models.site_update_resource.SiteUpdateResource()  # noqa: E501
         pass
 
 

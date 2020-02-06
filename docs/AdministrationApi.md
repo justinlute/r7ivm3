@@ -1,6 +1,6 @@
 # swagger_client.AdministrationApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,12 +22,12 @@ Licenses the product with an activation key or a provided license file. If both 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi()
+api_instance = r7ivm3.AdministrationApi()
 license = 'license_example' # str |  (optional)
 key = 'key_example' # str | A license activation key. (optional)
 
@@ -72,12 +72,12 @@ Executes a console command against the Security Console. <span class=\"authoriza
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi()
+api_instance = r7ivm3.AdministrationApi()
 body = 'body_example' # str | The console command to execute. (optional)
 
 try:
@@ -120,12 +120,12 @@ Returns system details, including host and version information.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi()
+api_instance = r7ivm3.AdministrationApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -168,12 +168,12 @@ Returns the enabled features and limits of the current license. <span class=\"au
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi()
+api_instance = r7ivm3.AdministrationApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -216,12 +216,12 @@ Returns system details, including host and version information.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi()
+api_instance = r7ivm3.AdministrationApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -264,12 +264,12 @@ Returns the current administration settings. <span class=\"authorization\">Globa
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AdministrationApi()
+api_instance = r7ivm3.AdministrationApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:

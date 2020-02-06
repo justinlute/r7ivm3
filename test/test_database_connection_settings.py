@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.database_connection_settings import DatabaseConnectionSettings  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestDatabaseConnectionSettings(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestDatabaseConnectionSettings(unittest.TestCase):
     def testDatabaseConnectionSettings(self):
         """Test DatabaseConnectionSettings"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.database_connection_settings.DatabaseConnectionSettings()  # noqa: E501
+        # model = r7ivm3.models.database_connection_settings.DatabaseConnectionSettings()  # noqa: E501
         pass
 
 

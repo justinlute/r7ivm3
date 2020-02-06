@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.unauthorized_error import UnauthorizedError  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestUnauthorizedError(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestUnauthorizedError(unittest.TestCase):
     def testUnauthorizedError(self):
         """Test UnauthorizedError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.unauthorized_error.UnauthorizedError()  # noqa: E501
+        # model = r7ivm3.models.unauthorized_error.UnauthorizedError()  # noqa: E501
         pass
 
 

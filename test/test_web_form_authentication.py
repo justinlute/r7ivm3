@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.web_form_authentication import WebFormAuthentication  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestWebFormAuthentication(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestWebFormAuthentication(unittest.TestCase):
     def testWebFormAuthentication(self):
         """Test WebFormAuthentication"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.web_form_authentication.WebFormAuthentication()  # noqa: E501
+        # model = r7ivm3.models.web_form_authentication.WebFormAuthentication()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.references_with_reference_with_endpoint_id_link_service_link import ReferencesWithReferenceWithEndpointIDLinkServiceLink  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestReferencesWithReferenceWithEndpointIDLinkServiceLink(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestReferencesWithReferenceWithEndpointIDLinkServiceLink(unittest.TestCase
     def testReferencesWithReferenceWithEndpointIDLinkServiceLink(self):
         """Test ReferencesWithReferenceWithEndpointIDLinkServiceLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.references_with_reference_with_endpoint_id_link_service_link.ReferencesWithReferenceWithEndpointIDLinkServiceLink()  # noqa: E501
+        # model = r7ivm3.models.references_with_reference_with_endpoint_id_link_service_link.ReferencesWithReferenceWithEndpointIDLinkServiceLink()  # noqa: E501
         pass
 
 

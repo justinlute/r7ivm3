@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.references_with_asset_group_id_link import ReferencesWithAssetGroupIDLink  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestReferencesWithAssetGroupIDLink(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestReferencesWithAssetGroupIDLink(unittest.TestCase):
     def testReferencesWithAssetGroupIDLink(self):
         """Test ReferencesWithAssetGroupIDLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.references_with_asset_group_id_link.ReferencesWithAssetGroupIDLink()  # noqa: E501
+        # model = r7ivm3.models.references_with_asset_group_id_link.ReferencesWithAssetGroupIDLink()  # noqa: E501
         pass
 
 

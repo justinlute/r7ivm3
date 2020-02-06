@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.version_info import VersionInfo  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestVersionInfo(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestVersionInfo(unittest.TestCase):
     def testVersionInfo(self):
         """Test VersionInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.version_info.VersionInfo()  # noqa: E501
+        # model = r7ivm3.models.version_info.VersionInfo()  # noqa: E501
         pass
 
 

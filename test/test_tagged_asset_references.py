@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.tagged_asset_references import TaggedAssetReferences  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestTaggedAssetReferences(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestTaggedAssetReferences(unittest.TestCase):
     def testTaggedAssetReferences(self):
         """Test TaggedAssetReferences"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.tagged_asset_references.TaggedAssetReferences()  # noqa: E501
+        # model = r7ivm3.models.tagged_asset_references.TaggedAssetReferences()  # noqa: E501
         pass
 
 

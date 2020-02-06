@@ -1,6 +1,6 @@
 # swagger_client.AssetDiscoveryApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,13 +26,13 @@ Creates a sonar query.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
-body = swagger_client.SonarQuery() # SonarQuery | The criteria for a Sonar query. (optional)
+api_instance = r7ivm3.AssetDiscoveryApi()
+body = r7ivm3.SonarQuery() # SonarQuery | The criteria for a Sonar query. (optional)
 
 try:
     # Sonar Queries
@@ -74,12 +74,12 @@ Removes a sonar query.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
+api_instance = r7ivm3.AssetDiscoveryApi()
 id = 789 # int | The identifier of the Sonar query.
 
 try:
@@ -122,12 +122,12 @@ Returns a discovery connection.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
+api_instance = r7ivm3.AssetDiscoveryApi()
 id = 789 # int | The identifier of the discovery connection.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -172,12 +172,12 @@ Returns all discovery connections.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
+api_instance = r7ivm3.AssetDiscoveryApi()
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
 size = 56 # int | The number of records per page to retrieve. (optional)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
@@ -226,12 +226,12 @@ Returns all sonar queries.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
+api_instance = r7ivm3.AssetDiscoveryApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -274,12 +274,12 @@ Returns a sonar query.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
+api_instance = r7ivm3.AssetDiscoveryApi()
 id = 789 # int | The identifier of the Sonar query.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -324,12 +324,12 @@ Returns the assets that are discovered by a Sonar query.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
+api_instance = r7ivm3.AssetDiscoveryApi()
 id = 789 # int | The identifier of the Sonar query.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -374,12 +374,12 @@ Attempts to reconnect the discovery connection.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
+api_instance = r7ivm3.AssetDiscoveryApi()
 id = 789 # int | The identifier of the discovery connection.
 
 try:
@@ -421,13 +421,13 @@ Executes a Sonar query to discover assets with the given search criteria.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
-body = swagger_client.SonarCriteria() # SonarCriteria | The criteria for a Sonar query. (optional)
+api_instance = r7ivm3.AssetDiscoveryApi()
+body = r7ivm3.SonarCriteria() # SonarCriteria | The criteria for a Sonar query. (optional)
 
 try:
     # Sonar Query Search
@@ -469,14 +469,14 @@ Updates a sonar query.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AssetDiscoveryApi()
+api_instance = r7ivm3.AssetDiscoveryApi()
 id = 789 # int | The identifier of the Sonar query.
-body = swagger_client.SonarQuery() # SonarQuery | The criteria for a Sonar query. (optional)
+body = r7ivm3.SonarQuery() # SonarQuery | The criteria for a Sonar query. (optional)
 
 try:
     # Sonar Query

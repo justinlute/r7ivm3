@@ -1,6 +1,6 @@
 # swagger_client.UserApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -48,12 +48,12 @@ Grants the user access to the asset group. Individual asset group access cannot 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 asset_group_id = 56 # int | The identifier of the asset group.
 
@@ -98,12 +98,12 @@ Grants the user access to the site. Individual site access cannot be granted to 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 site_id = 56 # int | The identifier of the site.
 
@@ -148,13 +148,13 @@ Creates a new user. <span class=\"authorization\">Global Administrator</span>
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
-body = swagger_client.UserEdit() # UserEdit | The details of the user. (optional)
+api_instance = r7ivm3.UserApi()
+body = r7ivm3.UserEdit() # UserEdit | The details of the user. (optional)
 
 try:
     # Users
@@ -196,12 +196,12 @@ Removes a role with the specified identifier. The role must not be built-in and 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 'id_example' # str | The identifier of the role.
 
 try:
@@ -244,12 +244,12 @@ Deletes a user account.<span class=\"authorization\">Global Administrator</span>
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -292,12 +292,12 @@ Returns the details for an authentication source.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the authentication source.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -342,12 +342,12 @@ Returns hypermedia links for the user accounts that use the authentication sourc
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the authentication source.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -392,12 +392,12 @@ Returns all available sources of authentication for users.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -440,12 +440,12 @@ Returns the details for a privilege.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 'id_example' # str | The identifier of the privilege.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -490,12 +490,12 @@ Returns all privileges that may be granted to a role.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -538,12 +538,12 @@ Retrieves the details of a role.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 'id_example' # str | The identifier of the role.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -588,12 +588,12 @@ Returns hypermedia links for the the users currently assigned a role.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 'id_example' # str | The identifier of the role.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -638,12 +638,12 @@ Returns all roles for which users may be assigned.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -686,12 +686,12 @@ Retrieves the current authentication token seed (key) for the user, if configure
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -736,12 +736,12 @@ Returns the details for a user.<span class=\"authorization\">Global Administrato
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -786,12 +786,12 @@ Returns the asset groups to which the user has access.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -836,12 +836,12 @@ Returns the privileges granted to the user by their role. <span class=\"authoriz
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -886,12 +886,12 @@ Returns the sites to which the user has access.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -936,12 +936,12 @@ Returns all defined users. <span class=\"authorization\">Global Administrator</s
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
 size = 56 # int | The number of records per page to retrieve. (optional)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
@@ -990,12 +990,12 @@ Returns hypermedia links for all users granted the specified privilege by their 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 'id_example' # str | The identifier of the privilege.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -1040,12 +1040,12 @@ Regenerates a new authentication token seed (key) and updates it for the user. T
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -1088,12 +1088,12 @@ Revokes access to all asset groups from the user.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -1136,12 +1136,12 @@ Revokes access to all sites from the user.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -1184,12 +1184,12 @@ Grants the user access to the asset group. Individual asset group access cannot 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 asset_group_id = 56 # int | The identifier of the asset group.
 
@@ -1234,12 +1234,12 @@ Grants the user access to the site. Individual site access cannot be granted to 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 site_id = 56 # int | The identifier of the site.
 
@@ -1284,12 +1284,12 @@ Changes the password for the user. Users may only change their own password.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 body = 'body_example' # str | The new password to set. (optional)
 
@@ -1334,12 +1334,12 @@ Sets the authentication token seed (key) for the user. This key may be then be u
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 body = 'body_example' # str | The authentication token seed (key) to use for the user. (optional)
 
@@ -1384,12 +1384,12 @@ Updates the asset groups to which the user has access. Individual asset group ac
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 body = [56] # list[int] | The identifiers of the asset groups to grant the user access to. Ignored if user has access to `allAssetGroups`. (optional)
 
@@ -1434,12 +1434,12 @@ Updates the sites to which the user has access. Individual site access cannot be
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 body = [56] # list[int] | The identifiers of the sites to grant the user access to. Ignored if the user has access to `allSites`. (optional)
 
@@ -1484,12 +1484,12 @@ Unlocks a locked user account that has too many failed authentication attempts. 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -1532,14 +1532,14 @@ Updates the details of a role.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 'id_example' # str | The identifier of the role.
-body = swagger_client.Role() # Role | The details of the role. (optional)
+body = r7ivm3.Role() # Role | The details of the role. (optional)
 
 try:
     # Role
@@ -1582,14 +1582,14 @@ Updates the details of a user. <span class=\"authorization\">Global Administrato
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = r7ivm3.UserApi()
 id = 56 # int | The identifier of the user.
-body = swagger_client.UserEdit() # UserEdit | The details of the user. (optional)
+body = r7ivm3.UserEdit() # UserEdit | The details of the user. (optional)
 
 try:
     # User

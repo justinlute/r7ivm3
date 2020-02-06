@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.included_asset_groups import IncludedAssetGroups  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestIncludedAssetGroups(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestIncludedAssetGroups(unittest.TestCase):
     def testIncludedAssetGroups(self):
         """Test IncludedAssetGroups"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.included_asset_groups.IncludedAssetGroups()  # noqa: E501
+        # model = r7ivm3.models.included_asset_groups.IncludedAssetGroups()  # noqa: E501
         pass
 
 

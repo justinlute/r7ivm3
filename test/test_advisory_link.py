@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.advisory_link import AdvisoryLink  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestAdvisoryLink(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAdvisoryLink(unittest.TestCase):
     def testAdvisoryLink(self):
         """Test AdvisoryLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.advisory_link.AdvisoryLink()  # noqa: E501
+        # model = r7ivm3.models.advisory_link.AdvisoryLink()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.disk_free import DiskFree  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestDiskFree(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestDiskFree(unittest.TestCase):
     def testDiskFree(self):
         """Test DiskFree"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.disk_free.DiskFree()  # noqa: E501
+        # model = r7ivm3.models.disk_free.DiskFree()  # noqa: E501
         pass
 
 

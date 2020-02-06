@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.excluded_asset_groups import ExcludedAssetGroups  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestExcludedAssetGroups(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestExcludedAssetGroups(unittest.TestCase):
     def testExcludedAssetGroups(self):
         """Test ExcludedAssetGroups"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.excluded_asset_groups.ExcludedAssetGroups()  # noqa: E501
+        # model = r7ivm3.models.excluded_asset_groups.ExcludedAssetGroups()  # noqa: E501
         pass
 
 

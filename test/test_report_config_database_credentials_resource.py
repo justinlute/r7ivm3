@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.report_config_database_credentials_resource import ReportConfigDatabaseCredentialsResource  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestReportConfigDatabaseCredentialsResource(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestReportConfigDatabaseCredentialsResource(unittest.TestCase):
     def testReportConfigDatabaseCredentialsResource(self):
         """Test ReportConfigDatabaseCredentialsResource"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.report_config_database_credentials_resource.ReportConfigDatabaseCredentialsResource()  # noqa: E501
+        # model = r7ivm3.models.report_config_database_credentials_resource.ReportConfigDatabaseCredentialsResource()  # noqa: E501
         pass
 
 

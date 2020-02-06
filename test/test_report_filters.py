@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.report_filters import ReportFilters  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestReportFilters(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestReportFilters(unittest.TestCase):
     def testReportFilters(self):
         """Test ReportFilters"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.report_filters.ReportFilters()  # noqa: E501
+        # model = r7ivm3.models.report_filters.ReportFilters()  # noqa: E501
         pass
 
 

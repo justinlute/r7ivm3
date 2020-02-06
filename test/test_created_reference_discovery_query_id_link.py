@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.created_reference_discovery_query_id_link import CreatedReferenceDiscoveryQueryIDLink  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestCreatedReferenceDiscoveryQueryIDLink(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestCreatedReferenceDiscoveryQueryIDLink(unittest.TestCase):
     def testCreatedReferenceDiscoveryQueryIDLink(self):
         """Test CreatedReferenceDiscoveryQueryIDLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.created_reference_discovery_query_id_link.CreatedReferenceDiscoveryQueryIDLink()  # noqa: E501
+        # model = r7ivm3.models.created_reference_discovery_query_id_link.CreatedReferenceDiscoveryQueryIDLink()  # noqa: E501
         pass
 
 

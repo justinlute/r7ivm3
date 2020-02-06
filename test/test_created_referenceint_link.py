@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.created_referenceint_link import CreatedReferenceintLink  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestCreatedReferenceintLink(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestCreatedReferenceintLink(unittest.TestCase):
     def testCreatedReferenceintLink(self):
         """Test CreatedReferenceintLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.created_referenceint_link.CreatedReferenceintLink()  # noqa: E501
+        # model = r7ivm3.models.created_referenceint_link.CreatedReferenceintLink()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.asset_tag import AssetTag  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestAssetTag(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAssetTag(unittest.TestCase):
     def testAssetTag(self):
         """Test AssetTag"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.asset_tag.AssetTag()  # noqa: E501
+        # model = r7ivm3.models.asset_tag.AssetTag()  # noqa: E501
         pass
 
 

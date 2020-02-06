@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.host_name import HostName  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestHostName(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestHostName(unittest.TestCase):
     def testHostName(self):
         """Test HostName"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.host_name.HostName()  # noqa: E501
+        # model = r7ivm3.models.host_name.HostName()  # noqa: E501
         pass
 
 

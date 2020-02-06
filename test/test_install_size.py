@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.install_size import InstallSize  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestInstallSize(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestInstallSize(unittest.TestCase):
     def testInstallSize(self):
         """Test InstallSize"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.install_size.InstallSize()  # noqa: E501
+        # model = r7ivm3.models.install_size.InstallSize()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.scan_engine import ScanEngine  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestScanEngine(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestScanEngine(unittest.TestCase):
     def testScanEngine(self):
         """Test ScanEngine"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.scan_engine.ScanEngine()  # noqa: E501
+        # model = r7ivm3.models.scan_engine.ScanEngine()  # noqa: E501
         pass
 
 

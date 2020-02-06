@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.cpu_info import CPUInfo  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestCPUInfo(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestCPUInfo(unittest.TestCase):
     def testCPUInfo(self):
         """Test CPUInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.cpu_info.CPUInfo()  # noqa: E501
+        # model = r7ivm3.models.cpu_info.CPUInfo()  # noqa: E501
         pass
 
 

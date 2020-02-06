@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.assessment_result import AssessmentResult  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestAssessmentResult(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAssessmentResult(unittest.TestCase):
     def testAssessmentResult(self):
         """Test AssessmentResult"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.assessment_result.AssessmentResult()  # noqa: E501
+        # model = r7ivm3.models.assessment_result.AssessmentResult()  # noqa: E501
         pass
 
 

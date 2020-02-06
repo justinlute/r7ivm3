@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.asset_created_or_updated_reference import AssetCreatedOrUpdatedReference  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestAssetCreatedOrUpdatedReference(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAssetCreatedOrUpdatedReference(unittest.TestCase):
     def testAssetCreatedOrUpdatedReference(self):
         """Test AssetCreatedOrUpdatedReference"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.asset_created_or_updated_reference.AssetCreatedOrUpdatedReference()  # noqa: E501
+        # model = r7ivm3.models.asset_created_or_updated_reference.AssetCreatedOrUpdatedReference()  # noqa: E501
         pass
 
 

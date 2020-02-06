@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.references_with_site_id_link import ReferencesWithSiteIDLink  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestReferencesWithSiteIDLink(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestReferencesWithSiteIDLink(unittest.TestCase):
     def testReferencesWithSiteIDLink(self):
         """Test ReferencesWithSiteIDLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.references_with_site_id_link.ReferencesWithSiteIDLink()  # noqa: E501
+        # model = r7ivm3.models.references_with_site_id_link.ReferencesWithSiteIDLink()  # noqa: E501
         pass
 
 

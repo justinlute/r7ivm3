@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.service_unavailable_error import ServiceUnavailableError  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestServiceUnavailableError(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestServiceUnavailableError(unittest.TestCase):
     def testServiceUnavailableError(self):
         """Test ServiceUnavailableError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.service_unavailable_error.ServiceUnavailableError()  # noqa: E501
+        # model = r7ivm3.models.service_unavailable_error.ServiceUnavailableError()  # noqa: E501
         pass
 
 

@@ -1,6 +1,6 @@
 # swagger_client.ScanApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,12 +21,12 @@ Returns the specified scan.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanApi()
+api_instance = r7ivm3.ScanApi()
 id = 789 # int | The identifier of the scan.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -71,12 +71,12 @@ Returns all scans.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanApi()
+api_instance = r7ivm3.ScanApi()
 active = true # bool | Return running scans or past scans (true/false value). (optional)
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
 size = 56 # int | The number of records per page to retrieve. (optional)
@@ -127,12 +127,12 @@ Returns the scans for the specified site.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanApi()
+api_instance = r7ivm3.ScanApi()
 id = 56 # int | The identifier of the site.
 active = true # bool | Return running scans or past scans (true/false value). (optional)
 page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
@@ -185,12 +185,12 @@ Updates the scan status. Can pause, resume, and stop scans using this resource. 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanApi()
+api_instance = r7ivm3.ScanApi()
 id = 789 # int | The identifier of the scan.
 status = 'status_example' # str | The status of the scan.
 
@@ -235,14 +235,14 @@ Starts a scan for the specified site.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanApi()
+api_instance = r7ivm3.ScanApi()
 id = 56 # int | The identifier of the site.
-body = swagger_client.AdhocScan() # AdhocScan | The details for the scan. (optional)
+body = r7ivm3.AdhocScan() # AdhocScan | The details for the scan. (optional)
 override_blackout = true # bool | Whether to request for the override of an scan blackout window. (optional)
 
 try:

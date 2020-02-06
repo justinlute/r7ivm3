@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.resources_scan_engine import ResourcesScanEngine  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestResourcesScanEngine(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestResourcesScanEngine(unittest.TestCase):
     def testResourcesScanEngine(self):
         """Test ResourcesScanEngine"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.resources_scan_engine.ResourcesScanEngine()  # noqa: E501
+        # model = r7ivm3.models.resources_scan_engine.ResourcesScanEngine()  # noqa: E501
         pass
 
 

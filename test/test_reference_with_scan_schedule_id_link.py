@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.reference_with_scan_schedule_id_link import ReferenceWithScanScheduleIDLink  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestReferenceWithScanScheduleIDLink(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestReferenceWithScanScheduleIDLink(unittest.TestCase):
     def testReferenceWithScanScheduleIDLink(self):
         """Test ReferenceWithScanScheduleIDLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.reference_with_scan_schedule_id_link.ReferenceWithScanScheduleIDLink()  # noqa: E501
+        # model = r7ivm3.models.reference_with_scan_schedule_id_link.ReferenceWithScanScheduleIDLink()  # noqa: E501
         pass
 
 

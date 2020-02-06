@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.scan_template_service_discovery_udp import ScanTemplateServiceDiscoveryUdp  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestScanTemplateServiceDiscoveryUdp(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestScanTemplateServiceDiscoveryUdp(unittest.TestCase):
     def testScanTemplateServiceDiscoveryUdp(self):
         """Test ScanTemplateServiceDiscoveryUdp"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.scan_template_service_discovery_udp.ScanTemplateServiceDiscoveryUdp()  # noqa: E501
+        # model = r7ivm3.models.scan_template_service_discovery_udp.ScanTemplateServiceDiscoveryUdp()  # noqa: E501
         pass
 
 

@@ -1,6 +1,6 @@
 # swagger_client.RemediationApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,12 +17,12 @@ Returns the highest-superceding rollup solutions for a vulnerability on an asset
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.RemediationApi()
+api_instance = r7ivm3.RemediationApi()
 id = 789 # int | The identifier of the asset.
 vulnerability_id = 'vulnerability_id_example' # str | The identifier of the vulnerability.
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)

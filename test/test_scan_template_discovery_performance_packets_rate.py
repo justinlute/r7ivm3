@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.scan_template_discovery_performance_packets_rate import ScanTemplateDiscoveryPerformancePacketsRate  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestScanTemplateDiscoveryPerformancePacketsRate(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestScanTemplateDiscoveryPerformancePacketsRate(unittest.TestCase):
     def testScanTemplateDiscoveryPerformancePacketsRate(self):
         """Test ScanTemplateDiscoveryPerformancePacketsRate"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.scan_template_discovery_performance_packets_rate.ScanTemplateDiscoveryPerformancePacketsRate()  # noqa: E501
+        # model = r7ivm3.models.scan_template_discovery_performance_packets_rate.ScanTemplateDiscoveryPerformancePacketsRate()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.resources_snmp_alert import ResourcesSnmpAlert  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestResourcesSnmpAlert(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestResourcesSnmpAlert(unittest.TestCase):
     def testResourcesSnmpAlert(self):
         """Test ResourcesSnmpAlert"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.resources_snmp_alert.ResourcesSnmpAlert()  # noqa: E501
+        # model = r7ivm3.models.resources_snmp_alert.ResourcesSnmpAlert()  # noqa: E501
         pass
 
 

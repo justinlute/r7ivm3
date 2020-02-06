@@ -1,6 +1,6 @@
 # swagger_client.ScanTemplateApi
 
-All URIs are relative to *https://insightvm.lb.com/*
+All URIs are relative to *https://<rapid7_insightvm_server>/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,13 +21,13 @@ Creates a new scan template.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanTemplateApi()
-body = swagger_client.ScanTemplate() # ScanTemplate | The details of the scan template. (optional)
+api_instance = r7ivm3.ScanTemplateApi()
+body = r7ivm3.ScanTemplate() # ScanTemplate | The details of the scan template. (optional)
 
 try:
     # Scan Templates
@@ -69,12 +69,12 @@ Deletes a scan template.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanTemplateApi()
+api_instance = r7ivm3.ScanTemplateApi()
 id = 'id_example' # str | The identifier of the scan template
 
 try:
@@ -117,12 +117,12 @@ Returns a scan template.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanTemplateApi()
+api_instance = r7ivm3.ScanTemplateApi()
 id = 'id_example' # str | The identifier of the scan template
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
@@ -167,12 +167,12 @@ Returns all scan templates.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanTemplateApi()
+api_instance = r7ivm3.ScanTemplateApi()
 view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
@@ -215,14 +215,14 @@ Updates a scan template.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import r7ivm3
+from r7ivm3.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ScanTemplateApi()
+api_instance = r7ivm3.ScanTemplateApi()
 id = 'id_example' # str | The identifier of the scan template
-body = swagger_client.ScanTemplate() # ScanTemplate | The details of the scan template. (optional)
+body = r7ivm3.ScanTemplate() # ScanTemplate | The details of the scan template. (optional)
 
 try:
     # Scan Template

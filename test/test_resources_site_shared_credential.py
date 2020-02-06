@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import r7ivm3
 from models.resources_site_shared_credential import ResourcesSiteSharedCredential  # noqa: E501
-from swagger_client.rest import ApiException
+from r7ivm3.rest import ApiException
 
 
 class TestResourcesSiteSharedCredential(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestResourcesSiteSharedCredential(unittest.TestCase):
     def testResourcesSiteSharedCredential(self):
         """Test ResourcesSiteSharedCredential"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.resources_site_shared_credential.ResourcesSiteSharedCredential()  # noqa: E501
+        # model = r7ivm3.models.resources_site_shared_credential.ResourcesSiteSharedCredential()  # noqa: E501
         pass
 
 
