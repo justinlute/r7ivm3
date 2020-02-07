@@ -16,7 +16,7 @@ from __future__ import absolute_import
 
 # import helpers for humans
 from r7ivm3.client_fh import ClientForHumans
-from r7ivm3.client_fh import ConfigurationForHumans
+from r7ivm3.client_fh import get_all_pages
 
 # import apis into sdk package
 from r7ivm3.api.administration_api import AdministrationApi
