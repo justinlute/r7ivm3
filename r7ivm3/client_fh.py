@@ -69,27 +69,13 @@ class ClientForHumans:
             import urllib3
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-
-class ConfigurationForHumans:
-    def __init__(self, config_file_path=None):
-        cfg_file = configparser.ConfigParser()
-
-        try:
-            cfg_file.read(config_file_path)
-        except:
-            AssertionError("Could not locate or could not read configuration file.")
-
-        # Capture config details from provided config file
-        self.hostname = cfg_file['insightvm']['hostname_or_address']
-        self.tcp_port = cfg_file['insightvm']['tcp_port']
-        if self.tcp_port == '443':
-            self.server_url = f"https://{self.hostname}/"
-        else:
-            self.server_url = f"https://{self.hostname}:{self.tcp_port}/"
-        # For use by policies workaround
-        self.api_url = f"{self.server_url}api/3/"
-
-        # Extract password from Windows Credential Manager
-        self.api_username = cfg_file['insightvm']['api_username']
-        self.wcm_site_name = cfg_file['insightvm']['windows_cred_mgr_site_name']
-        self.password = keyring.get_password(self.wcm_site_name, self.api_username)
+def get_all_pages(api_call, **kwargs):
+    di = {}
+    di["resources"] = []
+    page0 = api_call(**kwargs).to_dict()
+    di["resources"].extend(page0["resources"])
+    total_pages=page0["page"]["total_pages"]
+    for page_no in range(1,total_pages,1):
+        additional_page = api_call(page=page_no, **kwargs).to_dict()
+        di["resources"].extend(additional_page["resources"])
+    return di
