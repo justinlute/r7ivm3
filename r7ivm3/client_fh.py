@@ -6,7 +6,7 @@ import base64
 import keyring
 
 class ClientForHumans:
-    def __init__(self, config_file_path=None, client_name="r7ivm"):
+    def __init__(self, config_file_path=None, client_name="r7ivm_python_client", disable_insecure_request_warnings=False):
         cfg_file = configparser.ConfigParser()
         cfg_file.read(config_file_path)
 
@@ -64,6 +64,11 @@ class ClientForHumans:
         self.vulnerability_check_api = r7ivm3.VulnerabilityCheckApi(self.api_client)
         self.vulnerability_exception_api = r7ivm3.VulnerabilityExceptionApi(self.api_client)
         self.vulnerability_result_api = r7ivm3.VulnerabilityResultApi(self.api_client)
+
+        if disable_insecure_request_warnings == True:
+            import urllib3
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 class ConfigurationForHumans:
     def __init__(self, config_file_path=None):
