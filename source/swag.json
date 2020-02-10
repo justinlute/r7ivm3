@@ -193,7 +193,8 @@
       "schema": {
        "type": "string"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -417,7 +418,8 @@
       "description": "A license activation key.",
       "required": false,
       "type": "string"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -838,7 +840,8 @@
       "schema": {
        "$ref": "#/definitions/AssetGroup"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -1007,7 +1010,8 @@
       "schema": {
        "$ref": "#/definitions/AssetGroup"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1083,7 +1087,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1242,7 +1247,8 @@
         "format": "int64"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1318,7 +1324,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1396,7 +1403,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1480,7 +1488,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1635,7 +1644,8 @@
       "schema": {
        "$ref": "#/definitions/SearchCriteria"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1812,7 +1822,8 @@
         "format": "int32"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1888,7 +1899,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -1966,7 +1978,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -2050,7 +2063,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -2209,7 +2223,8 @@
         "format": "int32"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -2295,7 +2310,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -2379,7 +2395,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -2662,7 +2679,8 @@
       "schema": {
        "$ref": "#/definitions/AssetCreate"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -2738,7 +2756,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -2838,7 +2857,8 @@
        "type": "string"
       },
       "collectionFormat": "multi"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -3538,7 +3558,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -4969,7 +4990,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -5053,7 +5075,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -5655,7 +5678,8 @@
       "schema": {
        "$ref": "#/definitions/VulnerabilityValidationResource"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -5831,7 +5855,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -6304,7 +6329,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -9178,7 +9204,8 @@
       "schema": {
        "$ref": "#/definitions/PolicyOverride"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -9324,7 +9351,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -9479,7 +9507,8 @@
       "schema": {
        "type": "string"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -9578,7 +9607,8 @@
       "schema": {
        "type": "string"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -10254,7 +10284,8 @@
       "schema": {
        "$ref": "#/definitions/Report"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -10431,7 +10462,8 @@
       "schema": {
        "$ref": "#/definitions/Report"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -10507,7 +10539,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -10577,7 +10610,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -10823,7 +10857,8 @@
        "latest",
        "integer <<int32>>"
       ]
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -11137,7 +11172,8 @@
       "description": "The identifier of the role.",
       "required": false,
       "type": "string"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -11212,7 +11248,8 @@
       "description": "The identifier of the role.",
       "required": false,
       "type": "string"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -11436,7 +11473,8 @@
       "schema": {
        "$ref": "#/definitions/EnginePool"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -11591,7 +11629,8 @@
       "schema": {
        "$ref": "#/definitions/EnginePool"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -11667,7 +11706,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -11826,7 +11866,8 @@
         "format": "int32"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -11912,7 +11953,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -11996,7 +12038,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -12213,7 +12256,8 @@
       "schema": {
        "$ref": "#/definitions/ScanEngine"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -12343,7 +12387,9 @@
     "produces": [
      "application/json;charset=UTF-8"
     ],
-    "parameters": [],
+    "parameters": [
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
+    ],
     "responses": {
      "201": {
       "description": "Created",
@@ -12402,7 +12448,9 @@
     "produces": [
      "application/json;charset=UTF-8"
     ],
-    "parameters": [],
+    "parameters": [
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
+    ],
     "responses": {
      "200": {
       "description": "OK",
@@ -12627,7 +12675,8 @@
       "schema": {
        "$ref": "#/definitions/ScanEngine"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -12703,7 +12752,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -13134,7 +13184,8 @@
       "schema": {
        "$ref": "#/definitions/ScanTemplate"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -13287,7 +13338,8 @@
       "schema": {
        "$ref": "#/definitions/ScanTemplate"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -13362,7 +13414,8 @@
       "description": "The identifier of the scan template",
       "required": false,
       "type": "string"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -13633,7 +13686,8 @@
        "stop",
        "resume"
       ]
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -13772,7 +13826,8 @@
       "schema": {
        "$ref": "#/definitions/SharedCredential"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -13862,7 +13917,9 @@
     "produces": [
      "application/json;charset=UTF-8"
     ],
-    "parameters": [],
+    "parameters": [
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
+    ],
     "responses": {
      "200": {
       "description": "OK",
@@ -14016,7 +14073,8 @@
       "schema": {
        "$ref": "#/definitions/SharedCredential"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -14092,7 +14150,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -14260,7 +14319,8 @@
       "schema": {
        "$ref": "#/definitions/SiteCreateResource"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -14415,7 +14475,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -14491,7 +14552,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -14637,7 +14699,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -14792,7 +14855,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -14872,7 +14936,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -14948,7 +15013,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -15119,7 +15185,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -15203,7 +15270,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -15358,7 +15426,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -15438,7 +15507,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -15514,7 +15584,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -15685,7 +15756,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -15769,7 +15841,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -15924,7 +15997,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -16004,7 +16078,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -16080,7 +16155,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -16251,7 +16327,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -16335,7 +16412,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -16413,7 +16491,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -16569,7 +16648,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -16732,7 +16812,8 @@
       "schema": {
        "$ref": "#/definitions/DiscoverySearchCriteria"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -16899,7 +16980,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -16975,7 +17057,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -17053,7 +17136,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -17211,7 +17295,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -17378,7 +17463,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -17454,7 +17540,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -17532,7 +17619,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -17690,7 +17778,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -17853,7 +17942,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -18017,7 +18107,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -18180,7 +18271,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -18260,7 +18352,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -18336,7 +18429,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -18507,7 +18601,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -18591,7 +18686,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -18746,7 +18842,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -18962,7 +19059,8 @@
       "schema": {
        "$ref": "#/definitions/AdhocScan"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -19127,7 +19225,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -19290,7 +19389,8 @@
       "schema": {
        "$ref": "#/definitions/SiteCredential"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -19400,7 +19500,8 @@
         "$ref": "#/definitions/SiteCredential"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -19476,7 +19577,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -19647,7 +19749,8 @@
       "schema": {
        "$ref": "#/definitions/SiteCredential"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -19731,7 +19834,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -19818,7 +19922,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -19985,7 +20090,8 @@
         "format": "int32"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -20071,7 +20177,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -20155,7 +20262,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -20311,7 +20419,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -20392,7 +20501,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -20478,7 +20588,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -21365,7 +21476,8 @@
       "schema": {
        "$ref": "#/definitions/SonarQuery"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -21450,7 +21562,8 @@
       "schema": {
        "$ref": "#/definitions/SonarCriteria"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -21622,7 +21735,8 @@
       "schema": {
        "$ref": "#/definitions/SonarQuery"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -21712,7 +21826,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -21972,7 +22087,8 @@
       "schema": {
        "$ref": "#/definitions/Tag"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "201": {
@@ -22127,7 +22243,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -22203,7 +22320,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -22362,7 +22480,8 @@
         "format": "int32"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -22438,7 +22557,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -22516,7 +22636,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -22600,7 +22721,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -22756,7 +22878,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -22840,7 +22963,8 @@
       "required": false,
       "type": "integer",
       "format": "int64"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -22995,7 +23119,8 @@
       "schema": {
        "$ref": "#/definitions/SearchCriteria"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -23071,7 +23196,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -23230,7 +23356,8 @@
         "format": "int32"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -23306,7 +23433,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -23384,7 +23512,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -23468,7 +23597,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -23636,7 +23766,8 @@
       "schema": {
        "$ref": "#/definitions/UserEdit"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -23791,7 +23922,8 @@
       "schema": {
        "$ref": "#/definitions/UserEdit"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -23867,7 +23999,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24013,7 +24146,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24090,7 +24224,8 @@
       "schema": {
        "type": "string"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24257,7 +24392,8 @@
         "format": "int32"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24333,7 +24469,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24411,7 +24548,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24495,7 +24633,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24565,7 +24704,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24644,7 +24784,8 @@
       "schema": {
        "type": "string"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24889,7 +25030,8 @@
         "format": "int32"
        }
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -24965,7 +25107,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -25043,7 +25186,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -25127,7 +25271,8 @@
       "required": false,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -26563,7 +26708,8 @@
       "schema": {
        "$ref": "#/definitions/VulnerabilityException"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -26709,7 +26855,8 @@
       "required": true,
       "type": "integer",
       "format": "int32"
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -26864,7 +27011,8 @@
       "schema": {
        "type": "string"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
@@ -26963,7 +27111,8 @@
       "schema": {
        "type": "string"
       }
-     }
+     },
+     "{\n      \"name\": \"view\",\n      \"in\": \"query\",\n      \"description\": \"The depth for the JSON response. Valid values are 'details' (default) and 'summary'\",\n      \"required\": false,\n      \"type\": \"string\",\n      \"default\": \"details\"\n     }"
     ],
     "responses": {
      "200": {
