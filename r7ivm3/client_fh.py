@@ -6,7 +6,7 @@ import base64
 import keyring
 
 class ClientForHumans:
-    def __init__(self, config_file_path=None, client_name="r7ivm_python_client", disable_insecure_request_warnings=False):
+    def __init__(self, config_file_path=None, client_name="r7ivm3_python_client", disable_insecure_request_warnings=False):
         cfg_file = configparser.ConfigParser()
         cfg_file.read(config_file_path)
 
