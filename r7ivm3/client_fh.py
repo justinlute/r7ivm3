@@ -11,23 +11,28 @@ class ClientForHumans:
         cfg_file.read(config_file_path)
 
         # Capture config details from provided config file
-        self.hostname = cfg_file['insightvm']['hostname_or_address']
-        self.tcp_port = cfg_file['insightvm']['tcp_port']
+        self.hostname = cfg_file['r7ivm3']['hostname_or_address']
+        self.tcp_port = cfg_file['r7ivm3']['tcp_port']
         if self.tcp_port == '443':
             self.server_url = f"https://{self.hostname}/"
         else:
             self.server_url = f"https://{self.hostname}:{self.tcp_port}/"
         # For use by policies workaround
         self.api_url = f"{self.server_url}api/3/"
-        self.api_username = cfg_file['insightvm']['api_username']
-        self.wcm_site_name = cfg_file['insightvm']['windows_cred_mgr_site_name']
-        # Extract password from Windows Credential Manager
-        self.password = keyring.get_password(self.wcm_site_name, self.api_username)
+        self.api_username = cfg_file['r7ivm3']['api_username']
+        self.api_password = cfg_file['r7ivm3']['api_password']
+
+        if not self.api_username and not self.api_password:
+            wcm_site_name = cfg_file['r7ivm3']['windows_cred_mgr_site_name']
+            wcm_stored_username = cfg_file['r7ivm3']['wcm_stored_username']
+            # Extract password from Windows Credential Manager
+            self.api_password = keyring.get_password(wcm_site_name, wcm_stored_username)
+            self.api_username = wcm_stored_username
 
         # Instantiate an instance of the r7_ivm_swag module's Configuration class
         self.config = r7ivm3.Configuration(name=client_name)
         self.config.username = self.api_username
-        self.config.password = self.password
+        self.config.password = self.api_password
         self.config.host = self.server_url
         self.config.verify_ssl = False
         self.config.assert_hostname = False
