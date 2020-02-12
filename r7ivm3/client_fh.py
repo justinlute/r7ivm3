@@ -6,21 +6,36 @@ import base64
 #import keyring
 
 class ClientForHumans:
-    def __init__(self, config_file_path=None, client_name="r7ivm3_python_client", disable_insecure_request_warnings=False):
-        cfg_file = configparser.ConfigParser()
-        cfg_file.read(config_file_path)
+    def __init__(self,
+                 config_file_path=None,
+                 client_name="r7ivm3_python_client",
+                 hostname=None,
+                 tcp_port=3780,
+                 api_username=None,
+                 api_password=None,
+                 disable_insecure_request_warnings=False
+                 ):
+        if config_file_path is not None:
+            cfg_file = configparser.ConfigParser()
+            cfg_file.read(config_file_path)
 
-        # Capture config details from provided config file
-        self.hostname = cfg_file['r7ivm3']['hostname_or_address']
-        self.tcp_port = cfg_file['r7ivm3']['tcp_port']
-        if self.tcp_port == '443':
+            # Capture config details from provided config file
+            self.hostname = cfg_file['r7ivm3']['hostname_or_address']
+            self.tcp_port = cfg_file['r7ivm3']['tcp_port']
+            # For use by policies workaround
+            self.api_username = cfg_file['r7ivm3']['api_username']
+            self.api_password = cfg_file['r7ivm3']['api_password']
+        else:
+            self.hostname = hostname
+            self.tcp_port = tcp_port
+            self.api_username = api_username
+            self.api_password = api_password
+
+        if self.tcp_port == '443' or self.tcp_port == 443:
             self.server_url = f"https://{self.hostname}/"
         else:
             self.server_url = f"https://{self.hostname}:{self.tcp_port}/"
-        # For use by policies workaround
         self.api_url = f"{self.server_url}api/3/"
-        self.api_username = cfg_file['r7ivm3']['api_username']
-        self.api_password = cfg_file['r7ivm3']['api_password']
 
         # Commenting out until keyring is supported by PyInstaller module
         # if not self.api_username and not self.api_password:
