@@ -1,6 +1,6 @@
-# swagger_client.PolicyApi
+# r7ivm3.PolicyApi
 
-All URIs are relative to *https://<rapid7_insightvm_server>/*
+All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
