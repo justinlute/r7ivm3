@@ -3,7 +3,7 @@
 import r7ivm3
 import configparser
 import base64
-import keyring
+#import keyring
 
 class ClientForHumans:
     def __init__(self, config_file_path=None, client_name="r7ivm3_python_client", disable_insecure_request_warnings=False):
@@ -22,12 +22,13 @@ class ClientForHumans:
         self.api_username = cfg_file['r7ivm3']['api_username']
         self.api_password = cfg_file['r7ivm3']['api_password']
 
-        if not self.api_username and not self.api_password:
-            wcm_site_name = cfg_file['r7ivm3']['windows_cred_mgr_site_name']
-            wcm_stored_username = cfg_file['r7ivm3']['wcm_stored_username']
-            # Extract password from Windows Credential Manager
-            self.api_password = keyring.get_password(wcm_site_name, wcm_stored_username)
-            self.api_username = wcm_stored_username
+        # Commenting out until keyring is supported by PyInstaller module
+        # if not self.api_username and not self.api_password:
+        #     wcm_site_name = cfg_file['r7ivm3']['windows_cred_mgr_site_name']
+        #     wcm_stored_username = cfg_file['r7ivm3']['wcm_stored_username']
+        #     # Extract password from Windows Credential Manager
+        #     self.api_password = keyring.get_password(wcm_site_name, wcm_stored_username)
+        #     self.api_username = wcm_stored_username
 
         # Instantiate an instance of the r7_ivm_swag module's Configuration class
         self.config = r7ivm3.Configuration(name=client_name)
