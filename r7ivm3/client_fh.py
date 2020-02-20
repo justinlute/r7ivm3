@@ -39,7 +39,7 @@ class ClientForHumans:
 
         # Commenting out until keyring is supported by PyInstaller module
         # if not self.api_username and not self.api_password:
-        #     wcm_site_name = cfg_file['r7ivm3']['windows_cred_mgr_site_name']
+        #     wcm_site_name = cfg_file['r7ivm3']['wigit sndows_cred_mgr_site_name']
         #     wcm_stored_username = cfg_file['r7ivm3']['wcm_stored_username']
         #     # Extract password from Windows Credential Manager
         #     self.api_password = keyring.get_password(wcm_site_name, wcm_stored_username)
