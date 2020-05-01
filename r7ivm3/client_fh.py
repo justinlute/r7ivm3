@@ -1,55 +1,28 @@
 # -*- coding: utf-8 -*-
 
 import r7ivm3
-import configparser
 import base64
-#import keyring
+import json
 
 class ClientForHumans:
     def __init__(self,
-                 config_file_path=None,
+                 config_file_path="api_config.json",
                  client_name="r7ivm3_python_client",
-                 hostname=None,
-                 tcp_port=3780,
-                 api_username=None,
-                 api_password=None,
-                 disable_insecure_request_warnings=False
+                 disable_insecure_request_warnings=True
                  ):
-        if config_file_path is not None:
-            cfg_file = configparser.ConfigParser()
-            cfg_file.read(config_file_path)
 
-            # Capture config details from provided config file
-            self.hostname = cfg_file['r7ivm3']['hostname_or_address']
-            self.tcp_port = cfg_file['r7ivm3']['tcp_port']
-            # For use by policies workaround
-            self.api_username = cfg_file['r7ivm3']['api_username']
-            self.api_password = cfg_file['r7ivm3']['api_password']
-        else:
-            self.hostname = hostname
-            self.tcp_port = tcp_port
-            self.api_username = api_username
-            self.api_password = api_password
+        if disable_insecure_request_warnings == True:
+            import urllib3
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-        if self.tcp_port == '443' or self.tcp_port == 443:
-            self.server_url = f"https://{self.hostname}/"
-        else:
-            self.server_url = f"https://{self.hostname}:{self.tcp_port}/"
-        self.api_url = f"{self.server_url}api/3/"
-
-        # Commenting out until keyring is supported by PyInstaller module
-        # if not self.api_username and not self.api_password:
-        #     wcm_site_name = cfg_file['r7ivm3']['wigit sndows_cred_mgr_site_name']
-        #     wcm_stored_username = cfg_file['r7ivm3']['wcm_stored_username']
-        #     # Extract password from Windows Credential Manager
-        #     self.api_password = keyring.get_password(wcm_site_name, wcm_stored_username)
-        #     self.api_username = wcm_stored_username
+        with open(config_file_path, 'r') as infile:
+            cfg_file = json.load(infile)
 
         # Instantiate an instance of the r7_ivm_swag module's Configuration class
         self.config = r7ivm3.Configuration(name=client_name)
-        self.config.username = self.api_username
-        self.config.password = self.api_password
-        self.config.host = self.server_url
+        self.config.username = cfg_file["rapid7"]["credentials"]["username"]
+        self.config.password = cfg_file["rapid7"]["credentials"]["password"]
+        self.config.host = cfg_file["rapid7"]["api_url"]
         self.config.verify_ssl = False
         self.config.assert_hostname = False
         self.config.proxy = None
@@ -85,10 +58,6 @@ class ClientForHumans:
         self.vulnerability_check_api = r7ivm3.VulnerabilityCheckApi(self.api_client)
         self.vulnerability_exception_api = r7ivm3.VulnerabilityExceptionApi(self.api_client)
         self.vulnerability_result_api = r7ivm3.VulnerabilityResultApi(self.api_client)
-
-        if disable_insecure_request_warnings == True:
-            import urllib3
-            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_all_pages(api_call, **kwargs):
     di = {}
