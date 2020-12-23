@@ -1,6 +1,6 @@
-# r7ivm3.AssetDiscoveryApi
+# swagger_client.AssetDiscoveryApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,8 +15,9 @@ Method | HTTP request | Description
 [**sonar_query_search**](AssetDiscoveryApi.md#sonar_query_search) | **POST** /api/3/sonar_queries/search | Sonar Query Search
 [**update_sonar_query**](AssetDiscoveryApi.md#update_sonar_query) | **PUT** /api/3/sonar_queries/{id} | Sonar Query
 
+
 # **create_sonar_query**
-> CreatedReferenceDiscoveryQueryIDLink create_sonar_query(body=body)
+> CreatedReferenceDiscoveryQueryIDLink create_sonar_query(query=query)
 
 Sonar Queries
 
@@ -26,17 +27,17 @@ Creates a sonar query.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
-body = r7ivm3.SonarQuery() # SonarQuery | The criteria for a Sonar query. (optional)
+api_instance = swagger_client.AssetDiscoveryApi()
+query = swagger_client.SonarQuery() # SonarQuery | The criteria for a Sonar query. (optional)
 
 try:
     # Sonar Queries
-    api_response = api_instance.create_sonar_query(body=body)
+    api_response = api_instance.create_sonar_query(query=query)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetDiscoveryApi->create_sonar_query: %s\n" % e)
@@ -46,7 +47,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SonarQuery**](SonarQuery.md)| The criteria for a Sonar query. | [optional] 
+ **query** | [**SonarQuery**](SonarQuery.md)| The criteria for a Sonar query. | [optional] 
 
 ### Return type
 
@@ -74,12 +75,12 @@ Removes a sonar query.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
+api_instance = swagger_client.AssetDiscoveryApi()
 id = 789 # int | The identifier of the Sonar query.
 
 try:
@@ -106,13 +107,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_discovery_connection**
-> DiscoveryConnection get_discovery_connection(id, view=view)
+> DiscoveryConnection get_discovery_connection(id)
 
 Discovery Connection
 
@@ -122,18 +123,17 @@ Returns a discovery connection.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
+api_instance = swagger_client.AssetDiscoveryApi()
 id = 789 # int | The identifier of the discovery connection.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Discovery Connection
-    api_response = api_instance.get_discovery_connection(id, view=view)
+    api_response = api_instance.get_discovery_connection(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetDiscoveryApi->get_discovery_connection: %s\n" % e)
@@ -144,7 +144,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the discovery connection. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -156,13 +155,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_discovery_connections**
-> PageOfDiscoveryConnection get_discovery_connections(page=page, size=size, sort=sort, view=view)
+> PageOfDiscoveryConnection get_discovery_connections(page=page, size=size, sort=sort)
 
 Discovery Connections
 
@@ -172,20 +171,19 @@ Returns all discovery connections.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+api_instance = swagger_client.AssetDiscoveryApi()
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Discovery Connections
-    api_response = api_instance.get_discovery_connections(page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_discovery_connections(page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetDiscoveryApi->get_discovery_connections: %s\n" % e)
@@ -195,10 +193,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -210,13 +207,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sonar_queries**
-> ResourcesSonarQuery get_sonar_queries(view=view)
+> ResourcesSonarQuery get_sonar_queries()
 
 Sonar Queries
 
@@ -226,27 +223,23 @@ Returns all sonar queries.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.AssetDiscoveryApi()
 
 try:
     # Sonar Queries
-    api_response = api_instance.get_sonar_queries(view=view)
+    api_response = api_instance.get_sonar_queries()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetDiscoveryApi->get_sonar_queries: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -258,13 +251,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sonar_query**
-> SonarQuery get_sonar_query(id, view=view)
+> SonarQuery get_sonar_query(id)
 
 Sonar Query
 
@@ -274,18 +267,17 @@ Returns a sonar query.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
+api_instance = swagger_client.AssetDiscoveryApi()
 id = 789 # int | The identifier of the Sonar query.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Sonar Query
-    api_response = api_instance.get_sonar_query(id, view=view)
+    api_response = api_instance.get_sonar_query(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetDiscoveryApi->get_sonar_query: %s\n" % e)
@@ -296,7 +288,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the Sonar query. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -308,13 +299,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sonar_query_assets**
-> ResourcesDiscoveryAsset get_sonar_query_assets(id, view=view)
+> ResourcesDiscoveryAsset get_sonar_query_assets(id)
 
 Sonar Query Assets
 
@@ -324,18 +315,17 @@ Returns the assets that are discovered by a Sonar query.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
+api_instance = swagger_client.AssetDiscoveryApi()
 id = 789 # int | The identifier of the Sonar query.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Sonar Query Assets
-    api_response = api_instance.get_sonar_query_assets(id, view=view)
+    api_response = api_instance.get_sonar_query_assets(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetDiscoveryApi->get_sonar_query_assets: %s\n" % e)
@@ -346,7 +336,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the Sonar query. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -358,7 +347,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -374,12 +363,12 @@ Attempts to reconnect the discovery connection.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
+api_instance = swagger_client.AssetDiscoveryApi()
 id = 789 # int | The identifier of the discovery connection.
 
 try:
@@ -405,13 +394,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sonar_query_search**
-> list[DiscoveryAsset] sonar_query_search(body=body)
+> list[DiscoveryAsset] sonar_query_search(query=query)
 
 Sonar Query Search
 
@@ -421,17 +410,17 @@ Executes a Sonar query to discover assets with the given search criteria.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
-body = r7ivm3.SonarCriteria() # SonarCriteria | The criteria for a Sonar query. (optional)
+api_instance = swagger_client.AssetDiscoveryApi()
+query = swagger_client.SonarCriteria() # SonarCriteria | The criteria for a Sonar query. (optional)
 
 try:
     # Sonar Query Search
-    api_response = api_instance.sonar_query_search(body=body)
+    api_response = api_instance.sonar_query_search(query=query)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetDiscoveryApi->sonar_query_search: %s\n" % e)
@@ -441,7 +430,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SonarCriteria**](SonarCriteria.md)| The criteria for a Sonar query. | [optional] 
+ **query** | [**SonarCriteria**](SonarCriteria.md)| The criteria for a Sonar query. | [optional] 
 
 ### Return type
 
@@ -459,7 +448,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_sonar_query**
-> Links update_sonar_query(id, body=body)
+> Links update_sonar_query(id, query=query)
 
 Sonar Query
 
@@ -469,18 +458,18 @@ Updates a sonar query.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetDiscoveryApi()
+api_instance = swagger_client.AssetDiscoveryApi()
 id = 789 # int | The identifier of the Sonar query.
-body = r7ivm3.SonarQuery() # SonarQuery | The criteria for a Sonar query. (optional)
+query = swagger_client.SonarQuery() # SonarQuery | The criteria for a Sonar query. (optional)
 
 try:
     # Sonar Query
-    api_response = api_instance.update_sonar_query(id, body=body)
+    api_response = api_instance.update_sonar_query(id, query=query)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetDiscoveryApi->update_sonar_query: %s\n" % e)
@@ -491,7 +480,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the Sonar query. | 
- **body** | [**SonarQuery**](SonarQuery.md)| The criteria for a Sonar query. | [optional] 
+ **query** | [**SonarQuery**](SonarQuery.md)| The criteria for a Sonar query. | [optional] 
 
 ### Return type
 

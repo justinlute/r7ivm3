@@ -1,6 +1,6 @@
-# r7ivm3.TagApi
+# swagger_client.TagApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,8 +26,9 @@ Method | HTTP request | Description
 [**update_tag**](TagApi.md#update_tag) | **PUT** /api/3/tags/{id} | Tag
 [**update_tag_search_criteria**](TagApi.md#update_tag_search_criteria) | **PUT** /api/3/tags/{id}/search_criteria | Tag Search Criteria
 
+
 # **create_tag**
-> ReferenceWithTagIDLink create_tag(body=body)
+> ReferenceWithTagIDLink create_tag(tag=tag)
 
 Tags
 
@@ -37,17 +38,17 @@ Creates a new tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
-body = r7ivm3.Tag() # Tag | The details of the tag. (optional)
+api_instance = swagger_client.TagApi()
+tag = swagger_client.Tag() # Tag | The details of the tag. (optional)
 
 try:
     # Tags
-    api_response = api_instance.create_tag(body=body)
+    api_response = api_instance.create_tag(tag=tag)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->create_tag: %s\n" % e)
@@ -57,7 +58,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Tag**](Tag.md)| The details of the tag. | [optional] 
+ **tag** | [**Tag**](Tag.md)| The details of the tag. | [optional] 
 
 ### Return type
 
@@ -85,12 +86,12 @@ Deletes the tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 
 try:
@@ -117,13 +118,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tag**
-> Tag get_tag(id, view=view)
+> Tag get_tag(id)
 
 Tag
 
@@ -133,18 +134,17 @@ Returns a tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Tag
-    api_response = api_instance.get_tag(id, view=view)
+    api_response = api_instance.get_tag(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->get_tag: %s\n" % e)
@@ -155,7 +155,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -167,13 +166,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tag_asset_groups**
-> ReferencesWithAssetGroupIDLink get_tag_asset_groups(id, view=view)
+> ReferencesWithAssetGroupIDLink get_tag_asset_groups(id)
 
 Tag Asset Groups
 
@@ -183,18 +182,17 @@ Returns the asset groups associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Tag Asset Groups
-    api_response = api_instance.get_tag_asset_groups(id, view=view)
+    api_response = api_instance.get_tag_asset_groups(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->get_tag_asset_groups: %s\n" % e)
@@ -205,7 +203,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -217,13 +214,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tag_search_criteria**
-> SearchCriteria get_tag_search_criteria(id, view=view)
+> SearchCriteria get_tag_search_criteria(id)
 
 Tag Search Criteria
 
@@ -233,18 +230,17 @@ Returns the search criteria associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Tag Search Criteria
-    api_response = api_instance.get_tag_search_criteria(id, view=view)
+    api_response = api_instance.get_tag_search_criteria(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->get_tag_search_criteria: %s\n" % e)
@@ -255,7 +251,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -267,13 +262,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tagged_assets**
-> TaggedAssetReferences get_tagged_assets(id, view=view)
+> TaggedAssetReferences get_tagged_assets(id)
 
 Tag Assets
 
@@ -283,18 +278,17 @@ Returns the assets tagged with a tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Tag Assets
-    api_response = api_instance.get_tagged_assets(id, view=view)
+    api_response = api_instance.get_tagged_assets(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->get_tagged_assets: %s\n" % e)
@@ -305,7 +299,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -317,13 +310,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tagged_sites**
-> ReferencesWithSiteIDLink get_tagged_sites(id, view=view)
+> ReferencesWithSiteIDLink get_tagged_sites(id)
 
 Tag Sites
 
@@ -333,18 +326,17 @@ Returns the sites associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Tag Sites
-    api_response = api_instance.get_tagged_sites(id, view=view)
+    api_response = api_instance.get_tagged_sites(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->get_tagged_sites: %s\n" % e)
@@ -355,7 +347,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -367,13 +358,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tags**
-> PageOfTag get_tags(name=name, type=type, page=page, size=size, sort=sort, view=view)
+> PageOfTag get_tags(name=name, type=type, page=page, size=size, sort=sort)
 
 Tags
 
@@ -383,22 +374,21 @@ Returns all tags.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 name = 'name_example' # str | name (optional)
 type = 'type_example' # str | type (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Tags
-    api_response = api_instance.get_tags(name=name, type=type, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_tags(name=name, type=type, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->get_tags: %s\n" % e)
@@ -410,10 +400,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| name | [optional] 
  **type** | **str**| type | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -425,7 +414,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -441,12 +430,12 @@ Removes the search criteria associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 
 try:
@@ -473,7 +462,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -489,12 +478,12 @@ Removes the associations between the tag and the sites.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 
 try:
@@ -521,13 +510,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_tagged_asset_groups**
-> Links set_tagged_asset_groups(id, body=body)
+> Links set_tagged_asset_groups(id, asset_group_ids=asset_group_ids)
 
 Tag Asset Groups
 
@@ -537,18 +526,18 @@ Sets the asset groups associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-body = [56] # list[int] | The asset groups to add to the tag. (optional)
+asset_group_ids = [swagger_client.list[int]()] # list[int] | The asset groups to add to the tag. (optional)
 
 try:
     # Tag Asset Groups
-    api_response = api_instance.set_tagged_asset_groups(id, body=body)
+    api_response = api_instance.set_tagged_asset_groups(id, asset_group_ids=asset_group_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->set_tagged_asset_groups: %s\n" % e)
@@ -559,7 +548,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **body** | [**list[int]**](int.md)| The asset groups to add to the tag. | [optional] 
+ **asset_group_ids** | **list[int]**| The asset groups to add to the tag. | [optional] 
 
 ### Return type
 
@@ -577,7 +566,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_tagged_sites**
-> Links set_tagged_sites(id, body=body)
+> Links set_tagged_sites(id, sites=sites)
 
 Tag Sites
 
@@ -587,18 +576,18 @@ Sets the sites associated with the tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-body = [56] # list[int] | The sites to add to the tag. (optional)
+sites = [swagger_client.list[int]()] # list[int] | The sites to add to the tag. (optional)
 
 try:
     # Tag Sites
-    api_response = api_instance.set_tagged_sites(id, body=body)
+    api_response = api_instance.set_tagged_sites(id, sites=sites)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->set_tagged_sites: %s\n" % e)
@@ -609,7 +598,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **body** | [**list[int]**](int.md)| The sites to add to the tag. | [optional] 
+ **sites** | **list[int]**| The sites to add to the tag. | [optional] 
 
 ### Return type
 
@@ -637,12 +626,12 @@ Adds an asset to the tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 asset_id = 789 # int | The identifier of the asset.
 
@@ -671,7 +660,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -687,12 +676,12 @@ Adds an asset group to this tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 asset_group_id = 56 # int | The asset group identifier.
 
@@ -721,7 +710,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -737,12 +726,12 @@ Adds a site to this tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 site_id = 56 # int | The identifier of the site.
 
@@ -771,7 +760,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -787,12 +776,12 @@ Removes the associations between the tag and all asset groups.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 
 try:
@@ -819,7 +808,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -835,12 +824,12 @@ Removes an asset from the tag. Note: The asset must be added through the asset o
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 asset_id = 789 # int | The identifier of the asset.
 
@@ -869,7 +858,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -885,12 +874,12 @@ Removes an asset group from this tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 asset_group_id = 56 # int | The asset group identifier.
 
@@ -919,7 +908,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -935,12 +924,12 @@ Removes a site from this tag.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
 site_id = 56 # int | The identifier of the site.
 
@@ -969,13 +958,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tag**
-> Links update_tag(id, body=body)
+> Links update_tag(id, tag=tag)
 
 Tag
 
@@ -985,18 +974,18 @@ Updates the details of a tag. For more information about accepted fields for the
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-body = r7ivm3.Tag() # Tag | The details of the tag. (optional)
+tag = swagger_client.Tag() # Tag | The details of the tag. (optional)
 
 try:
     # Tag
-    api_response = api_instance.update_tag(id, body=body)
+    api_response = api_instance.update_tag(id, tag=tag)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->update_tag: %s\n" % e)
@@ -1007,7 +996,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **body** | [**Tag**](Tag.md)| The details of the tag. | [optional] 
+ **tag** | [**Tag**](Tag.md)| The details of the tag. | [optional] 
 
 ### Return type
 
@@ -1025,7 +1014,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tag_search_criteria**
-> Links update_tag_search_criteria(id, body=body)
+> Links update_tag_search_criteria(id, criterial=criterial)
 
 Tag Search Criteria
 
@@ -1035,18 +1024,18 @@ Updates the search criteria associated with the tag.   The following table outli
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.TagApi()
+api_instance = swagger_client.TagApi()
 id = 56 # int | The identifier of the tag.
-body = r7ivm3.SearchCriteria() # SearchCriteria | The details of the search criteria. (optional)
+criterial = swagger_client.SearchCriteria() # SearchCriteria | The details of the search criteria. (optional)
 
 try:
     # Tag Search Criteria
-    api_response = api_instance.update_tag_search_criteria(id, body=body)
+    api_response = api_instance.update_tag_search_criteria(id, criterial=criterial)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagApi->update_tag_search_criteria: %s\n" % e)
@@ -1057,7 +1046,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the tag. | 
- **body** | [**SearchCriteria**](SearchCriteria.md)| The details of the search criteria. | [optional] 
+ **criterial** | [**SearchCriteria**](SearchCriteria.md)| The details of the search criteria. | [optional] 
 
 ### Return type
 

@@ -1,6 +1,6 @@
-# r7ivm3.PolicyApi
+# swagger_client.PolicyApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,8 +31,9 @@ Method | HTTP request | Description
 [**get_policy_rules**](PolicyApi.md#get_policy_rules) | **GET** /api/3/policies/{policyId}/rules | Policy Rules
 [**get_policy_summary**](PolicyApi.md#get_policy_summary) | **GET** /api/3/policy/summary | Policy Compliance Summaries
 
+
 # **get_asset_policy_children**
-> PageOfAssetPolicyItem get_asset_policy_children(asset_id, policy_id, view=view)
+> PageOfAssetPolicyItem get_asset_policy_children(asset_id, policy_id)
 
 Policy Rules or Groups Directly Under Policy For Asset
 
@@ -42,19 +43,18 @@ Retrieves a paged resource of either policy rules, or groups, that are defined d
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 asset_id = 789 # int | The identifier of the asset.
 policy_id = 789 # int | The identifier of the policy
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rules or Groups Directly Under Policy For Asset
-    api_response = api_instance.get_asset_policy_children(asset_id, policy_id, view=view)
+    api_response = api_instance.get_asset_policy_children(asset_id, policy_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_asset_policy_children: %s\n" % e)
@@ -66,7 +66,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asset_id** | **int**| The identifier of the asset. | 
  **policy_id** | **int**| The identifier of the policy | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -78,13 +77,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_policy_group_children**
-> PageOfAssetPolicyItem get_asset_policy_group_children(asset_id, policy_id, group_id, view=view)
+> PageOfAssetPolicyItem get_asset_policy_group_children(asset_id, policy_id, group_id)
 
 Policy Rules or Groups Directly Under Policy Group For Asset
 
@@ -94,20 +93,19 @@ Retrieves a paged resource of either policy rules, or groups, that are defined d
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 asset_id = 789 # int | The identifier of the asset.
 policy_id = 789 # int | The identifier of the policy
 group_id = 789 # int | The identifier of the policy group.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rules or Groups Directly Under Policy Group For Asset
-    api_response = api_instance.get_asset_policy_group_children(asset_id, policy_id, group_id, view=view)
+    api_response = api_instance.get_asset_policy_group_children(asset_id, policy_id, group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_asset_policy_group_children: %s\n" % e)
@@ -120,7 +118,6 @@ Name | Type | Description  | Notes
  **asset_id** | **int**| The identifier of the asset. | 
  **policy_id** | **int**| The identifier of the policy | 
  **group_id** | **int**| The identifier of the policy group. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -132,13 +129,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_policy_rules_summary**
-> PageOfPolicyRule get_asset_policy_rules_summary(asset_id, policy_id, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyRule get_asset_policy_rules_summary(asset_id, policy_id, page=page, size=size, sort=sort)
 
 Policy Rules For Asset
 
@@ -148,22 +145,21 @@ Retrieves the list of policy rules with compliance results for the specified ass
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 asset_id = 789 # int | The identifier of the asset.
 policy_id = 789 # int | The identifier of the policy
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rules For Asset
-    api_response = api_instance.get_asset_policy_rules_summary(asset_id, policy_id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_asset_policy_rules_summary(asset_id, policy_id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_asset_policy_rules_summary: %s\n" % e)
@@ -175,10 +171,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asset_id** | **int**| The identifier of the asset. | 
  **policy_id** | **int**| The identifier of the policy | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -190,13 +185,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_descendant_policy_rules**
-> PageOfPolicyRule get_descendant_policy_rules(policy_id, group_id, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyRule get_descendant_policy_rules(policy_id, group_id, page=page, size=size, sort=sort)
 
 Policy Rules Under Policy Group
 
@@ -206,22 +201,21 @@ Retrieves the list of policy rules defined directly, or indirectly, underneath t
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 group_id = 789 # int | The identifier of the policy group.
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rules Under Policy Group
-    api_response = api_instance.get_descendant_policy_rules(policy_id, group_id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_descendant_policy_rules(policy_id, group_id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_descendant_policy_rules: %s\n" % e)
@@ -233,10 +227,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
  **group_id** | **int**| The identifier of the policy group. | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -248,13 +241,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_disabled_policy_rules**
-> PageOfPolicyRule get_disabled_policy_rules(policy_id, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyRule get_disabled_policy_rules(policy_id, page=page, size=size, sort=sort)
 
 Disabled Policy Rules
 
@@ -264,21 +257,20 @@ Retrieves a paged resource of disabled policy rules for the specified policy.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Disabled Policy Rules
-    api_response = api_instance.get_disabled_policy_rules(policy_id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_disabled_policy_rules(policy_id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_disabled_policy_rules: %s\n" % e)
@@ -289,10 +281,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -304,13 +295,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policies**
-> PageOfPolicy get_policies(filter=filter, scanned_only=scanned_only, page=page, size=size, sort=sort, view=view)
+> PageOfPolicy get_policies(filter=filter, scanned_only=scanned_only, page=page, size=size, sort=sort)
 
 Policies
 
@@ -320,22 +311,21 @@ Retrieves a paged resource of policies.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 filter = 'filter_example' # str | Filters the retrieved policies with those whose titles that match the parameter. (optional)
 scanned_only = true # bool | Flag indicating the policies retrieved should only include those with Pass or Fail compliance results. The list of scanned policies is based on the user's list of accessible assets. (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policies
-    api_response = api_instance.get_policies(filter=filter, scanned_only=scanned_only, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policies(filter=filter, scanned_only=scanned_only, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policies: %s\n" % e)
@@ -346,11 +336,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| Filters the retrieved policies with those whose titles that match the parameter. | [optional] 
- **scanned_only** | **bool**| Flag indicating the policies retrieved should only include those with Pass or Fail compliance results. The list of scanned policies is based on the user&#x27;s list of accessible assets. | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **scanned_only** | **bool**| Flag indicating the policies retrieved should only include those with Pass or Fail compliance results. The list of scanned policies is based on the user&#39;s list of accessible assets. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -362,13 +351,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policies_for_asset**
-> PageOfAssetPolicy get_policies_for_asset(asset_id, applicable_only=applicable_only, page=page, size=size, sort=sort, view=view)
+> PageOfAssetPolicy get_policies_for_asset(asset_id, applicable_only=applicable_only, page=page, size=size, sort=sort)
 
 Policies For Asset
 
@@ -378,22 +367,21 @@ Retrieves the list of policies with compliance results for the specified asset.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 asset_id = 789 # int | The identifier of the asset.
 applicable_only = true # bool | An optional boolean parameter indicating the policies retrieved should only include those with a policy compliance status of either a PASS of FAIL result. Default value is `false`, which will also include policies with a compliance status of NOT_APPLICABLE. (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policies For Asset
-    api_response = api_instance.get_policies_for_asset(asset_id, applicable_only=applicable_only, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policies_for_asset(asset_id, applicable_only=applicable_only, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policies_for_asset: %s\n" % e)
@@ -405,10 +393,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asset_id** | **int**| The identifier of the asset. | 
  **applicable_only** | **bool**| An optional boolean parameter indicating the policies retrieved should only include those with a policy compliance status of either a PASS of FAIL result. Default value is &#x60;false&#x60;, which will also include policies with a compliance status of NOT_APPLICABLE. | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -420,13 +407,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy**
-> Policy get_policy(policy_id, view=view)
+> Policy get_policy(policy_id)
 
 Policy
 
@@ -436,18 +423,17 @@ Retrieves the specified policy.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy
-    api_response = api_instance.get_policy(policy_id, view=view)
+    api_response = api_instance.get_policy(policy_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy: %s\n" % e)
@@ -458,7 +444,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -470,13 +455,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_asset_result**
-> PolicyAsset get_policy_asset_result(policy_id, asset_id, view=view)
+> PolicyAsset get_policy_asset_result(policy_id, asset_id)
 
 Policy Asset Result
 
@@ -486,19 +471,18 @@ Retrieves an asset resource with rule compliance results for the specified asset
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 asset_id = 789 # int | The identifier of the asset.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Asset Result
-    api_response = api_instance.get_policy_asset_result(policy_id, asset_id, view=view)
+    api_response = api_instance.get_policy_asset_result(policy_id, asset_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_asset_result: %s\n" % e)
@@ -510,7 +494,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
  **asset_id** | **int**| The identifier of the asset. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -522,13 +505,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_asset_results**
-> PageOfPolicyAsset get_policy_asset_results(policy_id, applicable_only=applicable_only, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyAsset get_policy_asset_results(policy_id, applicable_only=applicable_only, page=page, size=size, sort=sort)
 
 Policy Asset Results
 
@@ -538,22 +521,21 @@ Retrieves asset resources with rule compliance results for the specified policy.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 applicable_only = true # bool | An optional boolean parameter indicating the assets retrieved should only include those with rule results of either PASS or FAIL. Default value is `false`, which will also include assets with a compliance status of NOT_APPLICABLE. (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Asset Results
-    api_response = api_instance.get_policy_asset_results(policy_id, applicable_only=applicable_only, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policy_asset_results(policy_id, applicable_only=applicable_only, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_asset_results: %s\n" % e)
@@ -565,10 +547,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
  **applicable_only** | **bool**| An optional boolean parameter indicating the assets retrieved should only include those with rule results of either PASS or FAIL. Default value is &#x60;false&#x60;, which will also include assets with a compliance status of NOT_APPLICABLE. | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -580,13 +561,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_children**
-> PageOfPolicyItem get_policy_children(id, view=view)
+> PageOfPolicyItem get_policy_children(id)
 
 Policy Rules or Groups Directly Under Policy
 
@@ -596,18 +577,17 @@ Retrieves a paged resource of either policy rules, or groups, that are defined d
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 id = 789 # int | The identifier of the policy
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rules or Groups Directly Under Policy
-    api_response = api_instance.get_policy_children(id, view=view)
+    api_response = api_instance.get_policy_children(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_children: %s\n" % e)
@@ -618,7 +598,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the policy | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -630,13 +609,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_group**
-> PolicyGroup get_policy_group(policy_id, group_id, view=view)
+> PolicyGroup get_policy_group(policy_id, group_id)
 
 Policy Group
 
@@ -646,19 +625,18 @@ Retrieves the specified policy group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 group_id = 789 # int | The identifier of the policy group.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Group
-    api_response = api_instance.get_policy_group(policy_id, group_id, view=view)
+    api_response = api_instance.get_policy_group(policy_id, group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_group: %s\n" % e)
@@ -670,7 +648,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
  **group_id** | **int**| The identifier of the policy group. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -682,13 +659,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_group_asset_result**
-> PolicyAsset get_policy_group_asset_result(policy_id, group_id, asset_id, view=view)
+> PolicyAsset get_policy_group_asset_result(policy_id, group_id, asset_id)
 
 Asset Compliance For Policy Rules Under Policy Group
 
@@ -698,20 +675,19 @@ Retrieves an asset resource with rule compliance status against all rules under 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 group_id = 789 # int | The identifier of the policy group.
 asset_id = 789 # int | The identifier of the asset.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Compliance For Policy Rules Under Policy Group
-    api_response = api_instance.get_policy_group_asset_result(policy_id, group_id, asset_id, view=view)
+    api_response = api_instance.get_policy_group_asset_result(policy_id, group_id, asset_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_group_asset_result: %s\n" % e)
@@ -724,7 +700,6 @@ Name | Type | Description  | Notes
  **policy_id** | **int**| The identifier of the policy | 
  **group_id** | **int**| The identifier of the policy group. | 
  **asset_id** | **int**| The identifier of the asset. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -736,13 +711,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_group_asset_results**
-> PageOfPolicyAsset get_policy_group_asset_results(policy_id, group_id, applicable_only=applicable_only, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyAsset get_policy_group_asset_results(policy_id, group_id, applicable_only=applicable_only, page=page, size=size, sort=sort)
 
 Assets Compliance For Policy Rules Under Policy Group
 
@@ -752,23 +727,22 @@ Retrieves asset resources with rule compliance status against all rules under th
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 group_id = 789 # int | The identifier of the policy group.
 applicable_only = true # bool | An optional boolean parameter indicating the assets retrieved should only include those with rule results of either PASS or FAIL. Default value is `false`, which will also include assets with a compliance status of NOT_APPLICABLE. (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Assets Compliance For Policy Rules Under Policy Group
-    api_response = api_instance.get_policy_group_asset_results(policy_id, group_id, applicable_only=applicable_only, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policy_group_asset_results(policy_id, group_id, applicable_only=applicable_only, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_group_asset_results: %s\n" % e)
@@ -781,10 +755,9 @@ Name | Type | Description  | Notes
  **policy_id** | **int**| The identifier of the policy | 
  **group_id** | **int**| The identifier of the policy group. | 
  **applicable_only** | **bool**| An optional boolean parameter indicating the assets retrieved should only include those with rule results of either PASS or FAIL. Default value is &#x60;false&#x60;, which will also include assets with a compliance status of NOT_APPLICABLE. | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -796,13 +769,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_group_children**
-> PageOfPolicyItem get_policy_group_children(policy_id, group_id, view=view)
+> PageOfPolicyItem get_policy_group_children(policy_id, group_id)
 
 Policy Rules or Groups Directly Under Policy Group
 
@@ -812,19 +785,18 @@ Retrieves a paged resource of either policy rules, or groups, that are defined d
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 group_id = 789 # int | The identifier of the policy group.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rules or Groups Directly Under Policy Group
-    api_response = api_instance.get_policy_group_children(policy_id, group_id, view=view)
+    api_response = api_instance.get_policy_group_children(policy_id, group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_group_children: %s\n" % e)
@@ -836,7 +808,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
  **group_id** | **int**| The identifier of the policy group. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -848,13 +819,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_group_rules_with_asset_assessment**
-> PageOfPolicyRule get_policy_group_rules_with_asset_assessment(asset_id, policy_id, group_id, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyRule get_policy_group_rules_with_asset_assessment(asset_id, policy_id, group_id, page=page, size=size, sort=sort)
 
 Policy Rules Under Policy Group For Asset
 
@@ -864,23 +835,22 @@ Retrieves the list of policy rules defined directly, or indirectly, underneath t
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 asset_id = 789 # int | The identifier of the asset.
 policy_id = 789 # int | The identifier of the policy
 group_id = 789 # int | The identifier of the policy group.
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rules Under Policy Group For Asset
-    api_response = api_instance.get_policy_group_rules_with_asset_assessment(asset_id, policy_id, group_id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policy_group_rules_with_asset_assessment(asset_id, policy_id, group_id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_group_rules_with_asset_assessment: %s\n" % e)
@@ -893,10 +863,9 @@ Name | Type | Description  | Notes
  **asset_id** | **int**| The identifier of the asset. | 
  **policy_id** | **int**| The identifier of the policy | 
  **group_id** | **int**| The identifier of the policy group. | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -908,13 +877,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_groups**
-> PageOfPolicyGroup get_policy_groups(policy_id, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyGroup get_policy_groups(policy_id, page=page, size=size, sort=sort)
 
 Policy Groups
 
@@ -924,21 +893,20 @@ Retrieves a paged resource of policy groups for the specified policy.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Groups
-    api_response = api_instance.get_policy_groups(policy_id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policy_groups(policy_id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_groups: %s\n" % e)
@@ -949,10 +917,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -964,13 +931,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_rule**
-> PolicyRule get_policy_rule(policy_id, rule_id, view=view)
+> PolicyRule get_policy_rule(policy_id, rule_id)
 
 Policy Rule
 
@@ -980,19 +947,18 @@ Retrieves the specified policy rule.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 rule_id = 789 # int | The identifier of the policy rule.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rule
-    api_response = api_instance.get_policy_rule(policy_id, rule_id, view=view)
+    api_response = api_instance.get_policy_rule(policy_id, rule_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_rule: %s\n" % e)
@@ -1004,7 +970,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
  **rule_id** | **int**| The identifier of the policy rule. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1016,13 +981,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_rule_asset_result**
-> PolicyAsset get_policy_rule_asset_result(policy_id, rule_id, asset_id, view=view)
+> PolicyAsset get_policy_rule_asset_result(policy_id, rule_id, asset_id)
 
 Asset Compliance For Policy Rule
 
@@ -1032,20 +997,19 @@ Retrieves an asset resource with rule compliance results for the specified polic
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 rule_id = 789 # int | The identifier of the policy rule.
 asset_id = 789 # int | The identifier of the asset.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Compliance For Policy Rule
-    api_response = api_instance.get_policy_rule_asset_result(policy_id, rule_id, asset_id, view=view)
+    api_response = api_instance.get_policy_rule_asset_result(policy_id, rule_id, asset_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_rule_asset_result: %s\n" % e)
@@ -1058,7 +1022,6 @@ Name | Type | Description  | Notes
  **policy_id** | **int**| The identifier of the policy | 
  **rule_id** | **int**| The identifier of the policy rule. | 
  **asset_id** | **int**| The identifier of the asset. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1070,7 +1033,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1086,12 +1049,12 @@ Retrieves the policy rule proof captured during evaluation against the specified
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 rule_id = 789 # int | The identifier of the policy rule.
 asset_id = 789 # int | The identifier of the asset.
@@ -1122,13 +1085,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: text/html
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_rule_asset_results**
-> PageOfPolicyAsset get_policy_rule_asset_results(policy_id, rule_id, applicable_only=applicable_only, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyAsset get_policy_rule_asset_results(policy_id, rule_id, applicable_only=applicable_only, page=page, size=size, sort=sort)
 
 Assets Compliance For Policy Rule
 
@@ -1138,23 +1101,22 @@ Retrieves asset resources with rule compliance results for the specified policy 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 rule_id = 789 # int | The identifier of the policy rule.
 applicable_only = true # bool | An optional boolean parameter indicating the assets retrieved should only include those with rule results of either PASS or FAIL. Default value is `false`, which will also include assets with a compliance status of NOT_APPLICABLE. (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Assets Compliance For Policy Rule
-    api_response = api_instance.get_policy_rule_asset_results(policy_id, rule_id, applicable_only=applicable_only, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policy_rule_asset_results(policy_id, rule_id, applicable_only=applicable_only, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_rule_asset_results: %s\n" % e)
@@ -1167,10 +1129,9 @@ Name | Type | Description  | Notes
  **policy_id** | **int**| The identifier of the policy | 
  **rule_id** | **int**| The identifier of the policy rule. | 
  **applicable_only** | **bool**| An optional boolean parameter indicating the assets retrieved should only include those with rule results of either PASS or FAIL. Default value is &#x60;false&#x60;, which will also include assets with a compliance status of NOT_APPLICABLE. | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1182,13 +1143,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_rule_controls**
-> PageOfPolicyControl get_policy_rule_controls(policy_id, rule_id, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyControl get_policy_rule_controls(policy_id, rule_id, page=page, size=size, sort=sort)
 
 Policy Rule Controls
 
@@ -1198,22 +1159,21 @@ Retrieves all NIST SP 800-53 controls mappings for each CCE within the specified
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 rule_id = 789 # int | The identifier of the policy rule.
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rule Controls
-    api_response = api_instance.get_policy_rule_controls(policy_id, rule_id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policy_rule_controls(policy_id, rule_id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_rule_controls: %s\n" % e)
@@ -1225,10 +1185,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
  **rule_id** | **int**| The identifier of the policy rule. | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1240,7 +1199,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1256,12 +1215,12 @@ Retrieves the policy rule rationale for the specified policy.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 rule_id = 789 # int | The identifier of the policy rule.
 
@@ -1290,7 +1249,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: text/html
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1306,12 +1265,12 @@ Retrieves the policy rule remediation for the specified policy.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
 rule_id = 789 # int | The identifier of the policy rule.
 
@@ -1340,13 +1299,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: text/html
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_rules**
-> PageOfPolicyRule get_policy_rules(policy_id, page=page, size=size, sort=sort, view=view)
+> PageOfPolicyRule get_policy_rules(policy_id, page=page, size=size, sort=sort)
 
 Policy Rules
 
@@ -1356,21 +1315,20 @@ Retrieves a paged resource of policy rules for the specified policy.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
+api_instance = swagger_client.PolicyApi()
 policy_id = 789 # int | The identifier of the policy
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Policy Rules
-    api_response = api_instance.get_policy_rules(policy_id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_policy_rules(policy_id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_rules: %s\n" % e)
@@ -1381,10 +1339,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_id** | **int**| The identifier of the policy | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1396,13 +1353,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_policy_summary**
-> PolicySummaryResource get_policy_summary(view=view)
+> PolicySummaryResource get_policy_summary()
 
 Policy Compliance Summaries
 
@@ -1412,27 +1369,23 @@ Retrieves a compliance summary of all policies.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.PolicyApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.PolicyApi()
 
 try:
     # Policy Compliance Summaries
-    api_response = api_instance.get_policy_summary(view=view)
+    api_response = api_instance.get_policy_summary()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicyApi->get_policy_summary: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1444,7 +1397,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -14,8 +14,9 @@ Name | Type | Description | Notes
 **policy_editor** | **bool** | Whether the editing of policies is allowed. | [optional] 
 **policy_manager** | **bool** | Whether the policy manager is allowed. | [optional] 
 **remediation_analytics** | **bool** | Whether Remediation Analytics features are available. | [optional] 
-**reporting** | [**LicenseReporting**](LicenseReporting.md) |  | [optional] 
-**scanning** | [**LicenseScanning**](LicenseScanning.md) |  | [optional] 
+**reporting** | [**LicenseReporting**](LicenseReporting.md) | The reporting features available in the license. | [optional] 
+**scanning** | [**LicenseScanning**](LicenseScanning.md) | The scanning features available in the license. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

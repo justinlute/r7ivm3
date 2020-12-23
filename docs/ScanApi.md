@@ -1,6 +1,6 @@
-# r7ivm3.ScanApi
+# swagger_client.ScanApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,8 +10,9 @@ Method | HTTP request | Description
 [**set_scan_status**](ScanApi.md#set_scan_status) | **POST** /api/3/scans/{id}/{status} | Scan Status
 [**start_scan**](ScanApi.md#start_scan) | **POST** /api/3/sites/{id}/scans | Site Scans
 
+
 # **get_scan**
-> Scan get_scan(id, view=view)
+> Scan get_scan(id)
 
 Scan
 
@@ -21,18 +22,17 @@ Returns the specified scan.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanApi()
+api_instance = swagger_client.ScanApi()
 id = 789 # int | The identifier of the scan.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Scan
-    api_response = api_instance.get_scan(id, view=view)
+    api_response = api_instance.get_scan(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanApi->get_scan: %s\n" % e)
@@ -43,7 +43,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the scan. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -55,13 +54,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scans**
-> PageOfGlobalScan get_scans(active=active, page=page, size=size, sort=sort, view=view)
+> PageOfGlobalScan get_scans(active=active, page=page, size=size, sort=sort)
 
 Scans
 
@@ -71,21 +70,20 @@ Returns all scans.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanApi()
-active = true # bool | Return running scans or past scans (true/false value). (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+api_instance = swagger_client.ScanApi()
+active = false # bool | Return running scans or past scans (true/false value). (optional) (default to false)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Scans
-    api_response = api_instance.get_scans(active=active, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_scans(active=active, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanApi->get_scans: %s\n" % e)
@@ -95,11 +93,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **active** | **bool**| Return running scans or past scans (true/false value). | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **active** | **bool**| Return running scans or past scans (true/false value). | [optional] [default to false]
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -111,13 +108,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_scans**
-> PageOfScan get_site_scans(id, active=active, page=page, size=size, sort=sort, view=view)
+> PageOfScan get_site_scans(id, active=active, page=page, size=size, sort=sort)
 
 Site Scans
 
@@ -127,22 +124,21 @@ Returns the scans for the specified site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanApi()
+api_instance = swagger_client.ScanApi()
 id = 56 # int | The identifier of the site.
-active = true # bool | Return running scans or past scans (true/false value). (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+active = false # bool | Return running scans or past scans (true/false value). (optional) (default to false)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Scans
-    api_response = api_instance.get_site_scans(id, active=active, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_site_scans(id, active=active, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanApi->get_site_scans: %s\n" % e)
@@ -153,11 +149,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **active** | **bool**| Return running scans or past scans (true/false value). | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **active** | **bool**| Return running scans or past scans (true/false value). | [optional] [default to false]
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -169,7 +164,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -185,12 +180,12 @@ Updates the scan status. Can pause, resume, and stop scans using this resource. 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanApi()
+api_instance = swagger_client.ScanApi()
 id = 789 # int | The identifier of the scan.
 status = 'status_example' # str | The status of the scan.
 
@@ -219,13 +214,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **start_scan**
-> CreatedReferenceScanIDLink start_scan(id, body=body, override_blackout=override_blackout)
+> CreatedReferenceScanIDLink start_scan(id, override_blackout=override_blackout, scan=scan)
 
 Site Scans
 
@@ -235,19 +230,19 @@ Starts a scan for the specified site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanApi()
+api_instance = swagger_client.ScanApi()
 id = 56 # int | The identifier of the site.
-body = r7ivm3.AdhocScan() # AdhocScan | The details for the scan. (optional)
-override_blackout = true # bool | Whether to request for the override of an scan blackout window. (optional)
+override_blackout = false # bool | Whether to request for the override of an scan blackout window. (optional) (default to false)
+scan = swagger_client.AdhocScan() # AdhocScan | The details for the scan. (optional)
 
 try:
     # Site Scans
-    api_response = api_instance.start_scan(id, body=body, override_blackout=override_blackout)
+    api_response = api_instance.start_scan(id, override_blackout=override_blackout, scan=scan)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanApi->start_scan: %s\n" % e)
@@ -258,8 +253,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**AdhocScan**](AdhocScan.md)| The details for the scan. | [optional] 
- **override_blackout** | **bool**| Whether to request for the override of an scan blackout window. | [optional] 
+ **override_blackout** | **bool**| Whether to request for the override of an scan blackout window. | [optional] [default to false]
+ **scan** | [**AdhocScan**](AdhocScan.md)| The details for the scan. | [optional] 
 
 ### Return type
 

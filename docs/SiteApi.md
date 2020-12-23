@@ -1,9 +1,11 @@
-# r7ivm3.SiteApi
+# swagger_client.SiteApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_excluded_targets**](SiteApi.md#add_excluded_targets) | **POST** /api/3/sites/{id}/excluded_targets | Site Excluded Targets
+[**add_included_targets**](SiteApi.md#add_included_targets) | **POST** /api/3/sites/{id}/included_targets | Site Included Targets
 [**add_site_tag**](SiteApi.md#add_site_tag) | **PUT** /api/3/sites/{id}/tags/{tagId} | Site Tag
 [**add_site_user**](SiteApi.md#add_site_user) | **POST** /api/3/sites/{id}/users | Site Users Access
 [**create_site**](SiteApi.md#create_site) | **POST** /api/3/sites | Sites
@@ -58,7 +60,9 @@ Method | HTTP request | Description
 [**remove_all_included_asset_groups**](SiteApi.md#remove_all_included_asset_groups) | **DELETE** /api/3/sites/{id}/included_asset_groups | Site Included Asset Groups
 [**remove_asset_from_site**](SiteApi.md#remove_asset_from_site) | **DELETE** /api/3/sites/{id}/assets/{assetId} | Site Asset
 [**remove_excluded_asset_group**](SiteApi.md#remove_excluded_asset_group) | **DELETE** /api/3/sites/{id}/excluded_asset_groups/{assetGroupId} | Site Excluded Asset Group
+[**remove_excluded_targets**](SiteApi.md#remove_excluded_targets) | **DELETE** /api/3/sites/{id}/excluded_targets | Site Excluded Targets
 [**remove_included_asset_group**](SiteApi.md#remove_included_asset_group) | **DELETE** /api/3/sites/{id}/included_asset_groups/{assetGroupId} | Site Included Asset Group
+[**remove_included_targets**](SiteApi.md#remove_included_targets) | **DELETE** /api/3/sites/{id}/included_targets | Site Included Targets
 [**remove_site_assets**](SiteApi.md#remove_site_assets) | **DELETE** /api/3/sites/{id}/assets | Site Assets
 [**remove_site_tag**](SiteApi.md#remove_site_tag) | **DELETE** /api/3/sites/{id}/tags/{tagId} | Site Tag
 [**remove_site_user**](SiteApi.md#remove_site_user) | **DELETE** /api/3/sites/{id}/users/{userId} | Site User Access
@@ -85,6 +89,107 @@ Method | HTTP request | Description
 [**update_site_snmp_alert**](SiteApi.md#update_site_snmp_alert) | **PUT** /api/3/sites/{id}/alerts/snmp/{alertId} | Site SNMP Alert
 [**update_site_syslog_alert**](SiteApi.md#update_site_syslog_alert) | **PUT** /api/3/sites/{id}/alerts/syslog/{alertId} | Site Syslog Alert
 
+
+# **add_excluded_targets**
+> ReferenceWithSiteIDLink add_excluded_targets(id, scan_targets_to_add=scan_targets_to_add)
+
+Site Excluded Targets
+
+Adds one or more addresses to the site's list of excluded scan targets.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SiteApi()
+id = 56 # int | The identifier of the site.
+scan_targets_to_add = [swagger_client.list[str]()] # list[str] | List of addresses to add to the site's excluded scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. (optional)
+
+try:
+    # Site Excluded Targets
+    api_response = api_instance.add_excluded_targets(id, scan_targets_to_add=scan_targets_to_add)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SiteApi->add_excluded_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The identifier of the site. | 
+ **scan_targets_to_add** | **list[str]**| List of addresses to add to the site&#39;s excluded scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. | [optional] 
+
+### Return type
+
+[**ReferenceWithSiteIDLink**](ReferenceWithSiteIDLink.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **add_included_targets**
+> ReferenceWithSiteIDLink add_included_targets(id, scan_targets_to_add=scan_targets_to_add)
+
+Site Included Targets
+
+Adds one or more addresses to the site's list of included scan targets.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SiteApi()
+id = 56 # int | The identifier of the site.
+scan_targets_to_add = [swagger_client.list[str]()] # list[str] | List of addresses to add to the site's included scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. (optional)
+
+try:
+    # Site Included Targets
+    api_response = api_instance.add_included_targets(id, scan_targets_to_add=scan_targets_to_add)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SiteApi->add_included_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The identifier of the site. | 
+ **scan_targets_to_add** | **list[str]**| List of addresses to add to the site&#39;s included scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. | [optional] 
+
+### Return type
+
+[**ReferenceWithSiteIDLink**](ReferenceWithSiteIDLink.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **add_site_tag**
 > Links add_site_tag(id, tag_id)
 
@@ -96,12 +201,12 @@ Adds a tag to the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 tag_id = 56 # int | The identifier of the tag.
 
@@ -130,13 +235,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_site_user**
-> ReferenceWithUserIDLink add_site_user(id, body=body)
+> ReferenceWithUserIDLink add_site_user(id, param0=param0)
 
 Site Users Access
 
@@ -146,18 +251,18 @@ Grants a non-administrator user access to the specified site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = 56 # int | The identifier of the user. (optional)
+param0 = 56 # int | The identifier of the user. (optional)
 
 try:
     # Site Users Access
-    api_response = api_instance.add_site_user(id, body=body)
+    api_response = api_instance.add_site_user(id, param0=param0)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->add_site_user: %s\n" % e)
@@ -168,7 +273,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**int**](int.md)| The identifier of the user. | [optional] 
+ **param0** | **int**| The identifier of the user. | [optional] 
 
 ### Return type
 
@@ -186,7 +291,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_site**
-> ReferenceWithSiteIDLink create_site(body=body)
+> ReferenceWithSiteIDLink create_site(site=site)
 
 Sites
 
@@ -196,17 +301,17 @@ Creates a new site with the specified configuration.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
-body = r7ivm3.SiteCreateResource() # SiteCreateResource | Resource for creating a site configuration. (optional)
+api_instance = swagger_client.SiteApi()
+site = swagger_client.SiteCreateResource() # SiteCreateResource | Resource for creating a site configuration. (optional)
 
 try:
     # Sites
-    api_response = api_instance.create_site(body=body)
+    api_response = api_instance.create_site(site=site)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->create_site: %s\n" % e)
@@ -216,7 +321,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SiteCreateResource**](SiteCreateResource.md)| Resource for creating a site configuration. | [optional] 
+ **site** | [**SiteCreateResource**](SiteCreateResource.md)| Resource for creating a site configuration. | [optional] 
 
 ### Return type
 
@@ -234,7 +339,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_site_credential**
-> CreatedReferenceCredentialIDLink create_site_credential(id, body=body)
+> CreatedReferenceCredentialIDLink create_site_credential(id, site_credential=site_credential)
 
 Site Scan Credentials
 
@@ -244,18 +349,18 @@ Creates a new site credential.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = r7ivm3.SiteCredential() # SiteCredential | The specification of a site credential. (optional)
+site_credential = swagger_client.SiteCredential() # SiteCredential | The specification of a site credential. (optional)
 
 try:
     # Site Scan Credentials
-    api_response = api_instance.create_site_credential(id, body=body)
+    api_response = api_instance.create_site_credential(id, site_credential=site_credential)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->create_site_credential: %s\n" % e)
@@ -266,7 +371,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**SiteCredential**](SiteCredential.md)| The specification of a site credential. | [optional] 
+ **site_credential** | [**SiteCredential**](SiteCredential.md)| The specification of a site credential. | [optional] 
 
 ### Return type
 
@@ -284,7 +389,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_site_scan_schedule**
-> ReferenceWithScanScheduleIDLink create_site_scan_schedule(id, body=body)
+> ReferenceWithScanScheduleIDLink create_site_scan_schedule(id, scan_schedule=scan_schedule)
 
 Site Scan Schedules
 
@@ -294,18 +399,18 @@ Creates a new scan schedule for the specified site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = r7ivm3.ScanSchedule() # ScanSchedule | Resource for a scan schedule. (optional)
+scan_schedule = swagger_client.ScanSchedule() # ScanSchedule | Resource for a scan schedule. (optional)
 
 try:
     # Site Scan Schedules
-    api_response = api_instance.create_site_scan_schedule(id, body=body)
+    api_response = api_instance.create_site_scan_schedule(id, scan_schedule=scan_schedule)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->create_site_scan_schedule: %s\n" % e)
@@ -316,7 +421,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**ScanSchedule**](ScanSchedule.md)| Resource for a scan schedule. | [optional] 
+ **scan_schedule** | [**ScanSchedule**](ScanSchedule.md)| Resource for a scan schedule. | [optional] 
 
 ### Return type
 
@@ -334,7 +439,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_site_smtp_alert**
-> ReferenceWithAlertIDLink create_site_smtp_alert(id, body=body)
+> ReferenceWithAlertIDLink create_site_smtp_alert(id, alert=alert)
 
 Site SMTP Alerts
 
@@ -344,18 +449,18 @@ Creates a new SMTP alert for the specified site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = r7ivm3.SmtpAlert() # SmtpAlert | Resource for creating a new SMTP alert. (optional)
+alert = swagger_client.SmtpAlert() # SmtpAlert | Resource for creating a new SMTP alert. (optional)
 
 try:
     # Site SMTP Alerts
-    api_response = api_instance.create_site_smtp_alert(id, body=body)
+    api_response = api_instance.create_site_smtp_alert(id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->create_site_smtp_alert: %s\n" % e)
@@ -366,7 +471,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**SmtpAlert**](SmtpAlert.md)| Resource for creating a new SMTP alert. | [optional] 
+ **alert** | [**SmtpAlert**](SmtpAlert.md)| Resource for creating a new SMTP alert. | [optional] 
 
 ### Return type
 
@@ -384,7 +489,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_site_snmp_alert**
-> ReferenceWithAlertIDLink create_site_snmp_alert(id, body=body)
+> ReferenceWithAlertIDLink create_site_snmp_alert(id, alert=alert)
 
 Site SNMP Alerts
 
@@ -394,18 +499,18 @@ Creates a new SNMP alert for the specified site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = r7ivm3.SnmpAlert() # SnmpAlert | Resource for creating a new SNMP alert. (optional)
+alert = swagger_client.SnmpAlert() # SnmpAlert | Resource for creating a new SNMP alert. (optional)
 
 try:
     # Site SNMP Alerts
-    api_response = api_instance.create_site_snmp_alert(id, body=body)
+    api_response = api_instance.create_site_snmp_alert(id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->create_site_snmp_alert: %s\n" % e)
@@ -416,7 +521,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**SnmpAlert**](SnmpAlert.md)| Resource for creating a new SNMP alert. | [optional] 
+ **alert** | [**SnmpAlert**](SnmpAlert.md)| Resource for creating a new SNMP alert. | [optional] 
 
 ### Return type
 
@@ -434,7 +539,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_site_syslog_alert**
-> ReferenceWithAlertIDLink create_site_syslog_alert(id, body=body)
+> ReferenceWithAlertIDLink create_site_syslog_alert(id, alert=alert)
 
 Site Syslog Alerts
 
@@ -444,18 +549,18 @@ Creates a new Syslog alert for the specified site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = r7ivm3.SyslogAlert() # SyslogAlert | Resource for creating a new Syslog alert. (optional)
+alert = swagger_client.SyslogAlert() # SyslogAlert | Resource for creating a new Syslog alert. (optional)
 
 try:
     # Site Syslog Alerts
-    api_response = api_instance.create_site_syslog_alert(id, body=body)
+    api_response = api_instance.create_site_syslog_alert(id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->create_site_syslog_alert: %s\n" % e)
@@ -466,7 +571,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**SyslogAlert**](SyslogAlert.md)| Resource for creating a new Syslog alert. | [optional] 
+ **alert** | [**SyslogAlert**](SyslogAlert.md)| Resource for creating a new Syslog alert. | [optional] 
 
 ### Return type
 
@@ -494,12 +599,12 @@ Deletes all alerts from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -526,7 +631,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -542,12 +647,12 @@ Deletes all site credentials from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -574,7 +679,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -590,12 +695,12 @@ Deletes all scan schedules from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -622,7 +727,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -638,12 +743,12 @@ Deletes all SMTP alerts from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -670,7 +775,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -686,12 +791,12 @@ Deletes all SNMP alerts from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -718,7 +823,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -734,12 +839,12 @@ Deletes all Syslog alerts from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -766,7 +871,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -776,18 +881,18 @@ No authorization required
 
 Site
 
-site.delete.description
+Deletes the site with the specified identifier.
 
 ### Example
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -814,7 +919,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -830,12 +935,12 @@ Deletes the specified site credential.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 credential_id = 56 # int | The identifier of the site credential.
 
@@ -864,7 +969,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -880,12 +985,12 @@ Deletes the specified scan schedule from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 schedule_id = 56 # int | The identifier of the scan schedule.
 
@@ -914,7 +1019,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -930,12 +1035,12 @@ Deletes the specified SMTP alert from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
 
@@ -964,7 +1069,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -980,12 +1085,12 @@ Deletes the specified SNMP alert from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
 
@@ -1014,7 +1119,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1030,12 +1135,12 @@ Deletes the specified Syslog alert from the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
 
@@ -1064,13 +1169,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **enable_shared_credential_on_site**
-> Links enable_shared_credential_on_site(id, credential_id, body=body)
+> Links enable_shared_credential_on_site(id, credential_id, status=status)
 
 Assigned Shared Credential Enablement
 
@@ -1080,19 +1185,19 @@ Enable or disable the shared credential for the site's scans.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 credential_id = 56 # int | The identifier of the shared credential.
-body = True # bool | Flag indicating whether the shared credential is enabled for the site's scans. (optional)
+status = true # bool | Flag indicating whether the shared credential is enabled for the site's scans. (optional)
 
 try:
     # Assigned Shared Credential Enablement
-    api_response = api_instance.enable_shared_credential_on_site(id, credential_id, body=body)
+    api_response = api_instance.enable_shared_credential_on_site(id, credential_id, status=status)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->enable_shared_credential_on_site: %s\n" % e)
@@ -1104,7 +1209,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **credential_id** | **int**| The identifier of the shared credential. | 
- **body** | [**bool**](bool.md)| Flag indicating whether the shared credential is enabled for the site&#x27;s scans. | [optional] 
+ **status** | **bool**| Flag indicating whether the shared credential is enabled for the site&#39;s scans. | [optional] 
 
 ### Return type
 
@@ -1122,7 +1227,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **enable_site_credential**
-> Links enable_site_credential(id, credential_id, body=body)
+> Links enable_site_credential(id, credential_id, status=status)
 
 Site Credential Enablement
 
@@ -1132,19 +1237,19 @@ Enable or disable the site credential for scans.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 credential_id = 56 # int | The identifier of the site credential.
-body = True # bool | Flag indicating whether the credential is enabled for use during the scan. (optional)
+status = true # bool | Flag indicating whether the credential is enabled for use during the scan. (optional)
 
 try:
     # Site Credential Enablement
-    api_response = api_instance.enable_site_credential(id, credential_id, body=body)
+    api_response = api_instance.enable_site_credential(id, credential_id, status=status)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->enable_site_credential: %s\n" % e)
@@ -1156,7 +1261,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **credential_id** | **int**| The identifier of the site credential. | 
- **body** | [**bool**](bool.md)| Flag indicating whether the credential is enabled for use during the scan. | [optional] 
+ **status** | **bool**| Flag indicating whether the credential is enabled for use during the scan. | [optional] 
 
 ### Return type
 
@@ -1174,7 +1279,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_excluded_asset_groups**
-> ResourcesAssetGroup get_excluded_asset_groups(id, view=view)
+> ResourcesAssetGroup get_excluded_asset_groups(id)
 
 Site Excluded Asset Groups
 
@@ -1184,18 +1289,17 @@ Retrieves the excluded asset groups in a static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Excluded Asset Groups
-    api_response = api_instance.get_excluded_asset_groups(id, view=view)
+    api_response = api_instance.get_excluded_asset_groups(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_excluded_asset_groups: %s\n" % e)
@@ -1206,7 +1310,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1218,13 +1321,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_excluded_targets**
-> ScanTargetsResource get_excluded_targets(id, view=view)
+> ScanTargetsResource get_excluded_targets(id)
 
 Site Excluded Targets
 
@@ -1234,18 +1337,17 @@ Retrieves the excluded targets in a static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Excluded Targets
-    api_response = api_instance.get_excluded_targets(id, view=view)
+    api_response = api_instance.get_excluded_targets(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_excluded_targets: %s\n" % e)
@@ -1256,7 +1358,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1268,13 +1369,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_included_asset_groups**
-> ResourcesAssetGroup get_included_asset_groups(id, view=view)
+> ResourcesAssetGroup get_included_asset_groups(id)
 
 Site Included Asset Groups
 
@@ -1284,18 +1385,17 @@ Retrieves the included asset groups in a static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Included Asset Groups
-    api_response = api_instance.get_included_asset_groups(id, view=view)
+    api_response = api_instance.get_included_asset_groups(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_included_asset_groups: %s\n" % e)
@@ -1306,7 +1406,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1318,13 +1417,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_included_targets**
-> ScanTargetsResource get_included_targets(id, view=view)
+> ScanTargetsResource get_included_targets(id)
 
 Site Included Targets
 
@@ -1334,18 +1433,17 @@ Retrieves the included targets in a static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Included Targets
-    api_response = api_instance.get_included_targets(id, view=view)
+    api_response = api_instance.get_included_targets(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_included_targets: %s\n" % e)
@@ -1356,7 +1454,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1368,13 +1465,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site**
-> Site get_site(id, view=view)
+> Site get_site(id)
 
 Site
 
@@ -1384,18 +1481,17 @@ Retrieves the site with the specified identifier.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site
-    api_response = api_instance.get_site(id, view=view)
+    api_response = api_instance.get_site(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site: %s\n" % e)
@@ -1406,7 +1502,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1418,13 +1513,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_alerts**
-> ResourcesAlert get_site_alerts(id, view=view)
+> ResourcesAlert get_site_alerts(id)
 
 Site Alerts
 
@@ -1434,18 +1529,17 @@ Retrieve all alerts defined in the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Alerts
-    api_response = api_instance.get_site_alerts(id, view=view)
+    api_response = api_instance.get_site_alerts(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_alerts: %s\n" % e)
@@ -1456,7 +1550,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1468,13 +1561,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_assets**
-> PageOfAsset get_site_assets(id, page=page, size=size, sort=sort, view=view)
+> PageOfAsset get_site_assets(id, page=page, size=size, sort=sort)
 
 Site Assets
 
@@ -1484,21 +1577,20 @@ Retrieves a paged resource of assets linked with the specified site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Assets
-    api_response = api_instance.get_site_assets(id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_site_assets(id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_assets: %s\n" % e)
@@ -1509,10 +1601,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1524,13 +1615,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_credential**
-> SiteCredential get_site_credential(id, credential_id, view=view)
+> SiteCredential get_site_credential(id, credential_id)
 
 Site Scan Credential
 
@@ -1540,19 +1631,18 @@ Retrieves the specified site credential.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 credential_id = 56 # int | The identifier of the site credential.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Scan Credential
-    api_response = api_instance.get_site_credential(id, credential_id, view=view)
+    api_response = api_instance.get_site_credential(id, credential_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_credential: %s\n" % e)
@@ -1564,7 +1654,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **credential_id** | **int**| The identifier of the site credential. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1576,13 +1665,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_credentials**
-> ResourcesSiteCredential get_site_credentials(id, view=view)
+> ResourcesSiteCredential get_site_credentials(id)
 
 Site Scan Credentials
 
@@ -1592,18 +1681,17 @@ Retrieves all defined site credential resources.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Scan Credentials
-    api_response = api_instance.get_site_credentials(id, view=view)
+    api_response = api_instance.get_site_credentials(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_credentials: %s\n" % e)
@@ -1614,7 +1702,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1626,13 +1713,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_discovery_connection**
-> SiteDiscoveryConnection get_site_discovery_connection(id, view=view)
+> SiteDiscoveryConnection get_site_discovery_connection(id)
 
 Site Discovery Connection
 
@@ -1642,18 +1729,17 @@ Retrieves the discovery connection assigned to the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Discovery Connection
-    api_response = api_instance.get_site_discovery_connection(id, view=view)
+    api_response = api_instance.get_site_discovery_connection(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_discovery_connection: %s\n" % e)
@@ -1664,7 +1750,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1676,13 +1761,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_discovery_search_criteria**
-> DiscoverySearchCriteria get_site_discovery_search_criteria(id, view=view)
+> DiscoverySearchCriteria get_site_discovery_search_criteria(id)
 
 Site Discovery Search Criteria
 
@@ -1692,18 +1777,17 @@ Retrieve the search criteria of the dynamic site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Discovery Search Criteria
-    api_response = api_instance.get_site_discovery_search_criteria(id, view=view)
+    api_response = api_instance.get_site_discovery_search_criteria(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_discovery_search_criteria: %s\n" % e)
@@ -1714,7 +1798,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1726,13 +1809,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_organization**
-> SiteOrganization get_site_organization(id, view=view)
+> SiteOrganization get_site_organization(id)
 
 Site Organization Information
 
@@ -1742,18 +1825,17 @@ Retrieves the site organization information.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Organization Information
-    api_response = api_instance.get_site_organization(id, view=view)
+    api_response = api_instance.get_site_organization(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_organization: %s\n" % e)
@@ -1764,7 +1846,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1776,13 +1857,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_scan_engine**
-> ScanEngine get_site_scan_engine(id, view=view)
+> ScanEngine get_site_scan_engine(id)
 
 Site Scan Engine
 
@@ -1792,18 +1873,17 @@ Retrieves the resource of the scan engine assigned to the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Scan Engine
-    api_response = api_instance.get_site_scan_engine(id, view=view)
+    api_response = api_instance.get_site_scan_engine(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_scan_engine: %s\n" % e)
@@ -1814,7 +1894,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1826,13 +1905,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_scan_schedule**
-> ScanSchedule get_site_scan_schedule(id, schedule_id, view=view)
+> ScanSchedule get_site_scan_schedule(id, schedule_id)
 
 Site Scan Schedule
 
@@ -1842,19 +1921,18 @@ Retrieves the specified scan schedule.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 schedule_id = 56 # int | The identifier of the scan schedule.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Scan Schedule
-    api_response = api_instance.get_site_scan_schedule(id, schedule_id, view=view)
+    api_response = api_instance.get_site_scan_schedule(id, schedule_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_scan_schedule: %s\n" % e)
@@ -1866,7 +1944,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **schedule_id** | **int**| The identifier of the scan schedule. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1878,13 +1955,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_scan_schedules**
-> ResourcesScanSchedule get_site_scan_schedules(id, view=view)
+> ResourcesScanSchedule get_site_scan_schedules(id)
 
 Site Scan Schedules
 
@@ -1894,18 +1971,17 @@ Returns all scan schedules for the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Scan Schedules
-    api_response = api_instance.get_site_scan_schedules(id, view=view)
+    api_response = api_instance.get_site_scan_schedules(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_scan_schedules: %s\n" % e)
@@ -1916,7 +1992,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1928,13 +2003,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_scan_template**
-> ScanTemplate get_site_scan_template(id, view=view)
+> ScanTemplate get_site_scan_template(id)
 
 Site Scan Template
 
@@ -1944,18 +2019,17 @@ Retrieves the resource of the scan template assigned to the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Scan Template
-    api_response = api_instance.get_site_scan_template(id, view=view)
+    api_response = api_instance.get_site_scan_template(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_scan_template: %s\n" % e)
@@ -1966,7 +2040,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1978,13 +2051,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_shared_credentials**
-> ResourcesSiteSharedCredential get_site_shared_credentials(id, view=view)
+> ResourcesSiteSharedCredential get_site_shared_credentials(id)
 
 Assigned Shared Credentials
 
@@ -1994,18 +2067,17 @@ Retrieve all of the shared credentials assigned to the site. These shared creden
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Assigned Shared Credentials
-    api_response = api_instance.get_site_shared_credentials(id, view=view)
+    api_response = api_instance.get_site_shared_credentials(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_shared_credentials: %s\n" % e)
@@ -2016,7 +2088,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2028,13 +2099,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_smtp_alert**
-> SmtpAlert get_site_smtp_alert(id, alert_id, view=view)
+> SmtpAlert get_site_smtp_alert(id, alert_id)
 
 Site SMTP Alert
 
@@ -2044,19 +2115,18 @@ Retrieves the specified SMTP alert.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site SMTP Alert
-    api_response = api_instance.get_site_smtp_alert(id, alert_id, view=view)
+    api_response = api_instance.get_site_smtp_alert(id, alert_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_smtp_alert: %s\n" % e)
@@ -2068,7 +2138,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **alert_id** | **int**| The identifier of the alert. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2080,13 +2149,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_smtp_alerts**
-> ResourcesSmtpAlert get_site_smtp_alerts(id, view=view)
+> ResourcesSmtpAlert get_site_smtp_alerts(id)
 
 Site SMTP Alerts
 
@@ -2096,18 +2165,17 @@ Retrieves all SMTP alerts defined in the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site SMTP Alerts
-    api_response = api_instance.get_site_smtp_alerts(id, view=view)
+    api_response = api_instance.get_site_smtp_alerts(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_smtp_alerts: %s\n" % e)
@@ -2118,7 +2186,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2130,13 +2197,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_snmp_alert**
-> SnmpAlert get_site_snmp_alert(id, alert_id, view=view)
+> SnmpAlert get_site_snmp_alert(id, alert_id)
 
 Site SNMP Alert
 
@@ -2146,19 +2213,18 @@ Retrieves the specified SNMP alert.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site SNMP Alert
-    api_response = api_instance.get_site_snmp_alert(id, alert_id, view=view)
+    api_response = api_instance.get_site_snmp_alert(id, alert_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_snmp_alert: %s\n" % e)
@@ -2170,7 +2236,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **alert_id** | **int**| The identifier of the alert. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2182,13 +2247,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_snmp_alerts**
-> ResourcesSnmpAlert get_site_snmp_alerts(id, view=view)
+> ResourcesSnmpAlert get_site_snmp_alerts(id)
 
 Site SNMP Alerts
 
@@ -2198,18 +2263,17 @@ Retrieves all SNMP alerts defined in the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site SNMP Alerts
-    api_response = api_instance.get_site_snmp_alerts(id, view=view)
+    api_response = api_instance.get_site_snmp_alerts(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_snmp_alerts: %s\n" % e)
@@ -2220,7 +2284,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2232,13 +2295,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_syslog_alert**
-> SyslogAlert get_site_syslog_alert(id, alert_id, view=view)
+> SyslogAlert get_site_syslog_alert(id, alert_id)
 
 Site Syslog Alert
 
@@ -2248,19 +2311,18 @@ Retrieves the specified Syslog alert.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Syslog Alert
-    api_response = api_instance.get_site_syslog_alert(id, alert_id, view=view)
+    api_response = api_instance.get_site_syslog_alert(id, alert_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_syslog_alert: %s\n" % e)
@@ -2272,7 +2334,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **alert_id** | **int**| The identifier of the alert. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2284,13 +2345,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_syslog_alerts**
-> ResourcesSyslogAlert get_site_syslog_alerts(id, view=view)
+> ResourcesSyslogAlert get_site_syslog_alerts(id)
 
 Site Syslog Alerts
 
@@ -2300,18 +2361,17 @@ Retrieves all Syslog alerts defined in the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Syslog Alerts
-    api_response = api_instance.get_site_syslog_alerts(id, view=view)
+    api_response = api_instance.get_site_syslog_alerts(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_syslog_alerts: %s\n" % e)
@@ -2322,7 +2382,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2334,13 +2393,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_tags**
-> ResourcesTag get_site_tags(id, view=view)
+> ResourcesTag get_site_tags(id)
 
 Site Tags
 
@@ -2350,18 +2409,17 @@ Retrieves the list of tags added to the sites.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Tags
-    api_response = api_instance.get_site_tags(id, view=view)
+    api_response = api_instance.get_site_tags(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_tags: %s\n" % e)
@@ -2372,7 +2430,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2384,13 +2441,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_site_users**
-> ResourcesUser get_site_users(id, view=view)
+> ResourcesUser get_site_users(id)
 
 Site Users Access
 
@@ -2400,18 +2457,17 @@ Retrieve the list of non-administrator users that have access to the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Site Users Access
-    api_response = api_instance.get_site_users(id, view=view)
+    api_response = api_instance.get_site_users(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_site_users: %s\n" % e)
@@ -2422,7 +2478,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2434,13 +2489,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sites**
-> PageOfSite get_sites(page=page, size=size, sort=sort, view=view)
+> PageOfSite get_sites(page=page, size=size, sort=sort)
 
 Sites
 
@@ -2450,20 +2505,19 @@ Retrieves a paged resource of accessible sites.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+api_instance = swagger_client.SiteApi()
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Sites
-    api_response = api_instance.get_sites(page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_sites(page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_sites: %s\n" % e)
@@ -2473,10 +2527,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2488,13 +2541,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_web_auth_html_forms**
-> ResourcesWebFormAuthentication get_web_auth_html_forms(id, view=view)
+> ResourcesWebFormAuthentication get_web_auth_html_forms(id)
 
 Web Authentication HTML Forms
 
@@ -2504,18 +2557,17 @@ Retrieves all HTML form authentications configured in the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Web Authentication HTML Forms
-    api_response = api_instance.get_web_auth_html_forms(id, view=view)
+    api_response = api_instance.get_web_auth_html_forms(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_web_auth_html_forms: %s\n" % e)
@@ -2526,7 +2578,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2538,13 +2589,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_web_auth_http_headers**
-> ResourcesWebHeaderAuthentication get_web_auth_http_headers(id, view=view)
+> ResourcesWebHeaderAuthentication get_web_auth_http_headers(id)
 
 Web Authentication HTTP Headers
 
@@ -2554,18 +2605,17 @@ Retrieves all HTTP header authentications configured in the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Web Authentication HTTP Headers
-    api_response = api_instance.get_web_auth_http_headers(id, view=view)
+    api_response = api_instance.get_web_auth_http_headers(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->get_web_auth_http_headers: %s\n" % e)
@@ -2576,7 +2626,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -2588,7 +2637,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2604,12 +2653,12 @@ Removes all excluded asset groups from the specified static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -2636,7 +2685,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2652,12 +2701,12 @@ Removes all included asset groups from the specified static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -2684,7 +2733,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2700,12 +2749,12 @@ Removes an asset from a site. The asset will only be deleted if it belongs to no
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 asset_id = 789 # int | The identifier of the asset.
 
@@ -2734,7 +2783,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2750,12 +2799,12 @@ Removes the specified asset group from the excluded asset groups configured in t
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 asset_group_id = 56 # int | The identifier of the asset group.
 
@@ -2784,7 +2833,57 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_excluded_targets**
+> Links remove_excluded_targets(id, scan_targets_to_remove=scan_targets_to_remove)
+
+Site Excluded Targets
+
+Removes one or more addresses from the site's list of excluded scan targets.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SiteApi()
+id = 56 # int | The identifier of the site.
+scan_targets_to_remove = [swagger_client.list[str]()] # list[str] | List of address to remove from the sites excluded scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. (optional)
+
+try:
+    # Site Excluded Targets
+    api_response = api_instance.remove_excluded_targets(id, scan_targets_to_remove=scan_targets_to_remove)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SiteApi->remove_excluded_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The identifier of the site. | 
+ **scan_targets_to_remove** | **list[str]**| List of address to remove from the sites excluded scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. | [optional] 
+
+### Return type
+
+[**Links**](Links.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2800,12 +2899,12 @@ Removes the specified asset group from the included asset groups configured in t
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 asset_group_id = 56 # int | The identifier of the asset group.
 
@@ -2834,7 +2933,57 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_included_targets**
+> Links remove_included_targets(id, scan_targets_to_remove=scan_targets_to_remove)
+
+Site Included Targets
+
+Removes one or more addresses from the site's list of included scan targets.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.SiteApi()
+id = 56 # int | The identifier of the site.
+scan_targets_to_remove = [swagger_client.list[str]()] # list[str] | List of address to remove from the sites included scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. (optional)
+
+try:
+    # Site Included Targets
+    api_response = api_instance.remove_included_targets(id, scan_targets_to_remove=scan_targets_to_remove)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SiteApi->remove_included_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The identifier of the site. | 
+ **scan_targets_to_remove** | **list[str]**| List of address to remove from the sites included scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. | [optional] 
+
+### Return type
+
+[**Links**](Links.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2850,12 +2999,12 @@ Removes all assets from the specified site. Assets will be deleted entirely from
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 
 try:
@@ -2882,7 +3031,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2898,12 +3047,12 @@ Removes the specified tag from the site's tags.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 tag_id = 56 # int | The identifier of the tag.
 
@@ -2932,7 +3081,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2948,12 +3097,12 @@ Removes the specified user from the site's access list.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 user_id = 56 # int | The identifier of the user.
 
@@ -2982,13 +3131,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_credentials**
-> Links set_site_credentials(id, body=body)
+> Links set_site_credentials(id, site_credentials=site_credentials)
 
 Site Scan Credentials
 
@@ -2998,18 +3147,18 @@ Updates multiple site credentials.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [r7ivm3.SiteCredential()] # list[SiteCredential] | A list of site credentials resources. (optional)
+site_credentials = [swagger_client.SiteCredential()] # list[SiteCredential] | A list of site credentials resources. (optional)
 
 try:
     # Site Scan Credentials
-    api_response = api_instance.set_site_credentials(id, body=body)
+    api_response = api_instance.set_site_credentials(id, site_credentials=site_credentials)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_credentials: %s\n" % e)
@@ -3020,7 +3169,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[SiteCredential]**](SiteCredential.md)| A list of site credentials resources. | [optional] 
+ **site_credentials** | [**list[SiteCredential]**](SiteCredential.md)| A list of site credentials resources. | [optional] 
 
 ### Return type
 
@@ -3038,7 +3187,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_discovery_connection**
-> Links set_site_discovery_connection(id, body=body)
+> Links set_site_discovery_connection(id, connection_id=connection_id)
 
 Site Discovery Connection
 
@@ -3048,18 +3197,18 @@ Updates the discovery connection assigned to the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = 56 # int | The identifier of the discovery connection. (optional)
+connection_id = 789 # int | The identifier of the discovery connection. (optional)
 
 try:
     # Site Discovery Connection
-    api_response = api_instance.set_site_discovery_connection(id, body=body)
+    api_response = api_instance.set_site_discovery_connection(id, connection_id=connection_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_discovery_connection: %s\n" % e)
@@ -3070,7 +3219,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**int**](int.md)| The identifier of the discovery connection. | [optional] 
+ **connection_id** | **int**| The identifier of the discovery connection. | [optional] 
 
 ### Return type
 
@@ -3088,7 +3237,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_discovery_search_criteria**
-> Links set_site_discovery_search_criteria(body, id)
+> Links set_site_discovery_search_criteria(id, param1)
 
 Site Discovery Search Criteria
 
@@ -3098,18 +3247,18 @@ Update the search criteria of the dynamic site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
-body = r7ivm3.DiscoverySearchCriteria() # DiscoverySearchCriteria | param1
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
+param1 = swagger_client.DiscoverySearchCriteria() # DiscoverySearchCriteria | param1
 
 try:
     # Site Discovery Search Criteria
-    api_response = api_instance.set_site_discovery_search_criteria(body, id)
+    api_response = api_instance.set_site_discovery_search_criteria(id, param1)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_discovery_search_criteria: %s\n" % e)
@@ -3119,8 +3268,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DiscoverySearchCriteria**](DiscoverySearchCriteria.md)| param1 | 
  **id** | **int**| The identifier of the site. | 
+ **param1** | [**DiscoverySearchCriteria**](DiscoverySearchCriteria.md)| param1 | 
 
 ### Return type
 
@@ -3138,7 +3287,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_scan_engine**
-> Links set_site_scan_engine(id, body=body)
+> Links set_site_scan_engine(id, scan_engine_id=scan_engine_id)
 
 Site Scan Engine
 
@@ -3148,18 +3297,18 @@ Updates the assigned scan engine to the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = 56 # int | The identifier of the scan engine. (optional)
+scan_engine_id = 56 # int | The identifier of the scan engine. (optional)
 
 try:
     # Site Scan Engine
-    api_response = api_instance.set_site_scan_engine(id, body=body)
+    api_response = api_instance.set_site_scan_engine(id, scan_engine_id=scan_engine_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_scan_engine: %s\n" % e)
@@ -3170,7 +3319,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**int**](int.md)| The identifier of the scan engine. | [optional] 
+ **scan_engine_id** | **int**| The identifier of the scan engine. | [optional] 
 
 ### Return type
 
@@ -3188,7 +3337,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_scan_schedules**
-> Links set_site_scan_schedules(id, body=body)
+> Links set_site_scan_schedules(id, scan_schedules=scan_schedules)
 
 Site Scan Schedules
 
@@ -3198,18 +3347,18 @@ Updates all scan schedules for the specified site in a single request using the 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [r7ivm3.ScanSchedule()] # list[ScanSchedule] | Array of resources for updating all scan schedules defined in the site. Scan schedules defined in the site that are omitted from this request will be deleted from the site. (optional)
+scan_schedules = [swagger_client.ScanSchedule()] # list[ScanSchedule] | Array of resources for updating all scan schedules defined in the site. Scan schedules defined in the site that are omitted from this request will be deleted from the site. (optional)
 
 try:
     # Site Scan Schedules
-    api_response = api_instance.set_site_scan_schedules(id, body=body)
+    api_response = api_instance.set_site_scan_schedules(id, scan_schedules=scan_schedules)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_scan_schedules: %s\n" % e)
@@ -3220,7 +3369,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[ScanSchedule]**](ScanSchedule.md)| Array of resources for updating all scan schedules defined in the site. Scan schedules defined in the site that are omitted from this request will be deleted from the site. | [optional] 
+ **scan_schedules** | [**list[ScanSchedule]**](ScanSchedule.md)| Array of resources for updating all scan schedules defined in the site. Scan schedules defined in the site that are omitted from this request will be deleted from the site. | [optional] 
 
 ### Return type
 
@@ -3238,7 +3387,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_scan_template**
-> Links set_site_scan_template(id, body=body)
+> Links set_site_scan_template(id, scan_template_id=scan_template_id)
 
 Site Scan Template
 
@@ -3248,18 +3397,18 @@ Updates the assigned scan template to the site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = 'body_example' # str | The identifier of the scan template. (optional)
+scan_template_id = 'scan_template_id_example' # str | The identifier of the scan template. (optional)
 
 try:
     # Site Scan Template
-    api_response = api_instance.set_site_scan_template(id, body=body)
+    api_response = api_instance.set_site_scan_template(id, scan_template_id=scan_template_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_scan_template: %s\n" % e)
@@ -3270,7 +3419,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**str**](str.md)| The identifier of the scan template. | [optional] 
+ **scan_template_id** | **str**| The identifier of the scan template. | [optional] 
 
 ### Return type
 
@@ -3288,7 +3437,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_smtp_alerts**
-> Links set_site_smtp_alerts(id, body=body)
+> Links set_site_smtp_alerts(id, alert=alert)
 
 Site SMTP Alerts
 
@@ -3298,18 +3447,18 @@ Updates all SMTP alerts for the specified site in a single request using the arr
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [r7ivm3.SmtpAlert()] # list[SmtpAlert] | Array of resources for updating all SMTP alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. (optional)
+alert = [swagger_client.SmtpAlert()] # list[SmtpAlert] | Array of resources for updating all SMTP alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. (optional)
 
 try:
     # Site SMTP Alerts
-    api_response = api_instance.set_site_smtp_alerts(id, body=body)
+    api_response = api_instance.set_site_smtp_alerts(id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_smtp_alerts: %s\n" % e)
@@ -3320,7 +3469,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[SmtpAlert]**](SmtpAlert.md)| Array of resources for updating all SMTP alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. | [optional] 
+ **alert** | [**list[SmtpAlert]**](SmtpAlert.md)| Array of resources for updating all SMTP alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. | [optional] 
 
 ### Return type
 
@@ -3338,7 +3487,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_snmp_alerts**
-> Links set_site_snmp_alerts(id, body=body)
+> Links set_site_snmp_alerts(id, alert=alert)
 
 Site SNMP Alerts
 
@@ -3348,18 +3497,18 @@ Updates all SNMP alerts for the specified site in a single request using the arr
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [r7ivm3.SnmpAlert()] # list[SnmpAlert] | Array of resources for updating all SNMP alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. (optional)
+alert = [swagger_client.SnmpAlert()] # list[SnmpAlert] | Array of resources for updating all SNMP alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. (optional)
 
 try:
     # Site SNMP Alerts
-    api_response = api_instance.set_site_snmp_alerts(id, body=body)
+    api_response = api_instance.set_site_snmp_alerts(id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_snmp_alerts: %s\n" % e)
@@ -3370,7 +3519,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[SnmpAlert]**](SnmpAlert.md)| Array of resources for updating all SNMP alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. | [optional] 
+ **alert** | [**list[SnmpAlert]**](SnmpAlert.md)| Array of resources for updating all SNMP alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. | [optional] 
 
 ### Return type
 
@@ -3388,7 +3537,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_syslog_alerts**
-> Links set_site_syslog_alerts(id, body=body)
+> Links set_site_syslog_alerts(id, alert=alert)
 
 Site Syslog Alerts
 
@@ -3398,18 +3547,18 @@ Updates all Syslog alerts for the specified site in a single request using the a
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [r7ivm3.SyslogAlert()] # list[SyslogAlert] | Array of resources for updating all Syslog alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. (optional)
+alert = [swagger_client.SyslogAlert()] # list[SyslogAlert] | Array of resources for updating all Syslog alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. (optional)
 
 try:
     # Site Syslog Alerts
-    api_response = api_instance.set_site_syslog_alerts(id, body=body)
+    api_response = api_instance.set_site_syslog_alerts(id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_syslog_alerts: %s\n" % e)
@@ -3420,7 +3569,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[SyslogAlert]**](SyslogAlert.md)| Array of resources for updating all Syslog alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. | [optional] 
+ **alert** | [**list[SyslogAlert]**](SyslogAlert.md)| Array of resources for updating all Syslog alerts defined in the site. Alerts defined in the site that are omitted from this request will be deleted from the site. | [optional] 
 
 ### Return type
 
@@ -3438,7 +3587,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_tags**
-> Links set_site_tags(id, body=body)
+> Links set_site_tags(id, tags=tags)
 
 Site Tags
 
@@ -3448,18 +3597,18 @@ Updates the site's list of tags.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [56] # list[int] | A list of tag identifiers to replace the site's tags. (optional)
+tags = [swagger_client.list[int]()] # list[int] | A list of tag identifiers to replace the site's tags. (optional)
 
 try:
     # Site Tags
-    api_response = api_instance.set_site_tags(id, body=body)
+    api_response = api_instance.set_site_tags(id, tags=tags)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_tags: %s\n" % e)
@@ -3470,7 +3619,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[int]**](int.md)| A list of tag identifiers to replace the site&#x27;s tags. | [optional] 
+ **tags** | **list[int]**| A list of tag identifiers to replace the site&#39;s tags. | [optional] 
 
 ### Return type
 
@@ -3488,7 +3637,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_site_users**
-> Links set_site_users(id, body=body)
+> Links set_site_users(id, users=users)
 
 Site Users Access
 
@@ -3498,18 +3647,18 @@ Updates the site's access list.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [56] # list[int] | A list of user identifiers to replace the site's access list. (optional)
+users = [swagger_client.list[int]()] # list[int] | A list of user identifiers to replace the site's access list. (optional)
 
 try:
     # Site Users Access
-    api_response = api_instance.set_site_users(id, body=body)
+    api_response = api_instance.set_site_users(id, users=users)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->set_site_users: %s\n" % e)
@@ -3520,7 +3669,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[int]**](int.md)| A list of user identifiers to replace the site&#x27;s access list. | [optional] 
+ **users** | **list[int]**| A list of user identifiers to replace the site&#39;s access list. | [optional] 
 
 ### Return type
 
@@ -3538,7 +3687,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_excluded_asset_groups**
-> Links update_excluded_asset_groups(id, body=body)
+> Links update_excluded_asset_groups(id, asset_group_ids=asset_group_ids)
 
 Site Excluded Asset Groups
 
@@ -3548,18 +3697,18 @@ Updates the excluded asset groups in a static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [56] # list[int] | Array of asset group identifiers. (optional)
+asset_group_ids = [swagger_client.list[int]()] # list[int] | Array of asset group identifiers. (optional)
 
 try:
     # Site Excluded Asset Groups
-    api_response = api_instance.update_excluded_asset_groups(id, body=body)
+    api_response = api_instance.update_excluded_asset_groups(id, asset_group_ids=asset_group_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_excluded_asset_groups: %s\n" % e)
@@ -3570,7 +3719,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[int]**](int.md)| Array of asset group identifiers. | [optional] 
+ **asset_group_ids** | **list[int]**| Array of asset group identifiers. | [optional] 
 
 ### Return type
 
@@ -3588,7 +3737,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_excluded_targets**
-> Links update_excluded_targets(id, body=body)
+> Links update_excluded_targets(id, scan_targets=scan_targets)
 
 Site Excluded Targets
 
@@ -3598,18 +3747,18 @@ Updates the excluded targets in a static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = ['body_example'] # list[str] | List of addresses to be the site's new excluded scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. (optional)
+scan_targets = [swagger_client.list[str]()] # list[str] | List of addresses to be the site's new excluded scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. (optional)
 
 try:
     # Site Excluded Targets
-    api_response = api_instance.update_excluded_targets(id, body=body)
+    api_response = api_instance.update_excluded_targets(id, scan_targets=scan_targets)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_excluded_targets: %s\n" % e)
@@ -3620,7 +3769,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[str]**](str.md)| List of addresses to be the site&#x27;s new excluded scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. | [optional] 
+ **scan_targets** | **list[str]**| List of addresses to be the site&#39;s new excluded scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. | [optional] 
 
 ### Return type
 
@@ -3638,7 +3787,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_included_asset_groups**
-> Links update_included_asset_groups(id, body=body)
+> Links update_included_asset_groups(id, asset_group_ids=asset_group_ids)
 
 Site Included Asset Groups
 
@@ -3648,18 +3797,18 @@ Updates the included asset groups in a static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = [56] # list[int] | Array of asset group identifiers. (optional)
+asset_group_ids = [swagger_client.list[int]()] # list[int] | Array of asset group identifiers. (optional)
 
 try:
     # Site Included Asset Groups
-    api_response = api_instance.update_included_asset_groups(id, body=body)
+    api_response = api_instance.update_included_asset_groups(id, asset_group_ids=asset_group_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_included_asset_groups: %s\n" % e)
@@ -3670,7 +3819,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[int]**](int.md)| Array of asset group identifiers. | [optional] 
+ **asset_group_ids** | **list[int]**| Array of asset group identifiers. | [optional] 
 
 ### Return type
 
@@ -3688,7 +3837,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_included_targets**
-> Links update_included_targets(id, body=body)
+> Links update_included_targets(id, scan_targets=scan_targets)
 
 Site Included Targets
 
@@ -3698,18 +3847,18 @@ Updates the included targets in a static site.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = ['body_example'] # list[str] | List of addresses to be the site's new included scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. (optional)
+scan_targets = [swagger_client.list[str]()] # list[str] | List of addresses to be the site's new included scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. (optional)
 
 try:
     # Site Included Targets
-    api_response = api_instance.update_included_targets(id, body=body)
+    api_response = api_instance.update_included_targets(id, scan_targets=scan_targets)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_included_targets: %s\n" % e)
@@ -3720,7 +3869,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**list[str]**](str.md)| List of addresses to be the site&#x27;s new included scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. | [optional] 
+ **scan_targets** | **list[str]**| List of addresses to be the site&#39;s new included scan targets. Each address is a string that can represent either a hostname, ipv4 address, ipv4 address range, ipv6 address, or CIDR notation. | [optional] 
 
 ### Return type
 
@@ -3738,7 +3887,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_site**
-> Links update_site(id, body=body)
+> Links update_site(id, site=site)
 
 Site
 
@@ -3748,18 +3897,18 @@ Updates the configuration of the site with the specified identifier.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = r7ivm3.SiteUpdateResource() # SiteUpdateResource | Resource for updating a site configuration. (optional)
+site = swagger_client.SiteUpdateResource() # SiteUpdateResource | Resource for updating a site configuration. (optional)
 
 try:
     # Site
-    api_response = api_instance.update_site(id, body=body)
+    api_response = api_instance.update_site(id, site=site)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_site: %s\n" % e)
@@ -3770,7 +3919,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**SiteUpdateResource**](SiteUpdateResource.md)| Resource for updating a site configuration. | [optional] 
+ **site** | [**SiteUpdateResource**](SiteUpdateResource.md)| Resource for updating a site configuration. | [optional] 
 
 ### Return type
 
@@ -3788,7 +3937,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_site_credential**
-> Links update_site_credential(id, credential_id, body=body)
+> Links update_site_credential(id, credential_id, site_credential=site_credential)
 
 Site Scan Credential
 
@@ -3798,19 +3947,19 @@ Updates the specified site credential.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 credential_id = 56 # int | The identifier of the site credential.
-body = r7ivm3.SiteCredential() # SiteCredential | The specification of the site credential to update. (optional)
+site_credential = swagger_client.SiteCredential() # SiteCredential | The specification of the site credential to update. (optional)
 
 try:
     # Site Scan Credential
-    api_response = api_instance.update_site_credential(id, credential_id, body=body)
+    api_response = api_instance.update_site_credential(id, credential_id, site_credential=site_credential)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_site_credential: %s\n" % e)
@@ -3822,7 +3971,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **credential_id** | **int**| The identifier of the site credential. | 
- **body** | [**SiteCredential**](SiteCredential.md)| The specification of the site credential to update. | [optional] 
+ **site_credential** | [**SiteCredential**](SiteCredential.md)| The specification of the site credential to update. | [optional] 
 
 ### Return type
 
@@ -3840,7 +3989,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_site_organization**
-> Links update_site_organization(id, body=body)
+> Links update_site_organization(id, site_organization=site_organization)
 
 Site Organization Information
 
@@ -3850,18 +3999,18 @@ Updates the site organization information.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
-body = r7ivm3.SiteOrganization() # SiteOrganization | Resource for updating the specified site's organization information. (optional)
+site_organization = swagger_client.SiteOrganization() # SiteOrganization | Resource for updating the specified site's organization information. (optional)
 
 try:
     # Site Organization Information
-    api_response = api_instance.update_site_organization(id, body=body)
+    api_response = api_instance.update_site_organization(id, site_organization=site_organization)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_site_organization: %s\n" % e)
@@ -3872,7 +4021,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
- **body** | [**SiteOrganization**](SiteOrganization.md)| Resource for updating the specified site&#x27;s organization information. | [optional] 
+ **site_organization** | [**SiteOrganization**](SiteOrganization.md)| Resource for updating the specified site&#39;s organization information. | [optional] 
 
 ### Return type
 
@@ -3890,7 +4039,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_site_scan_schedule**
-> Links update_site_scan_schedule(id, schedule_id, body=body)
+> Links update_site_scan_schedule(id, schedule_id, scan_schedule=scan_schedule)
 
 Site Scan Schedule
 
@@ -3900,19 +4049,19 @@ Updates the specified scan schedule.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 schedule_id = 56 # int | The identifier of the scan schedule.
-body = r7ivm3.ScanSchedule() # ScanSchedule | Resource for updating the specified scan schedule. (optional)
+scan_schedule = swagger_client.ScanSchedule() # ScanSchedule | Resource for updating the specified scan schedule. (optional)
 
 try:
     # Site Scan Schedule
-    api_response = api_instance.update_site_scan_schedule(id, schedule_id, body=body)
+    api_response = api_instance.update_site_scan_schedule(id, schedule_id, scan_schedule=scan_schedule)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_site_scan_schedule: %s\n" % e)
@@ -3924,7 +4073,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **schedule_id** | **int**| The identifier of the scan schedule. | 
- **body** | [**ScanSchedule**](ScanSchedule.md)| Resource for updating the specified scan schedule. | [optional] 
+ **scan_schedule** | [**ScanSchedule**](ScanSchedule.md)| Resource for updating the specified scan schedule. | [optional] 
 
 ### Return type
 
@@ -3942,7 +4091,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_site_smtp_alert**
-> Links update_site_smtp_alert(id, alert_id, body=body)
+> Links update_site_smtp_alert(id, alert_id, alert=alert)
 
 Site SMTP Alert
 
@@ -3952,19 +4101,19 @@ Updates the specified SMTP alert.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
-body = r7ivm3.SmtpAlert() # SmtpAlert | Resource for updating the specified SMTP alert. (optional)
+alert = swagger_client.SmtpAlert() # SmtpAlert | Resource for updating the specified SMTP alert. (optional)
 
 try:
     # Site SMTP Alert
-    api_response = api_instance.update_site_smtp_alert(id, alert_id, body=body)
+    api_response = api_instance.update_site_smtp_alert(id, alert_id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_site_smtp_alert: %s\n" % e)
@@ -3976,7 +4125,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **alert_id** | **int**| The identifier of the alert. | 
- **body** | [**SmtpAlert**](SmtpAlert.md)| Resource for updating the specified SMTP alert. | [optional] 
+ **alert** | [**SmtpAlert**](SmtpAlert.md)| Resource for updating the specified SMTP alert. | [optional] 
 
 ### Return type
 
@@ -3994,7 +4143,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_site_snmp_alert**
-> Links update_site_snmp_alert(id, alert_id, body=body)
+> Links update_site_snmp_alert(id, alert_id, alert=alert)
 
 Site SNMP Alert
 
@@ -4004,19 +4153,19 @@ Updates the specified SNMP alert.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
-body = r7ivm3.SnmpAlert() # SnmpAlert | Resource for updating the specified SNMP alert. (optional)
+alert = swagger_client.SnmpAlert() # SnmpAlert | Resource for updating the specified SNMP alert. (optional)
 
 try:
     # Site SNMP Alert
-    api_response = api_instance.update_site_snmp_alert(id, alert_id, body=body)
+    api_response = api_instance.update_site_snmp_alert(id, alert_id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_site_snmp_alert: %s\n" % e)
@@ -4028,7 +4177,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **alert_id** | **int**| The identifier of the alert. | 
- **body** | [**SnmpAlert**](SnmpAlert.md)| Resource for updating the specified SNMP alert. | [optional] 
+ **alert** | [**SnmpAlert**](SnmpAlert.md)| Resource for updating the specified SNMP alert. | [optional] 
 
 ### Return type
 
@@ -4046,7 +4195,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_site_syslog_alert**
-> Links update_site_syslog_alert(id, alert_id, body=body)
+> Links update_site_syslog_alert(id, alert_id, alert=alert)
 
 Site Syslog Alert
 
@@ -4056,19 +4205,19 @@ Updates the specified Syslog alert.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.SiteApi()
+api_instance = swagger_client.SiteApi()
 id = 56 # int | The identifier of the site.
 alert_id = 56 # int | The identifier of the alert.
-body = r7ivm3.SyslogAlert() # SyslogAlert | Resource for updating the specified Syslog alert. (optional)
+alert = swagger_client.SyslogAlert() # SyslogAlert | Resource for updating the specified Syslog alert. (optional)
 
 try:
     # Site Syslog Alert
-    api_response = api_instance.update_site_syslog_alert(id, alert_id, body=body)
+    api_response = api_instance.update_site_syslog_alert(id, alert_id, alert=alert)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SiteApi->update_site_syslog_alert: %s\n" % e)
@@ -4080,7 +4229,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the site. | 
  **alert_id** | **int**| The identifier of the alert. | 
- **body** | [**SyslogAlert**](SyslogAlert.md)| Resource for updating the specified Syslog alert. | [optional] 
+ **alert** | [**SyslogAlert**](SyslogAlert.md)| Resource for updating the specified Syslog alert. | [optional] 
 
 ### Return type
 

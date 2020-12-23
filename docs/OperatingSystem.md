@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **architecture** | **str** | The architecture of the operating system. | [optional] 
 **configurations** | [**list[Configuration]**](Configuration.md) | Configuration key-values pairs enumerated on the operating system. | [optional] 
-**cpe** | [**OperatingSystemCpe**](OperatingSystemCpe.md) |  | [optional] 
+**cpe** | [**OperatingSystemCpe**](OperatingSystemCpe.md) | The Common Platform Enumeration (CPE) of the operating system. | [optional] 
 **description** | **str** | The description of the operating system (containing vendor, family, product, version and architecture in a single string). | [optional] 
 **family** | **str** | The family of the operating system. | [optional] 
 **id** | **int** | The identifier of the operating system. | [optional] 
@@ -16,4 +16,5 @@ Name | Type | Description | Notes
 **version** | **str** | The version of the operating system. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
