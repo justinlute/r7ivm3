@@ -1,6 +1,6 @@
-# r7ivm3.UserApi
+# swagger_client.UserApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**update_role**](UserApi.md#update_role) | **PUT** /api/3/roles/{id} | Role
 [**update_user**](UserApi.md#update_user) | **PUT** /api/3/users/{id} | User
 
+
 # **add_user_asset_group**
 > Links add_user_asset_group(id, asset_group_id)
 
@@ -48,12 +49,12 @@ Grants the user access to the asset group. Individual asset group access cannot 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 asset_group_id = 56 # int | The identifier of the asset group.
 
@@ -82,7 +83,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -98,12 +99,12 @@ Grants the user access to the site. Individual site access cannot be granted to 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 site_id = 56 # int | The identifier of the site.
 
@@ -132,13 +133,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_user**
-> CreatedReferenceUserIDLink create_user(body=body)
+> CreatedReferenceUserIDLink create_user(user=user)
 
 Users
 
@@ -148,17 +149,17 @@ Creates a new user. <span class=\"authorization\">Global Administrator</span>
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
-body = r7ivm3.UserEdit() # UserEdit | The details of the user. (optional)
+api_instance = swagger_client.UserApi()
+user = swagger_client.UserEdit() # UserEdit | The details of the user. (optional)
 
 try:
     # Users
-    api_response = api_instance.create_user(body=body)
+    api_response = api_instance.create_user(user=user)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->create_user: %s\n" % e)
@@ -168,7 +169,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserEdit**](UserEdit.md)| The details of the user. | [optional] 
+ **user** | [**UserEdit**](UserEdit.md)| The details of the user. | [optional] 
 
 ### Return type
 
@@ -196,12 +197,12 @@ Removes a role with the specified identifier. The role must not be built-in and 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 'id_example' # str | The identifier of the role.
 
 try:
@@ -228,7 +229,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -244,12 +245,12 @@ Deletes a user account.<span class=\"authorization\">Global Administrator</span>
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -276,13 +277,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_authentication_source**
-> AuthenticationSource get_authentication_source(id, view=view)
+> AuthenticationSource get_authentication_source(id)
 
 Authentication Source
 
@@ -292,18 +293,17 @@ Returns the details for an authentication source.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the authentication source.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Authentication Source
-    api_response = api_instance.get_authentication_source(id, view=view)
+    api_response = api_instance.get_authentication_source(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_authentication_source: %s\n" % e)
@@ -314,7 +314,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the authentication source. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -326,13 +325,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_authentication_source_users**
-> ReferencesWithUserIDLink get_authentication_source_users(id, view=view)
+> ReferencesWithUserIDLink get_authentication_source_users(id)
 
 Authentication Source Users
 
@@ -342,18 +341,17 @@ Returns hypermedia links for the user accounts that use the authentication sourc
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the authentication source.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Authentication Source Users
-    api_response = api_instance.get_authentication_source_users(id, view=view)
+    api_response = api_instance.get_authentication_source_users(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_authentication_source_users: %s\n" % e)
@@ -364,7 +362,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the authentication source. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -376,13 +373,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_authentication_sources**
-> ResourcesAuthenticationSource get_authentication_sources(view=view)
+> ResourcesAuthenticationSource get_authentication_sources()
 
 Authentication Sources
 
@@ -392,27 +389,23 @@ Returns all available sources of authentication for users.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.UserApi()
 
 try:
     # Authentication Sources
-    api_response = api_instance.get_authentication_sources(view=view)
+    api_response = api_instance.get_authentication_sources()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_authentication_sources: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -424,13 +417,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_privilege**
-> Links get_privilege(id, view=view)
+> Links get_privilege(id)
 
 Privilege
 
@@ -440,18 +433,17 @@ Returns the details for a privilege.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 'id_example' # str | The identifier of the privilege.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Privilege
-    api_response = api_instance.get_privilege(id, view=view)
+    api_response = api_instance.get_privilege(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_privilege: %s\n" % e)
@@ -462,7 +454,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The identifier of the privilege. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -474,13 +465,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_privileges**
-> Privileges get_privileges(view=view)
+> Privileges get_privileges()
 
 Privileges
 
@@ -490,27 +481,23 @@ Returns all privileges that may be granted to a role.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.UserApi()
 
 try:
     # Privileges
-    api_response = api_instance.get_privileges(view=view)
+    api_response = api_instance.get_privileges()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_privileges: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -522,13 +509,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_role**
-> Role get_role(id, view=view)
+> Role get_role(id)
 
 Role
 
@@ -538,18 +525,17 @@ Retrieves the details of a role.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 'id_example' # str | The identifier of the role.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Role
-    api_response = api_instance.get_role(id, view=view)
+    api_response = api_instance.get_role(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_role: %s\n" % e)
@@ -560,7 +546,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The identifier of the role. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -572,13 +557,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_role_users**
-> ReferencesWithUserIDLink get_role_users(id, view=view)
+> ReferencesWithUserIDLink get_role_users(id)
 
 Users With Role
 
@@ -588,18 +573,17 @@ Returns hypermedia links for the the users currently assigned a role.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 'id_example' # str | The identifier of the role.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Users With Role
-    api_response = api_instance.get_role_users(id, view=view)
+    api_response = api_instance.get_role_users(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_role_users: %s\n" % e)
@@ -610,7 +594,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The identifier of the role. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -622,13 +605,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_roles**
-> ResourcesRole get_roles(view=view)
+> ResourcesRole get_roles()
 
 Roles
 
@@ -638,27 +621,23 @@ Returns all roles for which users may be assigned.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.UserApi()
 
 try:
     # Roles
-    api_response = api_instance.get_roles(view=view)
+    api_response = api_instance.get_roles()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_roles: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -670,13 +649,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_two_factor_authentication_key**
-> TokenResource get_two_factor_authentication_key(id, view=view)
+> TokenResource get_two_factor_authentication_key(id)
 
 Two-Factor Authentication
 
@@ -686,18 +665,17 @@ Retrieves the current authentication token seed (key) for the user, if configure
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Two-Factor Authentication
-    api_response = api_instance.get_two_factor_authentication_key(id, view=view)
+    api_response = api_instance.get_two_factor_authentication_key(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_two_factor_authentication_key: %s\n" % e)
@@ -708,7 +686,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -720,13 +697,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user**
-> User get_user(id, view=view)
+> User get_user(id)
 
 User
 
@@ -736,18 +713,17 @@ Returns the details for a user.<span class=\"authorization\">Global Administrato
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # User
-    api_response = api_instance.get_user(id, view=view)
+    api_response = api_instance.get_user(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_user: %s\n" % e)
@@ -758,7 +734,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -770,13 +745,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_asset_groups**
-> ReferencesWithAssetGroupIDLink get_user_asset_groups(id, view=view)
+> ReferencesWithAssetGroupIDLink get_user_asset_groups(id)
 
 Asset Groups Access
 
@@ -786,18 +761,17 @@ Returns the asset groups to which the user has access.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Groups Access
-    api_response = api_instance.get_user_asset_groups(id, view=view)
+    api_response = api_instance.get_user_asset_groups(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_user_asset_groups: %s\n" % e)
@@ -808,7 +782,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -820,13 +793,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_privileges**
-> Privileges get_user_privileges(id, view=view)
+> Privileges get_user_privileges(id)
 
 User Privileges
 
@@ -836,18 +809,17 @@ Returns the privileges granted to the user by their role. <span class=\"authoriz
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # User Privileges
-    api_response = api_instance.get_user_privileges(id, view=view)
+    api_response = api_instance.get_user_privileges(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_user_privileges: %s\n" % e)
@@ -858,7 +830,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -870,13 +841,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_sites**
-> ReferencesWithSiteIDLink get_user_sites(id, view=view)
+> ReferencesWithSiteIDLink get_user_sites(id)
 
 Sites Access
 
@@ -886,18 +857,17 @@ Returns the sites to which the user has access.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Sites Access
-    api_response = api_instance.get_user_sites(id, view=view)
+    api_response = api_instance.get_user_sites(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_user_sites: %s\n" % e)
@@ -908,7 +878,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -920,13 +889,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_users**
-> PageOfUser get_users(page=page, size=size, sort=sort, view=view)
+> PageOfUser get_users(page=page, size=size, sort=sort)
 
 Users
 
@@ -936,20 +905,19 @@ Returns all defined users. <span class=\"authorization\">Global Administrator</s
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+api_instance = swagger_client.UserApi()
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Users
-    api_response = api_instance.get_users(page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_users(page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_users: %s\n" % e)
@@ -959,10 +927,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -974,13 +941,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_users_with_privilege**
-> ReferencesWithUserIDLink get_users_with_privilege(id, view=view)
+> ReferencesWithUserIDLink get_users_with_privilege(id)
 
 Users With Privilege
 
@@ -990,18 +957,17 @@ Returns hypermedia links for all users granted the specified privilege by their 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 'id_example' # str | The identifier of the privilege.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Users With Privilege
-    api_response = api_instance.get_users_with_privilege(id, view=view)
+    api_response = api_instance.get_users_with_privilege(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->get_users_with_privilege: %s\n" % e)
@@ -1012,7 +978,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The identifier of the privilege. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -1024,7 +989,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1040,12 +1005,12 @@ Regenerates a new authentication token seed (key) and updates it for the user. T
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -1072,7 +1037,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1088,12 +1053,12 @@ Revokes access to all asset groups from the user.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -1120,7 +1085,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1136,12 +1101,12 @@ Revokes access to all sites from the user.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -1168,7 +1133,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1184,12 +1149,12 @@ Grants the user access to the asset group. Individual asset group access cannot 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 asset_group_id = 56 # int | The identifier of the asset group.
 
@@ -1218,7 +1183,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1234,12 +1199,12 @@ Grants the user access to the site. Individual site access cannot be granted to 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 site_id = 56 # int | The identifier of the site.
 
@@ -1268,13 +1233,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reset_password**
-> Links reset_password(id, body=body)
+> Links reset_password(id, password=password)
 
 Password Reset
 
@@ -1284,18 +1249,18 @@ Changes the password for the user. Users may only change their own password.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-body = 'body_example' # str | The new password to set. (optional)
+password = 'password_example' # str | The new password to set. (optional)
 
 try:
     # Password Reset
-    api_response = api_instance.reset_password(id, body=body)
+    api_response = api_instance.reset_password(id, password=password)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->reset_password: %s\n" % e)
@@ -1306,7 +1271,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **body** | [**str**](str.md)| The new password to set. | [optional] 
+ **password** | **str**| The new password to set. | [optional] 
 
 ### Return type
 
@@ -1324,7 +1289,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_two_factor_authentication**
-> Links set_two_factor_authentication(id, body=body)
+> Links set_two_factor_authentication(id, token=token)
 
 Two-Factor Authentication
 
@@ -1334,18 +1299,18 @@ Sets the authentication token seed (key) for the user. This key may be then be u
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-body = 'body_example' # str | The authentication token seed (key) to use for the user. (optional)
+token = 'token_example' # str | The authentication token seed (key) to use for the user. (optional)
 
 try:
     # Two-Factor Authentication
-    api_response = api_instance.set_two_factor_authentication(id, body=body)
+    api_response = api_instance.set_two_factor_authentication(id, token=token)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->set_two_factor_authentication: %s\n" % e)
@@ -1356,7 +1321,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **body** | [**str**](str.md)| The authentication token seed (key) to use for the user. | [optional] 
+ **token** | **str**| The authentication token seed (key) to use for the user. | [optional] 
 
 ### Return type
 
@@ -1374,7 +1339,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_user_asset_groups**
-> Links set_user_asset_groups(id, body=body)
+> Links set_user_asset_groups(id, asset_group_ids=asset_group_ids)
 
 Asset Groups Access
 
@@ -1384,18 +1349,18 @@ Updates the asset groups to which the user has access. Individual asset group ac
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-body = [56] # list[int] | The identifiers of the asset groups to grant the user access to. Ignored if user has access to `allAssetGroups`. (optional)
+asset_group_ids = [swagger_client.list[int]()] # list[int] | The identifiers of the asset groups to grant the user access to. Ignored if user has access to `allAssetGroups`. (optional)
 
 try:
     # Asset Groups Access
-    api_response = api_instance.set_user_asset_groups(id, body=body)
+    api_response = api_instance.set_user_asset_groups(id, asset_group_ids=asset_group_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->set_user_asset_groups: %s\n" % e)
@@ -1406,7 +1371,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **body** | [**list[int]**](int.md)| The identifiers of the asset groups to grant the user access to. Ignored if user has access to &#x60;allAssetGroups&#x60;. | [optional] 
+ **asset_group_ids** | **list[int]**| The identifiers of the asset groups to grant the user access to. Ignored if user has access to &#x60;allAssetGroups&#x60;. | [optional] 
 
 ### Return type
 
@@ -1424,7 +1389,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_user_sites**
-> Links set_user_sites(id, body=body)
+> Links set_user_sites(id, site_ids=site_ids)
 
 Sites Access
 
@@ -1434,18 +1399,18 @@ Updates the sites to which the user has access. Individual site access cannot be
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-body = [56] # list[int] | The identifiers of the sites to grant the user access to. Ignored if the user has access to `allSites`. (optional)
+site_ids = [swagger_client.list[int]()] # list[int] | The identifiers of the sites to grant the user access to. Ignored if the user has access to `allSites`. (optional)
 
 try:
     # Sites Access
-    api_response = api_instance.set_user_sites(id, body=body)
+    api_response = api_instance.set_user_sites(id, site_ids=site_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->set_user_sites: %s\n" % e)
@@ -1456,7 +1421,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **body** | [**list[int]**](int.md)| The identifiers of the sites to grant the user access to. Ignored if the user has access to &#x60;allSites&#x60;. | [optional] 
+ **site_ids** | **list[int]**| The identifiers of the sites to grant the user access to. Ignored if the user has access to &#x60;allSites&#x60;. | [optional] 
 
 ### Return type
 
@@ -1484,12 +1449,12 @@ Unlocks a locked user account that has too many failed authentication attempts. 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
 
 try:
@@ -1516,13 +1481,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_role**
-> Links update_role(id, body=body)
+> Links update_role(id, role=role)
 
 Role
 
@@ -1532,18 +1497,18 @@ Updates the details of a role.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 'id_example' # str | The identifier of the role.
-body = r7ivm3.Role() # Role | The details of the role. (optional)
+role = swagger_client.Role() # Role | The details of the role. (optional)
 
 try:
     # Role
-    api_response = api_instance.update_role(id, body=body)
+    api_response = api_instance.update_role(id, role=role)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->update_role: %s\n" % e)
@@ -1554,7 +1519,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The identifier of the role. | 
- **body** | [**Role**](Role.md)| The details of the role. | [optional] 
+ **role** | [**Role**](Role.md)| The details of the role. | [optional] 
 
 ### Return type
 
@@ -1572,7 +1537,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user**
-> Links update_user(id, body=body)
+> Links update_user(id, user=user)
 
 User
 
@@ -1582,18 +1547,18 @@ Updates the details of a user. <span class=\"authorization\">Global Administrato
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.UserApi()
+api_instance = swagger_client.UserApi()
 id = 56 # int | The identifier of the user.
-body = r7ivm3.UserEdit() # UserEdit | The details of the user. (optional)
+user = swagger_client.UserEdit() # UserEdit | The details of the user. (optional)
 
 try:
     # User
-    api_response = api_instance.update_user(id, body=body)
+    api_response = api_instance.update_user(id, user=user)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->update_user: %s\n" % e)
@@ -1604,7 +1569,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the user. | 
- **body** | [**UserEdit**](UserEdit.md)| The details of the user. | [optional] 
+ **user** | [**UserEdit**](UserEdit.md)| The details of the user. | [optional] 
 
 ### Return type
 

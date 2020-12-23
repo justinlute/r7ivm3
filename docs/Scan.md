@@ -16,7 +16,8 @@ Name | Type | Description | Notes
 **start_time** | **str** | The start time of the scan in ISO8601 format. | [optional] 
 **started_by** | **str** | The name of the user that started the scan. | [optional] 
 **status** | **str** | The scan status. | [optional] 
-**vulnerabilities** | [**Vulnerabilities**](Vulnerabilities.md) |  | [optional] 
+**vulnerabilities** | [**Vulnerabilities**](Vulnerabilities.md) | The vulnerability synopsis of the scan. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **links** | [**list[Link]**](Link.md) | Hypermedia links to corresponding or related resources. | [optional] 
 **mac** | **str** | The primary Media Access Control (MAC) address of the asset. The format is six groups of two hexadecimal digits separated by colons. | [optional] 
 **os** | **str** | The full description of the operating system of the asset. | [optional] 
-**os_fingerprint** | [**OperatingSystem**](OperatingSystem.md) |  | [optional] 
+**os_fingerprint** | [**OperatingSystem**](OperatingSystem.md) | The details of the operating system of the asset. | [optional] 
 **raw_risk_score** | **float** | The base risk score of the asset. | [optional] 
 **risk_score** | **float** | The risk score (with criticality adjustments) of the asset. | [optional] 
 **services** | [**list[Service]**](Service.md) | The services discovered on the asset. | [optional] 
@@ -28,7 +28,8 @@ Name | Type | Description | Notes
 **type** | **str** | The type of asset. | [optional] 
 **user_groups** | [**list[GroupAccount]**](GroupAccount.md) | The group accounts enumerated on the asset. | [optional] 
 **users** | [**list[UserAccount]**](UserAccount.md) | The user accounts enumerated on the asset. | [optional] 
-**vulnerabilities** | [**AssetVulnerabilities**](AssetVulnerabilities.md) |  | [optional] 
+**vulnerabilities** | [**AssetVulnerabilities**](AssetVulnerabilities.md) | Summary information for vulnerabilities on the asset. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

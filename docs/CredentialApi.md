@@ -1,6 +1,6 @@
-# r7ivm3.CredentialApi
+# swagger_client.CredentialApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,8 +11,9 @@ Method | HTTP request | Description
 [**get_shared_credentials**](CredentialApi.md#get_shared_credentials) | **GET** /api/3/shared_credentials | Shared Credentials
 [**update_shared_credential**](CredentialApi.md#update_shared_credential) | **PUT** /api/3/shared_credentials/{id} | Shared Credential
 
+
 # **create_shared_credential**
-> CreatedReferenceCredentialIDLink create_shared_credential(body=body)
+> CreatedReferenceCredentialIDLink create_shared_credential(credential=credential)
 
 Shared Credentials
 
@@ -22,17 +23,17 @@ Creates a new shared credential.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.CredentialApi()
-body = r7ivm3.SharedCredential() # SharedCredential | The specification of a shared credential. (optional)
+api_instance = swagger_client.CredentialApi()
+credential = swagger_client.SharedCredential() # SharedCredential | The specification of a shared credential. (optional)
 
 try:
     # Shared Credentials
-    api_response = api_instance.create_shared_credential(body=body)
+    api_response = api_instance.create_shared_credential(credential=credential)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CredentialApi->create_shared_credential: %s\n" % e)
@@ -42,7 +43,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SharedCredential**](SharedCredential.md)| The specification of a shared credential. | [optional] 
+ **credential** | [**SharedCredential**](SharedCredential.md)| The specification of a shared credential. | [optional] 
 
 ### Return type
 
@@ -70,12 +71,12 @@ Deletes all shared credentials.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.CredentialApi()
+api_instance = swagger_client.CredentialApi()
 
 try:
     # Shared Credentials
@@ -98,7 +99,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -114,12 +115,12 @@ Deletes the specified shared scan credential.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.CredentialApi()
+api_instance = swagger_client.CredentialApi()
 id = 56 # int | The identifier of the credential.
 
 try:
@@ -146,13 +147,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_shared_credential**
-> SharedCredential get_shared_credential(id, view=view)
+> SharedCredential get_shared_credential(id)
 
 Shared Credential
 
@@ -162,18 +163,17 @@ Retrieves the specified shared credential.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.CredentialApi()
+api_instance = swagger_client.CredentialApi()
 id = 56 # int | The identifier of the credential.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Shared Credential
-    api_response = api_instance.get_shared_credential(id, view=view)
+    api_response = api_instance.get_shared_credential(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CredentialApi->get_shared_credential: %s\n" % e)
@@ -184,7 +184,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the credential. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -196,13 +195,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_shared_credentials**
-> ResourcesSharedCredential get_shared_credentials(view=view)
+> ResourcesSharedCredential get_shared_credentials()
 
 Shared Credentials
 
@@ -212,27 +211,23 @@ Retrieves all defined shared credential resources.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.CredentialApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.CredentialApi()
 
 try:
     # Shared Credentials
-    api_response = api_instance.get_shared_credentials(view=view)
+    api_response = api_instance.get_shared_credentials()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CredentialApi->get_shared_credentials: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -244,13 +239,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_shared_credential**
-> Links update_shared_credential(id, body=body)
+> Links update_shared_credential(id, credential=credential)
 
 Shared Credential
 
@@ -260,18 +255,18 @@ Updates the specified shared credential.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.CredentialApi()
+api_instance = swagger_client.CredentialApi()
 id = 56 # int | The identifier of the credential.
-body = r7ivm3.SharedCredential() # SharedCredential | The specification of the shared credential to update. (optional)
+credential = swagger_client.SharedCredential() # SharedCredential | The specification of the shared credential to update. (optional)
 
 try:
     # Shared Credential
-    api_response = api_instance.update_shared_credential(id, body=body)
+    api_response = api_instance.update_shared_credential(id, credential=credential)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CredentialApi->update_shared_credential: %s\n" % e)
@@ -282,7 +277,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the credential. | 
- **body** | [**SharedCredential**](SharedCredential.md)| The specification of the shared credential to update. | [optional] 
+ **credential** | [**SharedCredential**](SharedCredential.md)| The specification of the shared credential to update. | [optional] 
 
 ### Return type
 

@@ -1,6 +1,6 @@
-# r7ivm3.ScanEngineApi
+# swagger_client.ScanEngineApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**update_scan_engine**](ScanEngineApi.md#update_scan_engine) | **PUT** /api/3/scan_engines/{id} | Scan Engine
 [**update_scan_engine_pool**](ScanEngineApi.md#update_scan_engine_pool) | **PUT** /api/3/scan_engine_pools/{id} | Engine Pool
 
+
 # **add_scan_engine_pool_scan_engine**
 > Links add_scan_engine_pool_scan_engine(id, engine_id)
 
@@ -38,12 +39,12 @@ Add an engine to the engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the engine pool.
 engine_id = 56 # int | The identifier of the scan engine.
 
@@ -72,13 +73,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_scan_engine**
-> ReferenceWithEngineIDLink create_scan_engine(body=body)
+> ReferenceWithEngineIDLink create_scan_engine(scan_engine=scan_engine)
 
 Scan Engines
 
@@ -88,17 +89,17 @@ Creates a new scan engine.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
-body = r7ivm3.ScanEngine() # ScanEngine | The specification of a scan engine. (optional)
+api_instance = swagger_client.ScanEngineApi()
+scan_engine = swagger_client.ScanEngine() # ScanEngine | The specification of a scan engine. (optional)
 
 try:
     # Scan Engines
-    api_response = api_instance.create_scan_engine(body=body)
+    api_response = api_instance.create_scan_engine(scan_engine=scan_engine)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->create_scan_engine: %s\n" % e)
@@ -108,7 +109,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ScanEngine**](ScanEngine.md)| The specification of a scan engine. | [optional] 
+ **scan_engine** | [**ScanEngine**](ScanEngine.md)| The specification of a scan engine. | [optional] 
 
 ### Return type
 
@@ -126,7 +127,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_scan_engine_pool**
-> CreatedReferenceEngineIDLink create_scan_engine_pool(body=body)
+> CreatedReferenceEngineIDLink create_scan_engine_pool(engine_pool=engine_pool)
 
 Engine Pools
 
@@ -136,17 +137,17 @@ Creates a new engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
-body = r7ivm3.EnginePool() # EnginePool | The details for the scan engine to update. (optional)
+api_instance = swagger_client.ScanEngineApi()
+engine_pool = swagger_client.EnginePool() # EnginePool | The details for the scan engine to update. (optional)
 
 try:
     # Engine Pools
-    api_response = api_instance.create_scan_engine_pool(body=body)
+    api_response = api_instance.create_scan_engine_pool(engine_pool=engine_pool)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->create_scan_engine_pool: %s\n" % e)
@@ -156,7 +157,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EnginePool**](EnginePool.md)| The details for the scan engine to update. | [optional] 
+ **engine_pool** | [**EnginePool**](EnginePool.md)| The details for the scan engine to update. | [optional] 
 
 ### Return type
 
@@ -184,12 +185,12 @@ Returns the current valid shared secret or generates a new shared secret. The en
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 
 try:
     # Scan Engine Shared Secret
@@ -212,8 +213,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=UTF-8
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -228,12 +229,12 @@ Deletes the specified scan engine.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the scan engine.
 
 try:
@@ -260,7 +261,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -276,12 +277,12 @@ Revokes the current valid shared secret, if one exists.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 
 try:
     # Scan Engine Shared Secret
@@ -304,13 +305,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_assigned_engine_pools**
-> ResourcesEnginePool get_assigned_engine_pools(id, view=view)
+> ResourcesEnginePool get_assigned_engine_pools(id)
 
 Assigned Engine Pools
 
@@ -320,18 +321,17 @@ Retrieves the list of engine pools the scan engine is currently assigned to.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the scan engine.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Assigned Engine Pools
-    api_response = api_instance.get_assigned_engine_pools(id, view=view)
+    api_response = api_instance.get_assigned_engine_pools(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_assigned_engine_pools: %s\n" % e)
@@ -342,7 +342,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the scan engine. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -354,13 +353,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_current_shared_secret**
-> str get_current_shared_secret(view=view)
+> str get_current_shared_secret()
 
 Scan Engine Shared Secret
 
@@ -370,27 +369,23 @@ Returns the current valid shared secret, if one has been previously generated an
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.ScanEngineApi()
 
 try:
     # Scan Engine Shared Secret
-    api_response = api_instance.get_current_shared_secret(view=view)
+    api_response = api_instance.get_current_shared_secret()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_current_shared_secret: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -402,13 +397,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=UTF-8
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_current_shared_secret_time_to_live**
-> int get_current_shared_secret_time_to_live(view=view)
+> int get_current_shared_secret_time_to_live()
 
 Scan Engine Shared Secret Time to live
 
@@ -418,27 +413,23 @@ Returns the number of seconds remaining for the current shared secret before it 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.ScanEngineApi()
 
 try:
     # Scan Engine Shared Secret Time to live
-    api_response = api_instance.get_current_shared_secret_time_to_live(view=view)
+    api_response = api_instance.get_current_shared_secret_time_to_live()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_current_shared_secret_time_to_live: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -450,13 +441,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_engine_pool**
-> EnginePool get_engine_pool(id, view=view)
+> EnginePool get_engine_pool(id)
 
 Engine Pool
 
@@ -466,18 +457,17 @@ Retrieves the details for an engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the engine pool.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Engine Pool
-    api_response = api_instance.get_engine_pool(id, view=view)
+    api_response = api_instance.get_engine_pool(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_engine_pool: %s\n" % e)
@@ -488,7 +478,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the engine pool. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -500,13 +489,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scan_engine**
-> ScanEngine get_scan_engine(id, view=view)
+> ScanEngine get_scan_engine(id)
 
 Scan Engine
 
@@ -516,18 +505,17 @@ Retrieves the details for a scan engine.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the scan engine.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Scan Engine
-    api_response = api_instance.get_scan_engine(id, view=view)
+    api_response = api_instance.get_scan_engine(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_scan_engine: %s\n" % e)
@@ -538,7 +526,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the scan engine. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -550,13 +537,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scan_engine_pool_scan_engines**
-> ReferencesWithEngineIDLink get_scan_engine_pool_scan_engines(id, view=view)
+> ReferencesWithEngineIDLink get_scan_engine_pool_scan_engines(id)
 
 Engine Pool Engines
 
@@ -566,18 +553,17 @@ Get the engines in the engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the engine pool.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Engine Pool Engines
-    api_response = api_instance.get_scan_engine_pool_scan_engines(id, view=view)
+    api_response = api_instance.get_scan_engine_pool_scan_engines(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_scan_engine_pool_scan_engines: %s\n" % e)
@@ -588,7 +574,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the engine pool. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -600,13 +585,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scan_engine_pool_sites**
-> ReferencesWithSiteIDLink get_scan_engine_pool_sites(id, view=view)
+> ReferencesWithSiteIDLink get_scan_engine_pool_sites(id)
 
 Engine Pool Sites
 
@@ -616,18 +601,17 @@ Returns links to the sites associated with this engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the engine pool.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Engine Pool Sites
-    api_response = api_instance.get_scan_engine_pool_sites(id, view=view)
+    api_response = api_instance.get_scan_engine_pool_sites(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_scan_engine_pool_sites: %s\n" % e)
@@ -638,7 +622,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the engine pool. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -650,13 +633,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scan_engine_pools**
-> ResourcesEnginePool get_scan_engine_pools(view=view)
+> ResourcesEnginePool get_scan_engine_pools()
 
 Engine Pools
 
@@ -666,27 +649,23 @@ Returns engine pools available to use for scanning.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.ScanEngineApi()
 
 try:
     # Engine Pools
-    api_response = api_instance.get_scan_engine_pools(view=view)
+    api_response = api_instance.get_scan_engine_pools()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_scan_engine_pools: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -698,13 +677,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scan_engine_scans**
-> PageOfScan get_scan_engine_scans(id, page=page, size=size, sort=sort, view=view)
+> PageOfScan get_scan_engine_scans(id, page=page, size=size, sort=sort)
 
 Scan Engine Scans
 
@@ -714,21 +693,20 @@ Returns the scans that have been run on a scan engine.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the scan engine.
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Scan Engine Scans
-    api_response = api_instance.get_scan_engine_scans(id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_scan_engine_scans(id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_scan_engine_scans: %s\n" % e)
@@ -739,10 +717,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the scan engine. | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -754,13 +731,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scan_engine_sites**
-> PageOfSite get_scan_engine_sites(id, page=page, size=size, sort=sort, view=view)
+> PageOfSite get_scan_engine_sites(id, page=page, size=size, sort=sort)
 
 Scan Engine Sites
 
@@ -770,21 +747,20 @@ Retrieves the list of sites the specified scan engine is assigned to.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the scan engine.
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Scan Engine Sites
-    api_response = api_instance.get_scan_engine_sites(id, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_scan_engine_sites(id, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_scan_engine_sites: %s\n" % e)
@@ -795,10 +771,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the scan engine. | 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -810,13 +785,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scan_engines**
-> ResourcesScanEngine get_scan_engines(view=view)
+> ResourcesScanEngine get_scan_engines()
 
 Scan Engines
 
@@ -826,27 +801,23 @@ Returns scan engines available to use for scanning.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.ScanEngineApi()
 
 try:
     # Scan Engines
-    api_response = api_instance.get_scan_engines(view=view)
+    api_response = api_instance.get_scan_engines()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->get_scan_engines: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -858,7 +829,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -874,12 +845,12 @@ Deletes the specified engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the engine pool.
 
 try:
@@ -906,7 +877,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -922,12 +893,12 @@ Remove the specified engine from the engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the engine pool.
 engine_id = 56 # int | The identifier of the scan engine.
 
@@ -956,13 +927,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_scan_engine_pool_scan_engines**
-> Links set_scan_engine_pool_scan_engines(id, body=body)
+> Links set_scan_engine_pool_scan_engines(id, engines=engines)
 
 Engine Pool Engines
 
@@ -972,18 +943,18 @@ Set the engines in the engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the engine pool.
-body = [56] # list[int] | The identifiers of the scan engines to place into the engine pool. (optional)
+engines = [swagger_client.list[int]()] # list[int] | The identifiers of the scan engines to place into the engine pool. (optional)
 
 try:
     # Engine Pool Engines
-    api_response = api_instance.set_scan_engine_pool_scan_engines(id, body=body)
+    api_response = api_instance.set_scan_engine_pool_scan_engines(id, engines=engines)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->set_scan_engine_pool_scan_engines: %s\n" % e)
@@ -994,7 +965,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the engine pool. | 
- **body** | [**list[int]**](int.md)| The identifiers of the scan engines to place into the engine pool. | [optional] 
+ **engines** | **list[int]**| The identifiers of the scan engines to place into the engine pool. | [optional] 
 
 ### Return type
 
@@ -1012,7 +983,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_scan_engine**
-> Links update_scan_engine(id, body=body)
+> Links update_scan_engine(id, scan_engine=scan_engine)
 
 Scan Engine
 
@@ -1022,18 +993,18 @@ Updates the specified scan engine.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the scan engine.
-body = r7ivm3.ScanEngine() # ScanEngine | The specification of the scan engine to update. (optional)
+scan_engine = swagger_client.ScanEngine() # ScanEngine | The specification of the scan engine to update. (optional)
 
 try:
     # Scan Engine
-    api_response = api_instance.update_scan_engine(id, body=body)
+    api_response = api_instance.update_scan_engine(id, scan_engine=scan_engine)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->update_scan_engine: %s\n" % e)
@@ -1044,7 +1015,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the scan engine. | 
- **body** | [**ScanEngine**](ScanEngine.md)| The specification of the scan engine to update. | [optional] 
+ **scan_engine** | [**ScanEngine**](ScanEngine.md)| The specification of the scan engine to update. | [optional] 
 
 ### Return type
 
@@ -1062,7 +1033,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_scan_engine_pool**
-> Links update_scan_engine_pool(id, body=body)
+> Links update_scan_engine_pool(id, engine_pool=engine_pool)
 
 Engine Pool
 
@@ -1072,18 +1043,18 @@ Updates the specified engine pool.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ScanEngineApi()
+api_instance = swagger_client.ScanEngineApi()
 id = 56 # int | The identifier of the engine pool.
-body = r7ivm3.EnginePool() # EnginePool | The details for the scan engine to update. (optional)
+engine_pool = swagger_client.EnginePool() # EnginePool | The details for the scan engine to update. (optional)
 
 try:
     # Engine Pool
-    api_response = api_instance.update_scan_engine_pool(id, body=body)
+    api_response = api_instance.update_scan_engine_pool(id, engine_pool=engine_pool)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScanEngineApi->update_scan_engine_pool: %s\n" % e)
@@ -1094,7 +1065,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the engine pool. | 
- **body** | [**EnginePool**](EnginePool.md)| The details for the scan engine to update. | [optional] 
+ **engine_pool** | [**EnginePool**](EnginePool.md)| The details for the scan engine to update. | [optional] 
 
 ### Return type
 

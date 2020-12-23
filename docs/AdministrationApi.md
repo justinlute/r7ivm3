@@ -1,6 +1,6 @@
-# r7ivm3.AdministrationApi
+# swagger_client.AdministrationApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_license**](AdministrationApi.md#get_license) | **GET** /api/3/administration/license | License
 [**get_properties**](AdministrationApi.md#get_properties) | **GET** /api/3/administration/properties | Properties
 [**get_settings**](AdministrationApi.md#get_settings) | **GET** /api/3/administration/settings | Settings
+
 
 # **activate_license**
 > Links activate_license(license=license, key=key)
@@ -22,13 +23,13 @@ Licenses the product with an activation key or a provided license file. If both 
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AdministrationApi()
-license = 'license_example' # str |  (optional)
+api_instance = swagger_client.AdministrationApi()
+license = '/path/to/file.txt' # file | The contents of a license (.lic) file. (optional)
 key = 'key_example' # str | A license activation key. (optional)
 
 try:
@@ -43,7 +44,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license** | **str**|  | [optional] 
+ **license** | **file**| The contents of a license (.lic) file. | [optional] 
  **key** | **str**| A license activation key. | [optional] 
 
 ### Return type
@@ -62,7 +63,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **execute_command**
-> ConsoleCommandOutput execute_command(body=body)
+> ConsoleCommandOutput execute_command(command=command)
 
 Console Commands
 
@@ -72,17 +73,17 @@ Executes a console command against the Security Console. <span class=\"authoriza
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AdministrationApi()
-body = 'body_example' # str | The console command to execute. (optional)
+api_instance = swagger_client.AdministrationApi()
+command = 'command_example' # str | The console command to execute. (optional)
 
 try:
     # Console Commands
-    api_response = api_instance.execute_command(body=body)
+    api_response = api_instance.execute_command(command=command)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AdministrationApi->execute_command: %s\n" % e)
@@ -92,7 +93,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**str**](str.md)| The console command to execute. | [optional] 
+ **command** | **str**| The console command to execute. | [optional] 
 
 ### Return type
 
@@ -110,7 +111,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_info**
-> Info get_info(view=view)
+> Info get_info()
 
 Information
 
@@ -120,27 +121,23 @@ Returns system details, including host and version information.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AdministrationApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.AdministrationApi()
 
 try:
     # Information
-    api_response = api_instance.get_info(view=view)
+    api_response = api_instance.get_info()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AdministrationApi->get_info: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -152,13 +149,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_license**
-> License get_license(view=view)
+> License get_license()
 
 License
 
@@ -168,27 +165,23 @@ Returns the enabled features and limits of the current license. <span class=\"au
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AdministrationApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.AdministrationApi()
 
 try:
     # License
-    api_response = api_instance.get_license(view=view)
+    api_response = api_instance.get_license()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AdministrationApi->get_license: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -200,13 +193,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_properties**
-> EnvironmentProperties get_properties(view=view)
+> EnvironmentProperties get_properties()
 
 Properties
 
@@ -216,27 +209,23 @@ Returns system details, including host and version information.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AdministrationApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.AdministrationApi()
 
 try:
     # Properties
-    api_response = api_instance.get_properties(view=view)
+    api_response = api_instance.get_properties()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AdministrationApi->get_properties: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -248,13 +237,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_settings**
-> Settings get_settings(view=view)
+> Settings get_settings()
 
 Settings
 
@@ -264,27 +253,23 @@ Returns the current administration settings. <span class=\"authorization\">Globa
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AdministrationApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.AdministrationApi()
 
 try:
     # Settings
-    api_response = api_instance.get_settings(view=view)
+    api_response = api_instance.get_settings()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AdministrationApi->get_settings: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -296,7 +281,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -1,6 +1,6 @@
-# r7ivm3.ReportApi
+# swagger_client.ReportApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,8 +18,9 @@ Method | HTTP request | Description
 [**get_reports**](ReportApi.md#get_reports) | **GET** /api/3/reports | Reports
 [**update_report**](ReportApi.md#update_report) | **PUT** /api/3/reports/{id} | Report
 
+
 # **create_report**
-> CreatedReferenceintLink create_report(body=body)
+> CreatedReferenceintLink create_report(report=report)
 
 Reports
 
@@ -29,17 +30,17 @@ Configures a new report for generation. Report types are controlled through eith
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
-body = r7ivm3.Report() # Report | The specification of a report configuration. (optional)
+api_instance = swagger_client.ReportApi()
+report = swagger_client.Report() # Report | The specification of a report configuration. (optional)
 
 try:
     # Reports
-    api_response = api_instance.create_report(body=body)
+    api_response = api_instance.create_report(report=report)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->create_report: %s\n" % e)
@@ -49,7 +50,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Report**](Report.md)| The specification of a report configuration. | [optional] 
+ **report** | [**Report**](Report.md)| The specification of a report configuration. | [optional] 
 
 ### Return type
 
@@ -77,12 +78,12 @@ Deletes the configuration of a report.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 56 # int | The identifier of the report.
 
 try:
@@ -109,7 +110,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -125,12 +126,12 @@ Deletes an instance of a generated report.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 56 # int | The identifier of the report.
 instance = 'instance_example' # str | The identifier of the report instance.
 
@@ -159,13 +160,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_report**
-> str download_report(id, instance, view=view)
+> str download_report(id, instance)
 
 Report Download
 
@@ -175,19 +176,18 @@ Returns the contents of a generated report. The report content is usually return
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 56 # int | The identifier of the report.
 instance = 'instance_example' # str | The identifier of the report instance.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Report Download
-    api_response = api_instance.download_report(id, instance, view=view)
+    api_response = api_instance.download_report(id, instance)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->download_report: %s\n" % e)
@@ -199,7 +199,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the report. | 
  **instance** | **str**| The identifier of the report instance. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -211,7 +210,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/octet-stream, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -227,12 +226,12 @@ Generates a configured report and returns the instance identifier of the report.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 56 # int | The identifier of the report.
 
 try:
@@ -259,13 +258,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report**
-> Report get_report(id, view=view)
+> Report get_report(id)
 
 Report
 
@@ -275,18 +274,17 @@ Returns the configuration details of a report.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 56 # int | The identifier of the report.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Report
-    api_response = api_instance.get_report(id, view=view)
+    api_response = api_instance.get_report(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->get_report: %s\n" % e)
@@ -297,7 +295,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the report. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -309,13 +306,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report_formats**
-> ResourcesAvailableReportFormat get_report_formats(view=view)
+> ResourcesAvailableReportFormat get_report_formats()
 
 Report Formats
 
@@ -325,27 +322,23 @@ Returns all available report formats. A report format indicates an output file f
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.ReportApi()
 
 try:
     # Report Formats
-    api_response = api_instance.get_report_formats(view=view)
+    api_response = api_instance.get_report_formats()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->get_report_formats: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -357,13 +350,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report_instance**
-> ReportInstance get_report_instance(id, instance, view=view)
+> ReportInstance get_report_instance(id, instance)
 
 Report History
 
@@ -373,19 +366,18 @@ Returns the details for a generation of the report.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 56 # int | The identifier of the report.
 instance = 'instance_example' # str | The identifier of the report instance.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Report History
-    api_response = api_instance.get_report_instance(id, instance, view=view)
+    api_response = api_instance.get_report_instance(id, instance)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->get_report_instance: %s\n" % e)
@@ -397,7 +389,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the report. | 
  **instance** | **str**| The identifier of the report instance. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -409,13 +400,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report_instances**
-> ResourcesReportInstance get_report_instances(id, view=view)
+> ResourcesReportInstance get_report_instances(id)
 
 Report Histories
 
@@ -425,18 +416,17 @@ Returns all historical details for generation of the report over time.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 56 # int | The identifier of the report.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Report Histories
-    api_response = api_instance.get_report_instances(id, view=view)
+    api_response = api_instance.get_report_instances(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->get_report_instances: %s\n" % e)
@@ -447,7 +437,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the report. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -459,13 +448,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report_template**
-> ReportTemplate get_report_template(id, view=view)
+> ReportTemplate get_report_template(id)
 
 Report Template
 
@@ -475,18 +464,17 @@ Returns the details of a report template. Report templates govern the contents g
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 'id_example' # str | The identifier of the report template;
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Report Template
-    api_response = api_instance.get_report_template(id, view=view)
+    api_response = api_instance.get_report_template(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->get_report_template: %s\n" % e)
@@ -497,7 +485,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The identifier of the report template; | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -509,13 +496,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report_templates**
-> ResourcesReportTemplate get_report_templates(view=view)
+> ResourcesReportTemplate get_report_templates()
 
 Report Templates
 
@@ -525,27 +512,23 @@ Returns all available report templates.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
+api_instance = swagger_client.ReportApi()
 
 try:
     # Report Templates
-    api_response = api_instance.get_report_templates(view=view)
+    api_response = api_instance.get_report_templates()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->get_report_templates: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -557,13 +540,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_reports**
-> PageOfReport get_reports(page=page, size=size, sort=sort, view=view)
+> PageOfReport get_reports(page=page, size=size, sort=sort)
 
 Reports
 
@@ -573,20 +556,19 @@ Returns all defined report configurations.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+api_instance = swagger_client.ReportApi()
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Reports
-    api_response = api_instance.get_reports(page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_reports(page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->get_reports: %s\n" % e)
@@ -596,10 +578,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -611,13 +592,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_report**
-> Links update_report(id, body=body)
+> Links update_report(id, report=report)
 
 Report
 
@@ -627,18 +608,18 @@ Updates the configuration details of a report.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.ReportApi()
+api_instance = swagger_client.ReportApi()
 id = 56 # int | The identifier of the report.
-body = r7ivm3.Report() # Report | The specification of a report configuration. (optional)
+report = swagger_client.Report() # Report | The specification of a report configuration. (optional)
 
 try:
     # Report
-    api_response = api_instance.update_report(id, body=body)
+    api_response = api_instance.update_report(id, report=report)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReportApi->update_report: %s\n" % e)
@@ -649,7 +630,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the report. | 
- **body** | [**Report**](Report.md)| The specification of a report configuration. | [optional] 
+ **report** | [**Report**](Report.md)| The specification of a report configuration. | [optional] 
 
 ### Return type
 

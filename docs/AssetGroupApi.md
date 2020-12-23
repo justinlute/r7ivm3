@@ -1,10 +1,10 @@
-# r7ivm3.AssetGroupApi
+# swagger_client.AssetGroupApi
 
-All URIs are relative to *https://&lt;rapid7_ivm_server_name&gt;/*
+All URIs are relative to *https://insightvm.lb.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_asset_group_tag**](AssetGroupApi.md#add_asset_group_tag) | **PUT** /api/3/asset_groups/{id}/tags/{tagId} | Asset Group Tag
+[**add_asset_group_tag**](AssetGroupApi.md#add_asset_group_tag) | **PUT** /api/3/asset_groups/{id}/tags/{tagId} | Resources and operations for managing asset groups.
 [**add_asset_group_user**](AssetGroupApi.md#add_asset_group_user) | **PUT** /api/3/asset_groups/{id}/users/{userId} | Asset Group User
 [**add_asset_to_asset_group**](AssetGroupApi.md#add_asset_to_asset_group) | **PUT** /api/3/asset_groups/{id}/assets/{assetId} | Asset Group Asset
 [**create_asset_group**](AssetGroupApi.md#create_asset_group) | **POST** /api/3/asset_groups | Asset Groups
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**remove_all_asset_group_tags**](AssetGroupApi.md#remove_all_asset_group_tags) | **DELETE** /api/3/asset_groups/{id}/tags | Asset Group Tags
 [**remove_all_assets_from_asset_group**](AssetGroupApi.md#remove_all_assets_from_asset_group) | **DELETE** /api/3/asset_groups/{id}/assets | Asset Group Assets
 [**remove_asset_from_asset_group**](AssetGroupApi.md#remove_asset_from_asset_group) | **DELETE** /api/3/asset_groups/{id}/assets/{assetId} | Asset Group Asset
-[**remove_asset_group_tag**](AssetGroupApi.md#remove_asset_group_tag) | **DELETE** /api/3/asset_groups/{id}/tags/{tagId} | Asset Group Tag
+[**remove_asset_group_tag**](AssetGroupApi.md#remove_asset_group_tag) | **DELETE** /api/3/asset_groups/{id}/tags/{tagId} | Resources and operations for managing asset groups.
 [**remove_asset_group_user**](AssetGroupApi.md#remove_asset_group_user) | **DELETE** /api/3/asset_groups/{id}/users/{userId} | Asset Group User
 [**set_asset_group_search_criteria**](AssetGroupApi.md#set_asset_group_search_criteria) | **PUT** /api/3/asset_groups/{id}/search_criteria | Asset Group Search Criteria
 [**set_asset_group_tags**](AssetGroupApi.md#set_asset_group_tags) | **PUT** /api/3/asset_groups/{id}/tags | Asset Group Tags
@@ -27,10 +27,11 @@ Method | HTTP request | Description
 [**update_asset_group**](AssetGroupApi.md#update_asset_group) | **PUT** /api/3/asset_groups/{id} | Asset Group
 [**update_asset_group_assets**](AssetGroupApi.md#update_asset_group_assets) | **PUT** /api/3/asset_groups/{id}/assets | Asset Group Assets
 
+
 # **add_asset_group_tag**
 > Links add_asset_group_tag(id, tag_id)
 
-Asset Group Tag
+Resources and operations for managing asset groups.
 
 Adds a tag to an asset group.
 
@@ -38,17 +39,17 @@ Adds a tag to an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 tag_id = 56 # int | The identifier of the tag.
 
 try:
-    # Asset Group Tag
+    # Resources and operations for managing asset groups.
     api_response = api_instance.add_asset_group_tag(id, tag_id)
     pprint(api_response)
 except ApiException as e:
@@ -72,7 +73,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -88,12 +89,12 @@ Grants a user with sufficient privileges access to the asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 user_id = 56 # int | The identifier of the user.
 
@@ -122,7 +123,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -138,12 +139,12 @@ Adds an asset to a static asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 asset_id = 789 # int | The identifier of the asset.
 
@@ -172,13 +173,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_asset_group**
-> CreatedReferenceAssetGroupIDLink create_asset_group(body=body)
+> CreatedReferenceAssetGroupIDLink create_asset_group(asset_group=asset_group)
 
 Asset Groups
 
@@ -188,17 +189,17 @@ Creates a new asset group. The `searchCriteria` field can be passed no matter wh
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
-body = r7ivm3.AssetGroup() # AssetGroup | The details of the asset group. (optional)
+api_instance = swagger_client.AssetGroupApi()
+asset_group = swagger_client.AssetGroup() # AssetGroup | The details of the asset group. (optional)
 
 try:
     # Asset Groups
-    api_response = api_instance.create_asset_group(body=body)
+    api_response = api_instance.create_asset_group(asset_group=asset_group)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->create_asset_group: %s\n" % e)
@@ -208,7 +209,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssetGroup**](AssetGroup.md)| The details of the asset group. | [optional] 
+ **asset_group** | [**AssetGroup**](AssetGroup.md)| The details of the asset group. | [optional] 
 
 ### Return type
 
@@ -236,12 +237,12 @@ Deletes the asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 
 try:
@@ -268,13 +269,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_agents**
-> PageOfAgent get_agents(page=page, size=size, sort=sort, view=view)
+> PageOfAgent get_agents(page=page, size=size, sort=sort)
 
 Agents
 
@@ -284,20 +285,19 @@ Returns the details for all agents.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+api_instance = swagger_client.AssetGroupApi()
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Agents
-    api_response = api_instance.get_agents(page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_agents(page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->get_agents: %s\n" % e)
@@ -307,10 +307,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -322,13 +321,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_group**
-> AssetGroup get_asset_group(id, view=view)
+> AssetGroup get_asset_group(id)
 
 Asset Group
 
@@ -338,18 +337,17 @@ Returns an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Group
-    api_response = api_instance.get_asset_group(id, view=view)
+    api_response = api_instance.get_asset_group(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->get_asset_group: %s\n" % e)
@@ -360,7 +358,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -372,13 +369,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_group_assets**
-> ReferencesWithAssetIDLink get_asset_group_assets(id, view=view)
+> ReferencesWithAssetIDLink get_asset_group_assets(id)
 
 Asset Group Assets
 
@@ -388,18 +385,17 @@ Returns hypermedia links for the assets that belong to an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Group Assets
-    api_response = api_instance.get_asset_group_assets(id, view=view)
+    api_response = api_instance.get_asset_group_assets(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->get_asset_group_assets: %s\n" % e)
@@ -410,7 +406,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -422,13 +417,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_group_search_criteria**
-> SearchCriteria get_asset_group_search_criteria(id, view=view)
+> SearchCriteria get_asset_group_search_criteria(id)
 
 Asset Group Search Criteria
 
@@ -438,18 +433,17 @@ Returns the search criteria of a dynamic asset group.For a reference of valid se
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Group Search Criteria
-    api_response = api_instance.get_asset_group_search_criteria(id, view=view)
+    api_response = api_instance.get_asset_group_search_criteria(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->get_asset_group_search_criteria: %s\n" % e)
@@ -460,7 +454,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -472,13 +465,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_group_tags**
-> ReferencesWithTagIDLink get_asset_group_tags(id, view=view)
+> ReferencesWithTagIDLink get_asset_group_tags(id)
 
 Asset Group Tags
 
@@ -488,18 +481,17 @@ Returns the tags assigned to an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Group Tags
-    api_response = api_instance.get_asset_group_tags(id, view=view)
+    api_response = api_instance.get_asset_group_tags(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->get_asset_group_tags: %s\n" % e)
@@ -510,7 +502,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -522,13 +513,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_group_users**
-> ReferencesWithUserIDLink get_asset_group_users(id, view=view)
+> ReferencesWithUserIDLink get_asset_group_users(id)
 
 Asset Group Users
 
@@ -538,18 +529,17 @@ Returns hypermedia links for the users with access to this asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Group Users
-    api_response = api_instance.get_asset_group_users(id, view=view)
+    api_response = api_instance.get_asset_group_users(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->get_asset_group_users: %s\n" % e)
@@ -560,7 +550,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -572,13 +561,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_asset_groups**
-> PageOfAssetGroup get_asset_groups(type=type, name=name, page=page, size=size, sort=sort, view=view)
+> PageOfAssetGroup get_asset_groups(type=type, name=name, page=page, size=size, sort=sort)
 
 Asset Groups
 
@@ -588,22 +577,21 @@ Returns all asset groups.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 type = 'type_example' # str | The type of asset group. (optional)
 name = 'name_example' # str | A search pattern for the name of the asset group. Searches are case-insensitive contains. (optional)
-page = 56 # int | The index of the page (zero-based) to retrieve. (optional)
-size = 56 # int | The number of records per page to retrieve. (optional)
+page = 0 # int | The index of the page (zero-based) to retrieve. (optional) (default to 0)
+size = 10 # int | The number of records per page to retrieve. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The criteria to sort the records by, in the format: `property[,ASC|DESC]`. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. (optional)
-view = 'view_example' # str | The depth for the JSON response. Valid values are 'details' (default) and 'summary' (optional)
 
 try:
     # Asset Groups
-    api_response = api_instance.get_asset_groups(type=type, name=name, page=page, size=size, sort=sort, view=view)
+    api_response = api_instance.get_asset_groups(type=type, name=name, page=page, size=size, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->get_asset_groups: %s\n" % e)
@@ -615,10 +603,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **str**| The type of asset group. | [optional] 
  **name** | **str**| A search pattern for the name of the asset group. Searches are case-insensitive contains. | [optional] 
- **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] 
- **size** | **int**| The number of records per page to retrieve. | [optional] 
+ **page** | **int**| The index of the page (zero-based) to retrieve. | [optional] [default to 0]
+ **size** | **int**| The number of records per page to retrieve. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The criteria to sort the records by, in the format: &#x60;property[,ASC|DESC]&#x60;. The default sort order is ascending. Multiple sort criteria can be specified using multiple sort query parameters. | [optional] 
- **view** | **str**| The depth for the JSON response. Valid values are &#x27;details&#x27; (default) and &#x27;summary&#x27; | [optional] 
 
 ### Return type
 
@@ -630,7 +617,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -646,12 +633,12 @@ Removes all tag associations from the asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 
 try:
@@ -678,7 +665,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -694,12 +681,12 @@ Removes the assets from the given static asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 
 try:
@@ -726,7 +713,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -742,12 +729,12 @@ Removes an asset from an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 asset_id = 789 # int | The identifier of the asset.
 
@@ -776,7 +763,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -784,7 +771,7 @@ No authorization required
 # **remove_asset_group_tag**
 > Links remove_asset_group_tag(id, tag_id)
 
-Asset Group Tag
+Resources and operations for managing asset groups.
 
 Removes a tag from an asset group.
 
@@ -792,17 +779,17 @@ Removes a tag from an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 tag_id = 56 # int | The identifier of the tag.
 
 try:
-    # Asset Group Tag
+    # Resources and operations for managing asset groups.
     api_response = api_instance.remove_asset_group_tag(id, tag_id)
     pprint(api_response)
 except ApiException as e:
@@ -826,7 +813,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -842,12 +829,12 @@ Removes a user's access from an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
 user_id = 56 # int | The identifier of the user.
 
@@ -876,13 +863,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_asset_group_search_criteria**
-> Links set_asset_group_search_criteria(id, body=body)
+> Links set_asset_group_search_criteria(id, criteria=criteria)
 
 Asset Group Search Criteria
 
@@ -892,18 +879,18 @@ Updates the search criteria of a dynamic asset group. For a reference of valid s
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-body = r7ivm3.SearchCriteria() # SearchCriteria | The search criteria specification. (optional)
+criteria = swagger_client.SearchCriteria() # SearchCriteria | The search criteria specification. (optional)
 
 try:
     # Asset Group Search Criteria
-    api_response = api_instance.set_asset_group_search_criteria(id, body=body)
+    api_response = api_instance.set_asset_group_search_criteria(id, criteria=criteria)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->set_asset_group_search_criteria: %s\n" % e)
@@ -914,7 +901,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **body** | [**SearchCriteria**](SearchCriteria.md)| The search criteria specification. | [optional] 
+ **criteria** | [**SearchCriteria**](SearchCriteria.md)| The search criteria specification. | [optional] 
 
 ### Return type
 
@@ -932,7 +919,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_asset_group_tags**
-> Links set_asset_group_tags(id, body=body)
+> Links set_asset_group_tags(id, tags=tags)
 
 Asset Group Tags
 
@@ -942,18 +929,18 @@ Updates the tags of an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-body = [56] # list[int] | The tags to associate to the asset group. (optional)
+tags = [swagger_client.list[int]()] # list[int] | The tags to associate to the asset group. (optional)
 
 try:
     # Asset Group Tags
-    api_response = api_instance.set_asset_group_tags(id, body=body)
+    api_response = api_instance.set_asset_group_tags(id, tags=tags)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->set_asset_group_tags: %s\n" % e)
@@ -964,7 +951,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **body** | [**list[int]**](int.md)| The tags to associate to the asset group. | [optional] 
+ **tags** | **list[int]**| The tags to associate to the asset group. | [optional] 
 
 ### Return type
 
@@ -982,7 +969,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_asset_group_users**
-> Links set_asset_group_users(id, body=body)
+> Links set_asset_group_users(id, users=users)
 
 Asset Group Users
 
@@ -992,18 +979,18 @@ Grants users with sufficient privileges access to an asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-body = [56] # list[int] | The users to grant access to the asset group. (optional)
+users = [swagger_client.list[int]()] # list[int] | The users to grant access to the asset group. (optional)
 
 try:
     # Asset Group Users
-    api_response = api_instance.set_asset_group_users(id, body=body)
+    api_response = api_instance.set_asset_group_users(id, users=users)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->set_asset_group_users: %s\n" % e)
@@ -1014,7 +1001,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **body** | [**list[int]**](int.md)| The users to grant access to the asset group. | [optional] 
+ **users** | **list[int]**| The users to grant access to the asset group. | [optional] 
 
 ### Return type
 
@@ -1032,7 +1019,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_asset_group**
-> Links update_asset_group(id, body=body)
+> Links update_asset_group(id, asset_group=asset_group)
 
 Asset Group
 
@@ -1042,18 +1029,18 @@ Updates the details of an asset group. See the search criteria endpoint (/search
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-body = r7ivm3.AssetGroup() # AssetGroup | The details of the asset group. (optional)
+asset_group = swagger_client.AssetGroup() # AssetGroup | The details of the asset group. (optional)
 
 try:
     # Asset Group
-    api_response = api_instance.update_asset_group(id, body=body)
+    api_response = api_instance.update_asset_group(id, asset_group=asset_group)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->update_asset_group: %s\n" % e)
@@ -1064,7 +1051,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **body** | [**AssetGroup**](AssetGroup.md)| The details of the asset group. | [optional] 
+ **asset_group** | [**AssetGroup**](AssetGroup.md)| The details of the asset group. | [optional] 
 
 ### Return type
 
@@ -1082,7 +1069,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_asset_group_assets**
-> Links update_asset_group_assets(id, body=body)
+> Links update_asset_group_assets(id, assets=assets)
 
 Asset Group Assets
 
@@ -1092,18 +1079,18 @@ Updates all the assets that belong to a static asset group.
 ```python
 from __future__ import print_function
 import time
-import r7ivm3
-from r7ivm3.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = r7ivm3.AssetGroupApi()
+api_instance = swagger_client.AssetGroupApi()
 id = 56 # int | The identifier of the asset group.
-body = [56] # list[int] | The assets to place in the asset group.  (optional)
+assets = [swagger_client.list[int]()] # list[int] | The assets to place in the asset group.  (optional)
 
 try:
     # Asset Group Assets
-    api_response = api_instance.update_asset_group_assets(id, body=body)
+    api_response = api_instance.update_asset_group_assets(id, assets=assets)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetGroupApi->update_asset_group_assets: %s\n" % e)
@@ -1114,7 +1101,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The identifier of the asset group. | 
- **body** | [**list[int]**](int.md)| The assets to place in the asset group.  | [optional] 
+ **assets** | **list[int]**| The assets to place in the asset group.  | [optional] 
 
 ### Return type
 
