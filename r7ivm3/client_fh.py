@@ -7,7 +7,7 @@ import swagger_client
 
 class ClientForHumans:
     def __init__(self,
-                 config_file_path="api_config.json",
+                 config_file_path="../config/api_config.json",
                  client_name="r7ivm3_python_client",
                  disable_insecure_request_warnings=True
                  ):
